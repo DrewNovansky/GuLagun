@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45502525ECEA00066A7E /* MacroChalApp.swift */; };
+		49BA45532525ECEA00066A7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45522525ECEA00066A7E /* ContentView.swift */; };
+		49BA45552525ECEC00066A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA45542525ECEC00066A7E /* Assets.xcassets */; };
+		49BA45582525ECEC00066A7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA45572525ECEC00066A7E /* Preview Assets.xcassets */; };
+		49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45592525ECEC00066A7E /* Persistence.swift */; };
+		49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BA455B2525ECEC00066A7E /* MacroChal.xcdatamodeld */; };
+		49BA45682525ECEC00066A7E /* MacroChalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45672525ECEC00066A7E /* MacroChalTests.swift */; };
+		49BA45732525ECEC00066A7E /* MacroChalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45722525ECEC00066A7E /* MacroChalUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49BA45642525ECEC00066A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49BA45452525ECEA00066A7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49BA454C2525ECEA00066A7E;
+			remoteInfo = MacroChal;
+		};
+		49BA456F2525ECEC00066A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49BA45452525ECEA00066A7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49BA454C2525ECEA00066A7E;
+			remoteInfo = MacroChal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49BA454D2525ECEA00066A7E /* MacroChal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroChal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BA45502525ECEA00066A7E /* MacroChalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroChalApp.swift; sourceTree = "<group>"; };
+		49BA45522525ECEA00066A7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		49BA45542525ECEC00066A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49BA45572525ECEC00066A7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49BA45592525ECEC00066A7E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		49BA455C2525ECEC00066A7E /* MacroChal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacroChal.xcdatamodel; sourceTree = "<group>"; };
+		49BA455E2525ECEC00066A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49BA45632525ECEC00066A7E /* MacroChalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroChalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BA45672525ECEC00066A7E /* MacroChalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroChalTests.swift; sourceTree = "<group>"; };
+		49BA45692525ECEC00066A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49BA456E2525ECEC00066A7E /* MacroChalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroChalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BA45722525ECEC00066A7E /* MacroChalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroChalUITests.swift; sourceTree = "<group>"; };
+		49BA45742525ECEC00066A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49BA454A2525ECEA00066A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA45602525ECEC00066A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA456B2525ECEC00066A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49BA45442525ECEA00066A7E = {
+			isa = PBXGroup;
+			children = (
+				49BA454F2525ECEA00066A7E /* MacroChal */,
+				49BA45662525ECEC00066A7E /* MacroChalTests */,
+				49BA45712525ECEC00066A7E /* MacroChalUITests */,
+				49BA454E2525ECEA00066A7E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49BA454E2525ECEA00066A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49BA454D2525ECEA00066A7E /* MacroChal.app */,
+				49BA45632525ECEC00066A7E /* MacroChalTests.xctest */,
+				49BA456E2525ECEC00066A7E /* MacroChalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49BA454F2525ECEA00066A7E /* MacroChal */ = {
+			isa = PBXGroup;
+			children = (
+				49BA45502525ECEA00066A7E /* MacroChalApp.swift */,
+				49BA45522525ECEA00066A7E /* ContentView.swift */,
+				49BA45542525ECEC00066A7E /* Assets.xcassets */,
+				49BA45592525ECEC00066A7E /* Persistence.swift */,
+				49BA455E2525ECEC00066A7E /* Info.plist */,
+				49BA455B2525ECEC00066A7E /* MacroChal.xcdatamodeld */,
+				49BA45562525ECEC00066A7E /* Preview Content */,
+			);
+			path = MacroChal;
+			sourceTree = "<group>";
+		};
+		49BA45562525ECEC00066A7E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				49BA45572525ECEC00066A7E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49BA45662525ECEC00066A7E /* MacroChalTests */ = {
+			isa = PBXGroup;
+			children = (
+				49BA45672525ECEC00066A7E /* MacroChalTests.swift */,
+				49BA45692525ECEC00066A7E /* Info.plist */,
+			);
+			path = MacroChalTests;
+			sourceTree = "<group>";
+		};
+		49BA45712525ECEC00066A7E /* MacroChalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49BA45722525ECEC00066A7E /* MacroChalUITests.swift */,
+				49BA45742525ECEC00066A7E /* Info.plist */,
+			);
+			path = MacroChalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49BA454C2525ECEA00066A7E /* MacroChal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChal" */;
+			buildPhases = (
+				49BA45492525ECEA00066A7E /* Sources */,
+				49BA454A2525ECEA00066A7E /* Frameworks */,
+				49BA454B2525ECEA00066A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacroChal;
+			productName = MacroChal;
+			productReference = 49BA454D2525ECEA00066A7E /* MacroChal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49BA45622525ECEC00066A7E /* MacroChalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49BA457A2525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChalTests" */;
+			buildPhases = (
+				49BA455F2525ECEC00066A7E /* Sources */,
+				49BA45602525ECEC00066A7E /* Frameworks */,
+				49BA45612525ECEC00066A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49BA45652525ECEC00066A7E /* PBXTargetDependency */,
+			);
+			name = MacroChalTests;
+			productName = MacroChalTests;
+			productReference = 49BA45632525ECEC00066A7E /* MacroChalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49BA456D2525ECEC00066A7E /* MacroChalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49BA457D2525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChalUITests" */;
+			buildPhases = (
+				49BA456A2525ECEC00066A7E /* Sources */,
+				49BA456B2525ECEC00066A7E /* Frameworks */,
+				49BA456C2525ECEC00066A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49BA45702525ECEC00066A7E /* PBXTargetDependency */,
+			);
+			name = MacroChalUITests;
+			productName = MacroChalUITests;
+			productReference = 49BA456E2525ECEC00066A7E /* MacroChalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49BA45452525ECEA00066A7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					49BA454C2525ECEA00066A7E = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					49BA45622525ECEC00066A7E = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 49BA454C2525ECEA00066A7E;
+					};
+					49BA456D2525ECEC00066A7E = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 49BA454C2525ECEA00066A7E;
+					};
+				};
+			};
+			buildConfigurationList = 49BA45482525ECEA00066A7E /* Build configuration list for PBXProject "MacroChal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49BA45442525ECEA00066A7E;
+			productRefGroup = 49BA454E2525ECEA00066A7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49BA454C2525ECEA00066A7E /* MacroChal */,
+				49BA45622525ECEC00066A7E /* MacroChalTests */,
+				49BA456D2525ECEC00066A7E /* MacroChalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49BA454B2525ECEA00066A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49BA45582525ECEC00066A7E /* Preview Assets.xcassets in Resources */,
+				49BA45552525ECEC00066A7E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA45612525ECEC00066A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA456C2525ECEC00066A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49BA45492525ECEA00066A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */,
+				49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */,
+				49BA45532525ECEA00066A7E /* ContentView.swift in Sources */,
+				49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA455F2525ECEC00066A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49BA45682525ECEC00066A7E /* MacroChalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49BA456A2525ECEC00066A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49BA45732525ECEC00066A7E /* MacroChalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49BA45652525ECEC00066A7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49BA454C2525ECEA00066A7E /* MacroChal */;
+			targetProxy = 49BA45642525ECEC00066A7E /* PBXContainerItemProxy */;
+		};
+		49BA45702525ECEC00066A7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49BA454C2525ECEA00066A7E /* MacroChal */;
+			targetProxy = 49BA456F2525ECEC00066A7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49BA45752525ECEC00066A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49BA45762525ECEC00066A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49BA45782525ECEC00066A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MacroChal/Preview Content\"";
+				DEVELOPMENT_TEAM = N89WD274V4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MacroChal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49BA45792525ECEC00066A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MacroChal/Preview Content\"";
+				DEVELOPMENT_TEAM = N89WD274V4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MacroChal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49BA457B2525ECEC00066A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N89WD274V4;
+				INFOPLIST_FILE = MacroChalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroChal.app/MacroChal";
+			};
+			name = Debug;
+		};
+		49BA457C2525ECEC00066A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N89WD274V4;
+				INFOPLIST_FILE = MacroChalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroChal.app/MacroChal";
+			};
+			name = Release;
+		};
+		49BA457E2525ECEC00066A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N89WD274V4;
+				INFOPLIST_FILE = MacroChalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroChal;
+			};
+			name = Debug;
+		};
+		49BA457F2525ECEC00066A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N89WD274V4;
+				INFOPLIST_FILE = MacroChalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MacroChallenge.MacroChalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroChal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49BA45482525ECEA00066A7E /* Build configuration list for PBXProject "MacroChal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49BA45752525ECEC00066A7E /* Debug */,
+				49BA45762525ECEC00066A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49BA45782525ECEC00066A7E /* Debug */,
+				49BA45792525ECEC00066A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49BA457A2525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49BA457B2525ECEC00066A7E /* Debug */,
+				49BA457C2525ECEC00066A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49BA457D2525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49BA457E2525ECEC00066A7E /* Debug */,
+				49BA457F2525ECEC00066A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49BA455B2525ECEC00066A7E /* MacroChal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49BA455C2525ECEC00066A7E /* MacroChal.xcdatamodel */,
+			);
+			currentVersion = 49BA455C2525ECEC00066A7E /* MacroChal.xcdatamodel */;
+			path = MacroChal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 49BA45452525ECEA00066A7E /* Project object */;
+}
