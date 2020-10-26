@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4919532C2546C9B00037B779 /* cardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919532B2546C9B00037B779 /* cardModal.swift */; };
+		491953362546C9E40037B779 /* TextTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491953332546C9E40037B779 /* TextTemplate.swift */; };
+		491953372546C9E40037B779 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491953342546C9E40037B779 /* Template.swift */; };
+		491953382546C9E40037B779 /* TextFieldTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491953352546C9E40037B779 /* TextFieldTemplate.swift */; };
+		4919535B2546CAD20037B779 /* PreviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919535A2546CAD20037B779 /* PreviewPage.swift */; };
 		49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA45502525ECEA00066A7E /* MacroChalApp.swift */; };
 		49BA45552525ECEC00066A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA45542525ECEC00066A7E /* Assets.xcassets */; };
 		49BA45582525ECEC00066A7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA45572525ECEC00066A7E /* Preview Assets.xcassets */; };
@@ -19,11 +24,7 @@
 		49C36AD325418BF2009C9065 /* AcceptancePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AC725418BF2009C9065 /* AcceptancePage.swift */; };
 		49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AC825418BF2009C9065 /* WritingPage.swift */; };
 		49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AC925418BF2009C9065 /* QuotesPage.swift */; };
-		49C36AD625418BF2009C9065 /* PreviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACA25418BF2009C9065 /* PreviewPage.swift */; };
 		49C36AD725418BF2009C9065 /* EmotionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACB25418BF2009C9065 /* EmotionPage.swift */; };
-		49C36AD825418BF2009C9065 /* TextFieldTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */; };
-		49C36AD925418BF2009C9065 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACE25418BF2009C9065 /* Template.swift */; };
-		49C36ADA25418BF2009C9065 /* TextTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACF25418BF2009C9065 /* TextTemplate.swift */; };
 		685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944002546C6C4001BFF17 /* HistoryCalendarView.swift */; };
 		685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944012546C6C4001BFF17 /* CalendarDetails.swift */; };
 		68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B625418FB800712DCC /* BonFireView.swift */; };
@@ -61,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4919532B2546C9B00037B779 /* cardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardModal.swift; sourceTree = "<group>"; };
+		491953332546C9E40037B779 /* TextTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTemplate.swift; sourceTree = "<group>"; };
+		491953342546C9E40037B779 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		491953352546C9E40037B779 /* TextFieldTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTemplate.swift; sourceTree = "<group>"; };
+		4919535A2546CAD20037B779 /* PreviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPage.swift; sourceTree = "<group>"; };
 		49BA454D2525ECEA00066A7E /* MacroChal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroChal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BA45502525ECEA00066A7E /* MacroChalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroChalApp.swift; sourceTree = "<group>"; };
 		49BA45542525ECEC00066A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,11 +85,7 @@
 		49C36AC725418BF2009C9065 /* AcceptancePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptancePage.swift; sourceTree = "<group>"; };
 		49C36AC825418BF2009C9065 /* WritingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingPage.swift; sourceTree = "<group>"; };
 		49C36AC925418BF2009C9065 /* QuotesPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesPage.swift; sourceTree = "<group>"; };
-		49C36ACA25418BF2009C9065 /* PreviewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPage.swift; sourceTree = "<group>"; };
 		49C36ACB25418BF2009C9065 /* EmotionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPage.swift; sourceTree = "<group>"; };
-		49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTemplate.swift; sourceTree = "<group>"; };
-		49C36ACE25418BF2009C9065 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
-		49C36ACF25418BF2009C9065 /* TextTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTemplate.swift; sourceTree = "<group>"; };
 		685944002546C6C4001BFF17 /* HistoryCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCalendarView.swift; sourceTree = "<group>"; };
 		685944012546C6C4001BFF17 /* CalendarDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetails.swift; sourceTree = "<group>"; };
 		68D1C6B625418FB800712DCC /* BonFireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonFireView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				685944012546C6C4001BFF17 /* CalendarDetails.swift */,
 				685944002546C6C4001BFF17 /* HistoryCalendarView.swift */,
 				49C36AC425418BF2009C9065 /* HistoryPage.swift */,
+				4919532B2546C9B00037B779 /* cardModal.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -204,15 +207,15 @@
 		49C36AC525418BF2009C9065 /* WritingExpress */ = {
 			isa = PBXGroup;
 			children = (
-				49C36AC625418BF2009C9065 /* Emotion2Page.swift */,
 				EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */,
 				EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */,
+				49C36ACB25418BF2009C9065 /* EmotionPage.swift */,
+				49C36AC625418BF2009C9065 /* Emotion2Page.swift */,
 				EC87DA0C2546C19700EA4BCD /* FireAnimationTest.swift */,
 				49C36AC725418BF2009C9065 /* AcceptancePage.swift */,
 				49C36AC825418BF2009C9065 /* WritingPage.swift */,
 				49C36AC925418BF2009C9065 /* QuotesPage.swift */,
-				49C36ACA25418BF2009C9065 /* PreviewPage.swift */,
-				49C36ACB25418BF2009C9065 /* EmotionPage.swift */,
+				4919535A2546CAD20037B779 /* PreviewPage.swift */,
 			);
 			path = WritingExpress;
 			sourceTree = "<group>";
@@ -220,9 +223,9 @@
 		49C36ACC25418BF2009C9065 /* Template */ = {
 			isa = PBXGroup;
 			children = (
-				49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */,
-				49C36ACE25418BF2009C9065 /* Template.swift */,
-				49C36ACF25418BF2009C9065 /* TextTemplate.swift */,
+				491953342546C9E40037B779 /* Template.swift */,
+				491953352546C9E40037B779 /* TextFieldTemplate.swift */,
+				491953332546C9E40037B779 /* TextTemplate.swift */,
 				EC0CE22D2541917500217DAF /* FireAnimation.swift */,
 				EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */,
 			);
@@ -381,25 +384,26 @@
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
 				68D1C6C725418FB800712DCC /* DevNotePage.swift in Sources */,
-				49C36ADA25418BF2009C9065 /* TextTemplate.swift in Sources */,
 				68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */,
 				68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */,
+				491953362546C9E40037B779 /* TextTemplate.swift in Sources */,
 				49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */,
 				68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */,
 				49C36AD325418BF2009C9065 /* AcceptancePage.swift in Sources */,
 				685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */,
-				49C36AD825418BF2009C9065 /* TextFieldTemplate.swift in Sources */,
-				49C36AD625418BF2009C9065 /* PreviewPage.swift in Sources */,
+				4919532C2546C9B00037B779 /* cardModal.swift in Sources */,
+				491953372546C9E40037B779 /* Template.swift in Sources */,
 				49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */,
 				49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */,
 				685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */,
 				49C36AD225418BF2009C9065 /* Emotion2Page.swift in Sources */,
-				49C36AD925418BF2009C9065 /* Template.swift in Sources */,
 				EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */,
 				68D1C6C525418FB800712DCC /* ExplorePageView.swift in Sources */,
+				491953382546C9E40037B779 /* TextFieldTemplate.swift in Sources */,
 				49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */,
 				68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */,
 				EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */,
+				4919535B2546CAD20037B779 /* PreviewPage.swift in Sources */,
 				68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */,
 				EC87DA0D2546C19700EA4BCD /* FireAnimationTest.swift in Sources */,
 				68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */,

@@ -6,29 +6,71 @@
 //
 
 import SwiftUI
+struct comment : Identifiable {
+    var id: Int
+    
+    let Date: String
+    let comment: String
+}
+var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing"),comment(id: 1, Date: "1 november", comment: "Welcome to November")]
 
 struct HistoryPage: View {
+    @State var buttonComment = true
+    @State var commentField = false
+    @State var halfModal = false
+    @State var commentText = ""
     var body: some View {
-        ScrollView{
-            VStack{
-//                ScrollView{
-                TitleTemp(title: "#Tanggal#")
-                SubtitleTemp(subtitle: "#Jam#")
+        ZStack{
+            ScrollView{
+                VStack{
+                    //                ScrollView{
+                    TitleTemp(title: "#Tanggal#")
+                    SubtitleTemp(subtitle: "#Jam#")
                     reviewTemp(emotionChoosen: "Love")
-                SubtitleTemp(subtitle: "Note to self:")
-                ScrollView{
-                    SubtitleTemp(subtitle: "#Tanggal#")
-                    SubtitleTemp(subtitle: "Because I know that I was angry because things didn’t go well but it was not my fault. It’s out of my control and I should learn to accept it that way.")
-                }
-                .frame(width: 354, height: 135, alignment: .center)
-                .padding()
-                .background(Color("CommentColor"))
-                .cornerRadius(20)
-                NavigationLink(
-                    destination: WayToGoPage(),
-                    label: {
-                        buttonStyleTemplate(text: "Write your note")
+                    SubtitleTemp(subtitle: "Note to self:")
+                    
+                    ForEach(0 ..< commentList.count) { item in
+                        ScrollView{
+                            SubtitleTemp(subtitle: commentList[item].Date)
+                            SubtitleTemp(subtitle: commentList[item].comment)
+                        }
+                        .frame(width: 354, height: 135, alignment: .center)
+                        .padding()
+                        .background(Color("CommentColor"))
+                        .cornerRadius(20)
+                    }
+                    if commentField{
+                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
+                    }
+                    Button(action: {
+                        if buttonComment{
+                            
+                            commentField.toggle()
+                            buttonComment.toggle()
+                        } else if buttonComment == false{
+                            buttonComment.toggle()
+                            halfModal.toggle()
+                        }
+                        
+                    }, label: {
+                        if buttonComment{
+                            buttonStyleTemplate(text: "add comment")
+                        } else if buttonComment == false{
+                            buttonStyleTemplate(text: "save comment")
+                        }
+                        
                     })
+                }
+            }
+            if halfModal {
+            VStack{
+                SlideOverCard { cardModal() }
+                Button(action:{
+                    halfModal.toggle()
+                },label: {
+                    buttonStyleTemplate(text: "Save")
+                })
+            }
             }
         }
     }

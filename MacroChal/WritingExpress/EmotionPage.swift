@@ -15,11 +15,11 @@ struct EmotionPage: View {
                 Spacer()
                     .frame(height: 30)
                 SubtitleTemp(subtitle: "Choose which one is your most dominant\nfeeling today using this Feeling Wheel\ninspired from The Junto Wheel.")
-                
+                    .frame(width: 80)
                 ZStack{
                     Circle()
                         .frame(width: 286, height: 283)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color("WriteColor"))
                     
                     VStack{
                         NavigationLink(

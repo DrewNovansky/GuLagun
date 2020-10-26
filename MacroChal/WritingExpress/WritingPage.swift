@@ -10,6 +10,7 @@ import SwiftUI
 struct WritingPage: View {
     var emotionChoosen = "Love"
     var emotionDetails = "Grateful"
+    @State var story = ""
     var body: some View {
         VStack{
             TitleTemp(title: "Why did you feel \nthat way?")
@@ -17,14 +18,12 @@ struct WritingPage: View {
                 .frame(width: 68, height: 68)
                 .padding()
             SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”")
-            multilineTF(placeholder: "I feel \(emotionDetails) because")
+            multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
             NavigationLink(
-                destination: AcceptancePage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: "Testing dulu"),
+                destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story),
                 label: {
                     buttonStyleTemplate(text: "Next")
-                })
-            
-            
+                }).padding(20)
         }
     }
 }

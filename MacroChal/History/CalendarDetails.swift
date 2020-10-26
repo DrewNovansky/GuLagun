@@ -104,7 +104,7 @@ struct CollectionView: View {
                 }.offset(x:50)
             }
             
-        }.frame(width:350, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(5).background(Color("YellowButton")).cornerRadius(30)//.onTapGesture {
+        }.frame(width:350, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(5).background(Color("WriteColor")).cornerRadius(30)//.onTapGesture {
         //   /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
         // }
     }

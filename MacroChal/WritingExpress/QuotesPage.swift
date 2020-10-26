@@ -22,12 +22,13 @@ struct QuotesPage: View {
             Image("Great!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
+                .padding()
             SubtitleTemp(subtitle: "Let’s check out what you’ve written once more, shall we?")
             NavigationLink(
-                destination: PreviewPage(),
+                destination: PreviewPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartState),
                 label: {
                     buttonStyleTemplate(text: "Next")
-                })
+                }).padding()
         }
     }
 }
