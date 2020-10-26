@@ -56,11 +56,11 @@ struct reviewTemp: View {
     var body: some View{
         VStack{
             Image(emotionChoosen)
+                .padding()
             SubtitleTemp(subtitle: "I feel \(emotionDetails)")
             ScrollView{
                 // hasil passing data
                 SubtitleTemp(subtitle: story)
-                    .padding()
             }
             .frame(width: 354, height: 88, alignment: .center)
             .padding()
@@ -71,10 +71,12 @@ struct reviewTemp: View {
                 Image("Heart.Fill")
                     .renderingMode(.none)
                     .font(.system(size: 62))
+                    .padding()
             }else if heartOn == false{
                 Image("Heart")
                     .renderingMode(.none)
                     .font(.system(size: 62))
+                    .padding()
             }
             //hasil passing data
             SubtitleTemp(subtitle: "I know it’s okay to feel that way")
@@ -94,11 +96,11 @@ struct Template_Previews: PreviewProvider {
     @State private var activeIdx: Int = 0
     @State private var stringTest:String = ""
     static var previews: some View {
-        reviewTemp()
         VStack{
             TitleTemp(title: "Title")
             SubtitleTemp(subtitle: "This is template where we can put all our outlet template")
         }
+        reviewTemp()
     }
 }
 
@@ -143,7 +145,7 @@ struct buttonTemplate: View{
                 .font(.body)
                 .foregroundColor(.black)
                 .frame(width: 374, height: 48)
-                .background(Color("ButtonColor"))
+                .background(Color("WriteColor"))
                 .cornerRadius(30)
         }
         

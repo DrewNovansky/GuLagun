@@ -71,14 +71,16 @@ struct Emotion2Page: View {
     @State var ButtonActive = false
     @State var ShowDetails = false
     
+    
+    
     var body: some View {
         VStack{
             TitleTemp(title: "What kind of \(emotionChoosen) \ndid you feel?")
             CircleImage(imagename: emotionChoosen)
                 .frame(width: 68, height: 68)
-                .padding()
+                .padding(30)
             ScrollView{
-                VStack(spacing: 20)
+                VStack(spacing: 24)
                 {
                     if emotionChoosen == "Joy"{
                         ForEach(0 ..< 8) { item in
@@ -120,7 +122,7 @@ struct Emotion2Page: View {
                 }
             }
             NavigationLink(
-                destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails),
+                destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                 label: {
                     buttonStyleTemplate(text: "Next")
                 })
