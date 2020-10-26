@@ -13,7 +13,7 @@ struct MacroChalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            EmotionPage()
+            BonFireView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
