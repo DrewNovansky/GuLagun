@@ -61,10 +61,10 @@ struct BonFire : View{
                 //image fire
                 HStack{
                     VStack(alignment: .leading, spacing: 10) {
+                        FireAnimation(imageName: "kayuBakar", x: 7, y: -75, width: 400, height: 320)
+//                        Image("FireBG").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 450, height: 320, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
-                        Image("FireBG").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 450, height: 320, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                    }.offset(y:-40)
+                    }//.offset(y:-40)
                 }
                 
                 //text
