@@ -24,13 +24,13 @@
 		49C36AD825418BF2009C9065 /* TextFieldTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */; };
 		49C36AD925418BF2009C9065 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACE25418BF2009C9065 /* Template.swift */; };
 		49C36ADA25418BF2009C9065 /* TextTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACF25418BF2009C9065 /* TextTemplate.swift */; };
-		49C36ADB25418BF2009C9065 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AD025418BF2009C9065 /* ContentView.swift */; };
+		685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944002546C6C4001BFF17 /* HistoryCalendarView.swift */; };
+		685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944012546C6C4001BFF17 /* CalendarDetails.swift */; };
 		68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B625418FB800712DCC /* BonFireView.swift */; };
 		68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B725418FB800712DCC /* OnboardingPageView.swift */; };
 		68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B825418FB800712DCC /* ExpressPageView.swift */; };
 		68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B925418FB800712DCC /* AboutUsView.swift */; };
 		68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BA25418FB800712DCC /* HistoryPageView.swift */; };
-		68D1C6C425418FB800712DCC /* QuickHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BB25418FB800712DCC /* QuickHelpView.swift */; };
 		68D1C6C525418FB800712DCC /* ExplorePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BC25418FB800712DCC /* ExplorePageView.swift */; };
 		68D1C6C625418FB800712DCC /* DevPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BD25418FB800712DCC /* DevPageView.swift */; };
 		68D1C6C725418FB800712DCC /* DevNotePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BE25418FB800712DCC /* DevNotePage.swift */; };
@@ -84,13 +84,13 @@
 		49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTemplate.swift; sourceTree = "<group>"; };
 		49C36ACE25418BF2009C9065 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		49C36ACF25418BF2009C9065 /* TextTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTemplate.swift; sourceTree = "<group>"; };
-		49C36AD025418BF2009C9065 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		685944002546C6C4001BFF17 /* HistoryCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCalendarView.swift; sourceTree = "<group>"; };
+		685944012546C6C4001BFF17 /* CalendarDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetails.swift; sourceTree = "<group>"; };
 		68D1C6B625418FB800712DCC /* BonFireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonFireView.swift; sourceTree = "<group>"; };
 		68D1C6B725418FB800712DCC /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		68D1C6B825418FB800712DCC /* ExpressPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressPageView.swift; sourceTree = "<group>"; };
 		68D1C6B925418FB800712DCC /* AboutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		68D1C6BA25418FB800712DCC /* HistoryPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPageView.swift; sourceTree = "<group>"; };
-		68D1C6BB25418FB800712DCC /* QuickHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickHelpView.swift; sourceTree = "<group>"; };
 		68D1C6BC25418FB800712DCC /* ExplorePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplorePageView.swift; sourceTree = "<group>"; };
 		68D1C6BD25418FB800712DCC /* DevPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevPageView.swift; sourceTree = "<group>"; };
 		68D1C6BE25418FB800712DCC /* DevNotePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevNotePage.swift; sourceTree = "<group>"; };
@@ -194,6 +194,8 @@
 		49C36AC325418BF2009C9065 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				685944012546C6C4001BFF17 /* CalendarDetails.swift */,
+				685944002546C6C4001BFF17 /* HistoryCalendarView.swift */,
 				49C36AC425418BF2009C9065 /* HistoryPage.swift */,
 			);
 			path = History;
@@ -221,7 +223,6 @@
 				49C36ACD25418BF2009C9065 /* TextFieldTemplate.swift */,
 				49C36ACE25418BF2009C9065 /* Template.swift */,
 				49C36ACF25418BF2009C9065 /* TextTemplate.swift */,
-				49C36AD025418BF2009C9065 /* ContentView.swift */,
 				EC0CE22D2541917500217DAF /* FireAnimation.swift */,
 				EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */,
 			);
@@ -236,7 +237,6 @@
 				68D1C6B825418FB800712DCC /* ExpressPageView.swift */,
 				68D1C6B925418FB800712DCC /* AboutUsView.swift */,
 				68D1C6BA25418FB800712DCC /* HistoryPageView.swift */,
-				68D1C6BB25418FB800712DCC /* QuickHelpView.swift */,
 				68D1C6BC25418FB800712DCC /* ExplorePageView.swift */,
 				68D1C6BD25418FB800712DCC /* DevPageView.swift */,
 				68D1C6BE25418FB800712DCC /* DevNotePage.swift */,
@@ -379,7 +379,6 @@
 				68D1C6C625418FB800712DCC /* DevPageView.swift in Sources */,
 				49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */,
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
-				49C36ADB25418BF2009C9065 /* ContentView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
 				68D1C6C725418FB800712DCC /* DevNotePage.swift in Sources */,
 				49C36ADA25418BF2009C9065 /* TextTemplate.swift in Sources */,
@@ -388,16 +387,17 @@
 				49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */,
 				68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */,
 				49C36AD325418BF2009C9065 /* AcceptancePage.swift in Sources */,
+				685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */,
 				49C36AD825418BF2009C9065 /* TextFieldTemplate.swift in Sources */,
 				49C36AD625418BF2009C9065 /* PreviewPage.swift in Sources */,
 				49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */,
 				49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */,
+				685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */,
 				49C36AD225418BF2009C9065 /* Emotion2Page.swift in Sources */,
 				49C36AD925418BF2009C9065 /* Template.swift in Sources */,
 				EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */,
 				68D1C6C525418FB800712DCC /* ExplorePageView.swift in Sources */,
 				49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */,
-				68D1C6C425418FB800712DCC /* QuickHelpView.swift in Sources */,
 				68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */,
 				EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */,
 				68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */,

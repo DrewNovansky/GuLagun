@@ -70,59 +70,55 @@ struct BonFire : View{
                 //text
                 VStack{
                     HStack{
-                        Text("Welcome My Friend!")
-                            .font(.title)
-                            .multilineTextAlignment(.leading).foregroundColor(.accentColor)
-                        Spacer()
-                    }
+                        Text("Welcome!")
+                            .font(.title).fontWeight(.semibold)
+                            .multilineTextAlignment(.center
+                            ).foregroundColor(.accentColor)
+                        //Spacer()
+                    }.padding(2)
                     HStack{
                         Text("Please make yourself comfortable")
                             .font(.body)
-                            .multilineTextAlignment(.leading).foregroundColor(.accentColor)
-                        Spacer()
+                            .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                       // Spacer()
                     }
-                }.padding(5).offset(x : 25, y: -50)
-                
+                }.padding(1).offset(y: 20)
                 
                 //buttons
-                HStack{
+                VStack{
                     //Express
                     NavigationLink(destination: ExpressPageView()){
                         ZStack {
-                            Image("ExpressBtn").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 177, height: 257 , alignment: .center)
+                            Image("ExpressBtn")
                             VStack{
                                 Spacer()
                                 Text("Express Yourself")
-                                    .font(.title).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(1)
+                                    .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 50, y: -40)
                                 
-                                Text("How's Your day?").font(.body).foregroundColor(.accentColor)
+                                Text("Calm your heart with focus breathing and write daily nores").font(.body).foregroundColor(.accentColor).offset(x: 55, y: -45).frame(width:170)
                                 
-                            }.offset(y: -15)
-                        }.frame(width: 177, height: 252).padding(5)
-                    }
-                    
+                            }
+                        }
+                    }.padding(5)
                     //Explore
-                    NavigationLink(destination: ExplorePageView()){
+                    //NavigationLink(destination: ){//explorepage
                         ZStack {
-                            Image("ExploreBtn").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 177, height: 257 , alignment: .center)
+                            Image("GrayEploreBtn")
+                            
                             VStack{
                                 Spacer()
-                                Text("Explore Yourself")
-                                    .font(.title).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(1)
+                                Text("Explore inner you")
+                                    .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 55, y: -15)
                                 
-                                Text("Coming Soon").font(.body).foregroundColor(.accentColor)
-                                
-                            }.offset(y: -15)
-                        }.frame(width: 177, height: 252).padding(5)
-                    }
-                }.offset(y: -45)
+                                Text("Answer questions to know more about yourself").font(.body).foregroundColor(.accentColor).offset(x: 75, y: -20).frame(width:200)
+                            }
+                        }
+                }.offset(y: 20)
                 //Quick Help
-                NavigationLink(destination: QuickHelpView()){
                     HStack(spacing: 8){
-                        Text("Quick Help!")
-                            .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1).background(Color("BlueButton")).cornerRadius(30)
-                    }.offset(y: -40)
-                }
+                        Text("If things get harder, we recommen you to get help through nearest psychologist")
+                            .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1)
+                    }
             }
         }
     }
