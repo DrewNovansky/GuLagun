@@ -6,19 +6,44 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct PreviewPage: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var diary: FetchedResults<DiaryDatabase>
     // hasil passing data
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
     var story = ""
     var acceptenceText = ""
     var heartOn:Bool
+    var date = Date()
     var body: some View {
+        
         VStack{
             reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-            NavigationLink(
-                destination: WayToGoPage(),
+            Button(
+                //destination: WayToGoPage(),
+                action: {
+                    let diary = DiaryDatabase(context: viewContext)
+                    diary.emotionChoosen = self.emotionChoosen
+                    diary.acceptanceText = self.acceptenceText
+                    diary.emotionDetail = self.emotionDetails
+                    diary.heartOn = self.heartOn
+                    diary.story = self.story
+                    diary.timestamp = self.date
+                    //Save context
+                    do {
+                        try viewContext.save()
+                        print("Saved")
+                    } catch {
+                        let error = NSError.self
+                        fatalError("UnresolvedError \(error)")
+                    }
+//                    NavigationLink(destination: WayToGoPage()) {}
+                },
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding()

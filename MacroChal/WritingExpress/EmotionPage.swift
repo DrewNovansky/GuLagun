@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EmotionPage: View {
     var body: some View {
-        NavigationView{
             VStack{
                 TitleTemp(title: "How did you \nfeel today?")
                 Spacer()
@@ -69,7 +68,6 @@ struct EmotionPage: View {
                     }
                 }
             }
-        }
     }
 }
 
