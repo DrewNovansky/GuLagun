@@ -13,8 +13,12 @@ struct comment : Identifiable {
     let comment: String
 }
 var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing"),comment(id: 1, Date: "1 november", comment: "Welcome to November")]
-
 struct HistoryPage: View {
+    var emotionChoosen = ""
+    var emotionDetails = "Grateful"
+    var story = ""
+    var acceptenceText = ""
+    var heartOn:Bool
     @State var buttonComment = true
     @State var commentField = false
     @State var halfModal = false
@@ -26,7 +30,7 @@ struct HistoryPage: View {
                     //                ScrollView{
                     TitleTemp(title: "#Tanggal#")
                     SubtitleTemp(subtitle: "#Jam#")
-                    reviewTemp(emotionChoosen: "Love")
+                    reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     SubtitleTemp(subtitle: "Note to self:")
                     
                     ForEach(0 ..< commentList.count) { item in
@@ -48,8 +52,12 @@ struct HistoryPage: View {
                             commentField.toggle()
                             buttonComment.toggle()
                         } else if buttonComment == false{
+                            if heartOn == false{
+                                halfModal.toggle()
+                            }
+                            commentField.toggle()
                             buttonComment.toggle()
-                            halfModal.toggle()
+                            
                         }
                         
                     }, label: {
@@ -63,14 +71,14 @@ struct HistoryPage: View {
                 }
             }
             if halfModal {
-            VStack{
-                SlideOverCard { cardModal() }
-                Button(action:{
-                    halfModal.toggle()
-                },label: {
-                    buttonStyleTemplate(text: "Save")
-                })
-            }
+                VStack{
+                    SlideOverCard { cardModal(heartState: heartOn) }
+                    Button(action:{
+                        halfModal.toggle()
+                    },label: {
+                        buttonStyleTemplate(text: "Save")
+                    }).offset(y: -70)
+                }
             }
         }
     }
@@ -78,6 +86,6 @@ struct HistoryPage: View {
 
 struct HistoryPage_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryPage()
+        HistoryPage(emotionChoosen: "Joy", emotionDetails: "Grateful", story: "", acceptenceText: "", heartOn: false, buttonComment: true, commentField: false, halfModal: false, commentText: "")
     }
 }
