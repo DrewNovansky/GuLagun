@@ -26,9 +26,9 @@ struct FocusBreathingPage: View {
             Spacer()
             SubtitleTemp(subtitle: "1 session consist of 4 breaths 01:04 Min")
                 .padding()
-            Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+            NavigationLink(destination: BreathingPage()) {
                 buttonStyleTemplate(text: "Begin Breathing")
-            }
+            }.padding()
             
         }
     }

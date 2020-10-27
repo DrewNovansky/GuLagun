@@ -125,7 +125,7 @@ struct Emotion2Page: View {
                 destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                 label: {
                     buttonStyleTemplate(text: "Next")
-                })
+                }).padding()
         }
     }
 }

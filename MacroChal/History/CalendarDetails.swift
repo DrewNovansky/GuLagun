@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct DataModel: Identifiable {
-    let id: String
-    let date: String
-    let feeling: String
-    let time: String
-    let emotionImg: String
-    let heartImg: String
-}
+//struct DataModel: Identifiable {
+//    let id: String
+//    let date: String
+//    let feeling: String
+//    let time: String
+//    let emotionImg: String
+//    let heartImg: String
+//}
+
+let data = DiaryDatabase()
 
 struct CalendarDetails: View {
     @Environment(\.calendar) var calendar
@@ -66,41 +68,52 @@ struct CalendarDetails: View {
 
 struct HistoryCollectionView: View {
     
-    let data: [DataModel] = [
-        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Mad", time: "11:00", emotionImg: "Emotion", heartImg: "HeartFilled"),
-        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Angry", time: "12:00", emotionImg: "Emotion", heartImg: "HeartOutline"),
-    ]
+//    let data: [DataModel] = [
+//        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Mad", time: "11:00", emotionImg: "Emotion", heartImg: "HeartFilled"),
+//        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Angry", time: "12:00", emotionImg: "Emotion", heartImg: "HeartOutline"),
+//    ]
     
     var body: some View {
         
         VStack {
-            List {
-                ForEach(data) { items in
-                    ForEach(0..<1) { item in
-                        CollectionView(data: items)
-                    }
-                }
-            }
+            CollectionView()
+//            List {
+//                ForEach(data) { item in
+//                    ForEach(0..<1) { item in
+//                        CollectionView(data: item)
+//                    }
+//                }
+//            }
         }.frame(height: 400)
     }
     
 }
 
 struct CollectionView: View {
-    let data: DataModel
+    //let data: DataModel
     var body: some View {
         VStack {
             HStack{
-                Image(self.data.emotionImg).resizable().frame(width:70, height:70).offset(x:-50)
+                Image("\(data.emotionChoosen)").resizable().frame(width:70, height:70).offset(x:-50)
                 
                 VStack(alignment: .leading){
-                    Text(self.data.date).padding(1)
-                    Text(self.data.feeling)
+                    Text("\(data.timestamp!)").padding(1)
+                    Text(data.story!)
                 }.offset(x:-40)
                 
                 VStack{
-                    Text(self.data.time)
-                    Image(self.data.heartImg).resizable().frame(width: 45, height: 40)
+                    Text("\(data.timestamp!)")
+                    if data.heartOn == true{
+                        Image("Heart.Fill")
+                            .renderingMode(.none)
+                            .font(.system(size: 45))
+                            .padding()
+                    }else if data.heartOn == false{
+                        Image("Heart")
+                            .renderingMode(.none)
+                            .font(.system(size: 45))
+                            .padding()
+                    }
                 }.offset(x:50)
             }
             

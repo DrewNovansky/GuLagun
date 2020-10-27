@@ -14,8 +14,13 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
+            let newItem = DiaryDatabase(context: viewContext)
             newItem.timestamp = Date()
+            newItem.acceptanceText = "Your Journey Start Here"
+            newItem.emotionChoosen = "Joy"
+            newItem.emotionDetail = "Angry"
+            newItem.heartOn = true
+            newItem.story = "Your Journey Start Here"
         }
         do {
             try viewContext.save()

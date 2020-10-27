@@ -42,7 +42,10 @@ struct AcceptancePage: View {
                     label: {
                         buttonStyleTemplate(text: "Next")
                     }).padding()
+                    
             }
+            .offset(x: 0, y: -100)
+
         }
     }
 }

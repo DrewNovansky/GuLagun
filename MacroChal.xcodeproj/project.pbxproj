@@ -32,7 +32,6 @@
 		68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B825418FB800712DCC /* ExpressPageView.swift */; };
 		68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B925418FB800712DCC /* AboutUsView.swift */; };
 		68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BA25418FB800712DCC /* HistoryPageView.swift */; };
-		68D1C6C525418FB800712DCC /* ExplorePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BC25418FB800712DCC /* ExplorePageView.swift */; };
 		68D1C6C625418FB800712DCC /* DevPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BD25418FB800712DCC /* DevPageView.swift */; };
 		68D1C6C725418FB800712DCC /* DevNotePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BE25418FB800712DCC /* DevNotePage.swift */; };
 		68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */; };
@@ -93,7 +92,6 @@
 		68D1C6B825418FB800712DCC /* ExpressPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressPageView.swift; sourceTree = "<group>"; };
 		68D1C6B925418FB800712DCC /* AboutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		68D1C6BA25418FB800712DCC /* HistoryPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPageView.swift; sourceTree = "<group>"; };
-		68D1C6BC25418FB800712DCC /* ExplorePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplorePageView.swift; sourceTree = "<group>"; };
 		68D1C6BD25418FB800712DCC /* DevPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevPageView.swift; sourceTree = "<group>"; };
 		68D1C6BE25418FB800712DCC /* DevNotePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevNotePage.swift; sourceTree = "<group>"; };
 		68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */,
 				49C36ACB25418BF2009C9065 /* EmotionPage.swift */,
 				49C36AC625418BF2009C9065 /* Emotion2Page.swift */,
-				EC87DA0C2546C19700EA4BCD /* FireAnimationTest.swift */,
 				49C36AC725418BF2009C9065 /* AcceptancePage.swift */,
 				49C36AC825418BF2009C9065 /* WritingPage.swift */,
 				49C36AC925418BF2009C9065 /* QuotesPage.swift */,
@@ -227,6 +224,7 @@
 				491953352546C9E40037B779 /* TextFieldTemplate.swift */,
 				491953332546C9E40037B779 /* TextTemplate.swift */,
 				EC0CE22D2541917500217DAF /* FireAnimation.swift */,
+				EC87DA0C2546C19700EA4BCD /* FireAnimationTest.swift */,
 				EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */,
 			);
 			path = Template;
@@ -240,7 +238,6 @@
 				68D1C6B825418FB800712DCC /* ExpressPageView.swift */,
 				68D1C6B925418FB800712DCC /* AboutUsView.swift */,
 				68D1C6BA25418FB800712DCC /* HistoryPageView.swift */,
-				68D1C6BC25418FB800712DCC /* ExplorePageView.swift */,
 				68D1C6BD25418FB800712DCC /* DevPageView.swift */,
 				68D1C6BE25418FB800712DCC /* DevNotePage.swift */,
 				68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */,
@@ -398,7 +395,6 @@
 				685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */,
 				49C36AD225418BF2009C9065 /* Emotion2Page.swift in Sources */,
 				EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */,
-				68D1C6C525418FB800712DCC /* ExplorePageView.swift in Sources */,
 				491953382546C9E40037B779 /* TextFieldTemplate.swift in Sources */,
 				49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */,
 				68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */,

@@ -50,7 +50,8 @@ struct ExpressPage : View{
             //buttons
             VStack{
                 //Express
-                NavigationLink(destination: DevPageView()){//nanti ganti ke breathing ini buat testing dulu
+                NavigationLink(destination:  FocusBreathingPage()){//nanti ganti ke breathing ini buat testing dulu
+                   
                     ZStack {
                         Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 372, alignment:.leading)
                         VStack{
