@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct PreviewPage: View {
+    @State var showView = false
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
@@ -24,29 +25,32 @@ struct PreviewPage: View {
         
         VStack{
             reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-            Button(
-                //destination: WayToGoPage(),
-                action: {
-                    let diary = DiaryDatabase(context: viewContext)
-                    diary.emotionChoosen = self.emotionChoosen
-                    diary.acceptanceText = self.acceptenceText
-                    diary.emotionDetail = self.emotionDetails
-                    diary.heartOn = self.heartOn
-                    diary.story = self.story
-                    diary.timestamp = self.date
-                    //Save context
-                    do {
-                        try viewContext.save()
-                        print("Saved")
-                    } catch {
-                        let error = NSError.self
-                        fatalError("UnresolvedError \(error)")
-                    }
-//                    NavigationLink(destination: WayToGoPage()) {}
-                },
-                label: {
-                    buttonStyleTemplate(text: "Next")
-                }).padding()
+            NavigationLink(destination: WayToGoPage(), isActive: $showView) {
+                Button(
+                                //destination: WayToGoPage(),
+                                action: {
+                                    let diary = DiaryDatabase(context: viewContext)
+                                    diary.emotionChoosen = self.emotionChoosen
+                                    diary.acceptanceText = self.acceptenceText
+                                    diary.emotionDetail = self.emotionDetails
+                                    diary.heartOn = self.heartOn
+                                    diary.story = self.story
+                                    diary.timestamp = self.date
+                                    //Save context
+                                    do {
+                                        try viewContext.save()
+                                        print("Saved")
+                                    } catch {
+                                        let error = NSError.self
+                                        fatalError("UnresolvedError \(error)")
+                                    }
+                                    self.showView = true
+                
+                                },
+                                label: {
+                                    buttonStyleTemplate(text: "Next")
+                                }).padding()
+            }
         }
     }
 }
@@ -90,7 +94,7 @@ struct GoodJobPage: View {
                 .frame(width: 286, height: 283, alignment: .center)
                 .padding()
             NavigationLink(
-                destination: AcceptancePage(),
+                destination: BonFireView(),
                 label: {
                     buttonStyleTemplate(text: "See you!")
                 }).padding()
