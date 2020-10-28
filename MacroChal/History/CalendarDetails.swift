@@ -6,15 +6,7 @@
 //
 
 import SwiftUI
-
-//struct DataModel: Identifiable {
-//    let id: String
-//    let date: String
-//    let feeling: String
-//    let time: String
-//    let emotionImg: String
-//    let heartImg: String
-//}
+import CoreData
 
 let data = DiaryDatabase()
 
@@ -23,6 +15,7 @@ struct CalendarDetails: View {
     @State var components = DateComponents()
     @State var desiredDate = Date()
     @State var collectionView = false
+    @State var calendarInput = Date()
     
     private var weekly: DateInterval {
         var weekComponent = DateComponents()
@@ -49,6 +42,12 @@ struct CalendarDetails: View {
                             Image("Emotion").resizable().frame(width: 10, height: 10).offset(y: -10)
                             //Image(self.data.ColorImg)
                         }.onTapGesture{
+                            //print("Masuk?")
+                            self.components.month = self.calendar.component(.month, from: date)
+                            
+                                                        self.components.day = self.calendar.component(.day, from: date)
+                                                        self.components.year = self.calendar.component(.year, from: date)
+                            
                             collectionView.toggle()
                         }
                     )
@@ -56,6 +55,8 @@ struct CalendarDetails: View {
             }
             if collectionView{
                 VStack{
+                    DayView(date: self.calendar.date(from: self.components) ?? Date())
+                    
                     Text("Your writings that day:")
                     .font(.headline)
                     .fontWeight(.regular)
@@ -66,17 +67,46 @@ struct CalendarDetails: View {
     }
 }
 
+//.onTapGesture {
+//                      self.showingDayView.toggle()
+//
+//                  self.components.month = self.calendar.component(.month, from: date)
+//                  self.components.day = self.calendar.component(.day, from: date)
+//                  self.components.year = self.calendar.component(.year, from: date)
+//
+//                 }.sheet(isPresented: self.$showingDayView) {
+//                   DayView(date: self.calendar.date(from: self.components) ?? Date())
+//                }
+//            )
+//          }
+//        }
+//      }.padding()
+//    }
+//}
+//
+//struct DayView: View {
+//  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+//
+//  var date: Date
+//
+//  var dateFormatter: DateFormatter {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .short
+//    return formatter
+//  }
+
 struct HistoryCollectionView: View {
-    
-//    let data: [DataModel] = [
-//        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Mad", time: "11:00", emotionImg: "Emotion", heartImg: "HeartFilled"),
-//        .init(id: "0", date: "26 Oct 2020", feeling: "I feel Angry", time: "12:00", emotionImg: "Emotion", heartImg: "HeartOutline"),
-//    ]
     
     var body: some View {
         
         VStack {
-            CollectionView()
+            List {
+                ForEach(0..<5) { item in
+                    CollectionView()
+                }
+                //CollectionView()
+            }
+            
 //            List {
 //                ForEach(data) { item in
 //                    ForEach(0..<1) { item in
@@ -90,11 +120,11 @@ struct HistoryCollectionView: View {
 }
 
 struct CollectionView: View {
-    //let data: DataModel
+
     var body: some View {
         VStack {
             HStack{
-                Image("\(data.emotionChoosen)").resizable().frame(width:70, height:70).offset(x:-50)
+                Image("\(data.emotionChoosen ?? "angry")").resizable().frame(width:70, height:70).offset(x:-50)
                 
                 VStack(alignment: .leading){
                     Text("\(data.timestamp!)").padding(1)
@@ -121,6 +151,24 @@ struct CollectionView: View {
         //   /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
         // }
     }
+}
+
+struct DayView: View {
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+  
+  var date: Date
+    
+  var dateFormatter: DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    return formatter
+  }
+    
+  var body: some View {
+    VStack {
+      Text(self.dateFormatter.string(from: self.date))
+    }
+  }
 }
 struct CalendarDetails_Previews: PreviewProvider {
     static var previews: some View {

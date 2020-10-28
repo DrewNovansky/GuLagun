@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct FocusBreathingPage: View {
-    
-    
-    
     var body: some View {
-
         VStack{
-            FireAnimation(imageName: "apiBesar", x: 0, y: 0, width: 300, height: 300)
+            FireAnimation(imageName: "apiSedang", x: 0, y: 0, width: 300, height: 300)
                 .frame(width: 300, height: 325, alignment: .center)
             TitleTemp(title: "Focus Breathing")
             VStack(){

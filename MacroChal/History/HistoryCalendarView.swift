@@ -25,9 +25,10 @@ struct HistoryCalendarView: View {
                             
                     )
             }
-        }//.onTapGesture{
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-        //}
+        }
+//        }.onTapGesture{
+//            print("Kepencet")
+//        }
     }
 }
 
@@ -102,7 +103,6 @@ struct WeekView<DateView>: View where DateView: View {
                             self.content(date)
                         }
                     }
-                  
                 }
             }
         }

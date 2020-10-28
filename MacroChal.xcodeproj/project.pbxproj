@@ -41,6 +41,7 @@
 		EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */; };
 		EC8E5F002542ADFE002EA8B5 /* BreathingInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */; };
 		EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */; };
+		ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusBreathingPage.swift; sourceTree = "<group>"; };
 		EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingInstruction.swift; sourceTree = "<group>"; };
 		EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPage.swift; sourceTree = "<group>"; };
+		ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNoCalendarTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				685944012546C6C4001BFF17 /* CalendarDetails.swift */,
+				ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */,
 				685944002546C6C4001BFF17 /* HistoryCalendarView.swift */,
 				49C36AC425418BF2009C9065 /* HistoryPage.swift */,
 				4919532B2546C9B00037B779 /* cardModal.swift */,
@@ -381,6 +384,7 @@
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
 				68D1C6C725418FB800712DCC /* DevNotePage.swift in Sources */,
+				ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */,
 				68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */,
 				68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */,
 				491953362546C9E40037B779 /* TextTemplate.swift in Sources */,

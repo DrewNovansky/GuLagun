@@ -66,7 +66,7 @@ struct ExpressPage : View{
                 }.padding()
                 
                 //Explore
-                NavigationLink(destination: HistoryPageView()){
+                NavigationLink(destination: HistoryNoCalendarTest()){
                     ZStack {
                         Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 372, alignment:.leading)
                         VStack{
