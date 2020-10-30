@@ -17,7 +17,7 @@ struct AcceptancePage: View {
         ScrollView{
             VStack(){
                 TitleTemp(title: "Do you know it’s okay \nto feel that way?")
-                SubtitleTemp(subtitle: "“What you’ve felt is valid. There’s no right or wrong feeling. It is part of you & it’s okay to feel that way.”").frame(width: 80)
+                SubtitleTemp(subtitle: "“What you’ve felt is valid.\nThere’s no right or wrong feeling.\nIt is part of you & it’s okay to feel that way.”").frame(width: 80)
                 Button(action: {
                     self.heartState.toggle()
                 }, label: {
@@ -37,6 +37,8 @@ struct AcceptancePage: View {
                     }
                 }).padding()
                 multilineTF(placeholder: "Because I ...",textWritten: $acceptance)
+                ProgressView(value: 0.8)
+                    .padding()
                 NavigationLink(
                     destination: QuotesPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptance, heartState: heartState),
                     label: {

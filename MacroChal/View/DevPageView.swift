@@ -19,7 +19,8 @@ struct DevPageView: View {
             
             Text("note").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
             
-            Text("  We care about your privacy and safety.We never collect any text you enter.Your text is stored securely in your personal iCloud, not with us.").font(.body).multilineTextAlignment(.center).padding(10)
+            Text(" We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
+                .font(.body).multilineTextAlignment(.center).padding(10)
             
             Button(action: {}){
                 HStack(spacing: 8){
@@ -31,7 +32,7 @@ struct DevPageView: View {
             Button(action: {}){
                 HStack(spacing: 8){
                     Text("Term of Use")
-                        .font(.body).foregroundColor(.blue).frame(width: 374, height: 35).padding(0).offset(y: 30)
+                        .font(.body).foregroundColor(.blue).frame(width: 374, height: 48).padding(0).offset(y: 30)
                 }
             }
             
@@ -41,7 +42,7 @@ struct DevPageView: View {
                     HStack(spacing: 8){
                         
                         Text("Start")
-                            .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 35).padding(5).background(Color("ButtonColor")).cornerRadius(30)
+                            .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
                     }
                 }
             }.fullScreenCover(isPresented: $bonFire) {

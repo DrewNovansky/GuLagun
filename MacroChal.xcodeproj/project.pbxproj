@@ -66,7 +66,7 @@
 		491953342546C9E40037B779 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		491953352546C9E40037B779 /* TextFieldTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTemplate.swift; sourceTree = "<group>"; };
 		4919535A2546CAD20037B779 /* PreviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPage.swift; sourceTree = "<group>"; };
-		49BA454D2525ECEA00066A7E /* MacroChal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroChal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BA454D2525ECEA00066A7E /* ForRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BA45502525ECEA00066A7E /* MacroChalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroChalApp.swift; sourceTree = "<group>"; };
 		49BA45542525ECEC00066A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49BA45572525ECEC00066A7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		49BA454E2525ECEA00066A7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49BA454D2525ECEA00066A7E /* MacroChal.app */,
+				49BA454D2525ECEA00066A7E /* ForRest.app */,
 				49BA45632525ECEC00066A7E /* MacroChalTests.xctest */,
 				49BA456E2525ECEC00066A7E /* MacroChalUITests.xctest */,
 			);
@@ -211,8 +211,8 @@
 				EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */,
 				49C36ACB25418BF2009C9065 /* EmotionPage.swift */,
 				49C36AC625418BF2009C9065 /* Emotion2Page.swift */,
-				49C36AC725418BF2009C9065 /* AcceptancePage.swift */,
 				49C36AC825418BF2009C9065 /* WritingPage.swift */,
+				49C36AC725418BF2009C9065 /* AcceptancePage.swift */,
 				49C36AC925418BF2009C9065 /* QuotesPage.swift */,
 				4919535A2546CAD20037B779 /* PreviewPage.swift */,
 			);
@@ -257,9 +257,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49BA454C2525ECEA00066A7E /* MacroChal */ = {
+		49BA454C2525ECEA00066A7E /* ForRest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChal" */;
+			buildConfigurationList = 49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "ForRest" */;
 			buildPhases = (
 				49BA45492525ECEA00066A7E /* Sources */,
 				49BA454A2525ECEA00066A7E /* Frameworks */,
@@ -269,9 +269,9 @@
 			);
 			dependencies = (
 			);
-			name = MacroChal;
+			name = ForRest;
 			productName = MacroChal;
-			productReference = 49BA454D2525ECEA00066A7E /* MacroChal.app */;
+			productReference = 49BA454D2525ECEA00066A7E /* ForRest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		49BA45622525ECEC00066A7E /* MacroChalTests */ = {
@@ -345,7 +345,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49BA454C2525ECEA00066A7E /* MacroChal */,
+				49BA454C2525ECEA00066A7E /* ForRest */,
 				49BA45622525ECEC00066A7E /* MacroChalTests */,
 				49BA456D2525ECEC00066A7E /* MacroChalUITests */,
 			);
@@ -437,12 +437,12 @@
 /* Begin PBXTargetDependency section */
 		49BA45652525ECEC00066A7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49BA454C2525ECEA00066A7E /* MacroChal */;
+			target = 49BA454C2525ECEA00066A7E /* ForRest */;
 			targetProxy = 49BA45642525ECEC00066A7E /* PBXContainerItemProxy */;
 		};
 		49BA45702525ECEC00066A7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49BA454C2525ECEA00066A7E /* MacroChal */;
+			target = 49BA454C2525ECEA00066A7E /* ForRest */;
 			targetProxy = 49BA456F2525ECEC00066A7E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -704,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "MacroChal" */ = {
+		49BA45772525ECEC00066A7E /* Build configuration list for PBXNativeTarget "ForRest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49BA45782525ECEC00066A7E /* Debug */,

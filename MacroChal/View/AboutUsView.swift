@@ -50,7 +50,7 @@ struct AboutUsView: View {
             .foregroundColor(Color("AccentColor")).padding()
             
             VStack{
-                Text("Fiona Damanik, S.Psi.")   .font(.body)
+                Text("Fiona Damanik, M.Psi.")   .font(.body)
                     .foregroundColor(Color("AccentColor"))
                 Text("Marcell Valentino, S.Pd.")   .font(.body)
                     .foregroundColor(Color("AccentColor"))
@@ -58,7 +58,7 @@ struct AboutUsView: View {
                     .foregroundColor(Color("AccentColor"))
                 Text("Annisa Dwi Rachmawati, M.Psi.")   .font(.body)
                     .foregroundColor(Color("AccentColor"))
-                Text("as our source people")   .font(.body)
+                Text("as our experts")   .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(Color("AccentColor"))
             }.padding()

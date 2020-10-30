@@ -121,6 +121,8 @@ struct Emotion2Page: View {
                     }
                 }
             }
+            ProgressView(value: 0.4)
+                .padding(10)
             NavigationLink(
                 destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                 label: {

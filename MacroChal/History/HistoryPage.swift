@@ -19,6 +19,8 @@ struct HistoryPage: View {
     var story = ""
     var acceptenceText = ""
     var heartOn:Bool
+    var tanggal: String
+    var jam: String
     @State var buttonComment = true
     @State var commentField = false
     @State var halfModal = false
@@ -28,58 +30,58 @@ struct HistoryPage: View {
             ScrollView{
                 VStack{
                     //                ScrollView{
-                    TitleTemp(title: "#Tanggal#")
-                    SubtitleTemp(subtitle: "#Jam#")
+                    TitleTemp(title: "\(tanggal)")
+                    SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-                    SubtitleTemp(subtitle: "Note to self:")
-                    
-                    ForEach(0 ..< commentList.count) { item in
-                        ScrollView{
-                            SubtitleTemp(subtitle: commentList[item].Date)
-                            SubtitleTemp(subtitle: commentList[item].comment)
-                        }
-                        .frame(width: 354, height: 135, alignment: .center)
-                        .padding()
-                        .background(Color("CommentColor"))
-                        .cornerRadius(20)
-                    }
-                    if commentField{
-                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
-                    }
-                    Button(action: {
-                        if buttonComment{
-                            
-                            commentField.toggle()
-                            buttonComment.toggle()
-                        } else if buttonComment == false{
-                            if heartOn == false{
-                                halfModal.toggle()
-                            }
-                            commentField.toggle()
-                            buttonComment.toggle()
-                            
-                        }
-                        
-                    }, label: {
-                        if buttonComment{
-                            buttonStyleTemplate(text: "add comment")
-                        } else if buttonComment == false{
-                            buttonStyleTemplate(text: "save comment")
-                        }
-                        
-                    })
+//                    SubtitleTemp(subtitle: "Note to self:")
+//
+//                    ForEach(0 ..< commentList.count) { item in
+//                        ScrollView{
+//                            SubtitleTemp(subtitle: commentList[item].Date)
+//                            SubtitleTemp(subtitle: commentList[item].comment)
+//                        }
+//                        .frame(width: 354, height: 135, alignment: .center)
+//                        .padding()
+//                        .background(Color("CommentColor"))
+//                        .cornerRadius(20)
+//                    }
+//                    if commentField{
+//                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
+//                    }
+//                    Button(action: {
+//                        if buttonComment{
+//
+//                            commentField.toggle()
+//                            buttonComment.toggle()
+//                        } else if buttonComment == false{
+//                            if heartOn == false{
+//                                halfModal.toggle()
+//                            }
+//                            commentField.toggle()
+//                            buttonComment.toggle()
+//
+//                        }
+//
+//                    }, label: {
+//                        if buttonComment{
+//                            buttonStyleTemplate(text: "add comment")
+//                        } else if buttonComment == false{
+//                            buttonStyleTemplate(text: "save comment")
+//                        }
+//
+//                    })
                 }
             }
-            if halfModal {
-                VStack{
-                    SlideOverCard { cardModal(heartState: heartOn) }
-                    Button(action:{
-                        halfModal.toggle()
-                    },label: {
-                        buttonStyleTemplate(text: "Save")
-                    }).offset(y: -70)
-                }
-            }
+//            if halfModal {
+//                VStack{
+//                    SlideOverCard { cardModal(heartState: heartOn) }
+//                    Button(action:{
+//                        halfModal.toggle()
+//                    },label: {
+//                        buttonStyleTemplate(text: "Save")
+//                    }).offset(y: -70)
+//                }
+//            }
         }
     }
 }

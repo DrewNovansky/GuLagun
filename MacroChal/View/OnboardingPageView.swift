@@ -25,7 +25,7 @@ struct OnboardingPageView: View {
             Button(action: {developerNotes.toggle()}){
                 HStack(spacing: 8){
                     Text("Next")
-                        .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 35).padding(5).background(Color("ButtonColor")).cornerRadius(30)
+                        .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
                 }
             }.padding()
             .fullScreenCover(isPresented: $developerNotes) {
