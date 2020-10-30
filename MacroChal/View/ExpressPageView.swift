@@ -34,14 +34,10 @@ struct ExpressPage : View{
                     Text("Express")
                         .font(.title)
                         .fontWeight(.semibold)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor)//.padding()
+                        .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(2)
                 }
                 VStack{
-                    Text("Have you imagined about your day?")
-                        .font(.body)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor)
-                    
-                    Text("What’s on your mind?")
+                    Text("Have you imagined about your day?\nWhat’s on your mind?")
                         .font(.body)
                         .multilineTextAlignment(.center).foregroundColor(.accentColor)
                 }
@@ -53,31 +49,31 @@ struct ExpressPage : View{
                 NavigationLink(destination:  FocusBreathingPage()){//nanti ganti ke breathing ini buat testing dulu
                    
                     ZStack {
-                        Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 372, alignment:.leading)
+                        Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)
                         VStack{
                             Spacer()
                             Text("Begin Writing")
-                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 60, y: -50)
+                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.leading).padding(2).offset(x: 50, y: -50)
                             
                             Text("Start focus breathing & write your emotion in 7 minutes").font(.body).foregroundColor(.accentColor).offset(x: 70, y: -50).frame(width:170)
                             
                         }
-                    }.frame(width: 374, height: 198).padding(5).background(Color("WriteColor")).cornerRadius(30)
+                    }.frame(width: 374, height: 198).padding(5).background(Color("WriteColor")).cornerRadius(20)
                 }.padding()
                 
                 //Explore
                 NavigationLink(destination: HistoryNoCalendarTest()){
                     ZStack {
-                        Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 372, alignment:.leading)
+                        Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)
                         VStack{
                             Spacer()
                             Text("Open Previous Writing")
-                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(1).offset(x: 60, y: -50)
+                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.leading).padding(1).offset(x: 53, y: -50)
                             
-                            Text("Look back with a different perspective").font(.body).foregroundColor(.accentColor).offset(x: 70, y: -50).frame(width: 195)
+                            Text("Look back with a different perspective").font(.body).foregroundColor(.accentColor).offset(x: 65, y: -50).frame(width: 170)
                             
                         }
-                    }.frame(width: 374, height: 198).padding(5).background(Color("GreenButton")).cornerRadius(30)
+                    }.frame(width: 374, height: 198).padding(5).background(Color("GreenButton")).cornerRadius(20)
                 }
             }
         }.offset(y: -30)

@@ -120,6 +120,6 @@ struct BonFire : View{
                             .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1)
                     }
             }
-        }
+        }.navigationBarHidden(true)
     }
 }

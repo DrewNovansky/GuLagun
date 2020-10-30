@@ -43,7 +43,7 @@ struct buttonStyleTemplate: View {
             .foregroundColor(Color("FontColor"))
             .frame(width: 374, height: 48)
             .background(Color("ActiveButtonColor"))
-            .cornerRadius(30)
+            .cornerRadius(20)
     }
 }
 
@@ -139,14 +139,14 @@ struct buttonTemplate: View{
                 .foregroundColor(.black)
                 .frame(width: 374, height: 48)
                 .background(Color("ActiveButtonColor"))
-                .cornerRadius(30)
+                .cornerRadius(20)
         }else{
             Text(emotion)
                 .font(.body)
                 .foregroundColor(.black)
                 .frame(width: 374, height: 48)
                 .background(Color("WriteColor"))
-                .cornerRadius(30)
+                .cornerRadius(20)
         }
         
     }

@@ -65,6 +65,9 @@ struct EmotionPage: View {
                             .offset(y: -70)
                     }
                 }
+                ProgressView(value: 0.2)
+                    .padding()
+                    .offset(y: -20)
             }.offset(y:-50)
     }
 }

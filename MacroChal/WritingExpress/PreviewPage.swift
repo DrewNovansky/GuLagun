@@ -60,7 +60,7 @@ struct WayToGoPage: View{
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
-            SubtitleTemp(subtitle: "It’s a great experience today.I hope you learned something about yourself.Let’s meet again tomorrow!").frame(width: 80)
+            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!").frame(width: 80)
             
             Image("WayToGo!")
                 .resizable()
@@ -74,7 +74,7 @@ struct WayToGoPage: View{
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
                 .padding()
-            Text("\(selectedDate.advanced(by: 86400))")
+            Text("\(selectedDate.advanced(by: 86400))").hidden()
             NavigationLink(
                 destination: GoodJobPage(),
                 label: {

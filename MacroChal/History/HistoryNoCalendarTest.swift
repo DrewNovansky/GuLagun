@@ -16,39 +16,57 @@ struct HistoryNoCalendarTest: View {
     var body: some View {
         Text("Your Writings").font(.title).fontWeight(.semibold)
             .multilineTextAlignment(.center
-            ).foregroundColor(.accentColor)
+            ).foregroundColor(.accentColor).offset(y:-40)
         
         List {
             ForEach(self.result) {timestamp in
-                
                 VStack {
                     HStack{
-                        Image("\(timestamp.emotionChoosen ?? "")").resizable().frame(width:70, height:70)
-                        
+                        Image("\(timestamp.emotionChoosen ?? "")").resizable().frame(width:50, height:50)
+                            .padding()
                         VStack(alignment: .leading){
-                            //Text("\(timestamp.timestamp!)")
+                            Text(CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal")).foregroundColor(.accentColor)
+                            //tanggal
                             Text(timestamp.story ?? "")
+                                .frame(height: 25).foregroundColor(.accentColor)
                         }
                         
+                        Spacer()
                         VStack{
-                            //Text("\(timestamp.timestamp!)")
+                            Text(CekTanggal(tanggalInput: Date(), minta: "")).foregroundColor(.accentColor)
                             if timestamp.heartOn == true{
                                 Image("Heart.Fill")
-                                    .renderingMode(.none)
-                                    .font(.system(size: 45))
-                                    .padding()
+                                    .renderingMode(.none).resizable()
+                                    .frame(width: 26, height: 24)
+                                    .padding(2)
                             }else if timestamp.heartOn == false{
                                 Image("Heart")
-                                    .renderingMode(.none)
-                                    .font(.system(size: 45))
-                                    .padding()
+                                    .renderingMode(.none).resizable()
+                                    .frame(width: 26, height: 24)
+                                    .padding(2)
                             }
                         }
+                        .padding()
                     }
                     
-                }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(0).background(Color("WriteColor")).cornerRadius(30)
+                }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(0).background(Color("WriteColor")).cornerRadius(20)
             }
+        }.offset(y:-30)
+    }
+    func CekTanggal(tanggalInput: Date, minta: String)-> String {
+        let formatter3 = DateFormatter()
+        var tanggalString: String = String()
+        if minta == "tanggal" {
+            formatter3.dateFormat = "d MMM y"
+            tanggalString = formatter3.string(from: tanggalInput)
+            return tanggalString
+        } else {
+            formatter3.dateFormat = "HH:mm"
+            tanggalString = formatter3.string(from: tanggalInput)
+            return tanggalString
         }
+        
+        
     }
 }
 

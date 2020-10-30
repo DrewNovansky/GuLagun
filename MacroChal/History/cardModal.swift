@@ -34,7 +34,7 @@ struct cardModal: View {
                 }
             }).padding(5)
             Spacer()
-        }
+        }.offset(y: -50)
     }
 }
 

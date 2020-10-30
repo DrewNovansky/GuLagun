@@ -19,6 +19,8 @@ struct WritingPage: View {
                 .padding()
             SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”").frame(width: 80)
             multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
+            ProgressView(value: 0.6)
+                .padding()
             NavigationLink(
                 destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story),
                 label: {

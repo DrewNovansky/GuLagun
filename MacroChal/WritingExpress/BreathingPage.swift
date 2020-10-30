@@ -10,13 +10,14 @@ import SwiftUI
 struct BreathingPage: View {
     
     var timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
-    @State var kondisi = ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds", "Good Job!"]
+    @State var kondisi = ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds", "Now that you are more focus,\nlet’s start imagining how your day went today."]
+    @State var title = ["Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath", "Great Job!"]
     @State var count: Int = 0
     
     
     var body: some View {
         VStack {
-            TitleTemp(title: "Take a Deep Breath")
+            TitleTemp(title: title[count])
             SubtitleTemp(subtitle: kondisi[count])
                 .onReceive(timer) {input in
                     if count < kondisi.count-1 {
@@ -33,7 +34,7 @@ struct BreathingPage: View {
                 Image("Great!")
             }
             Spacer()
-            ProgressView(value: 0.5)
+            ProgressView(value: buatProgress(atas: count, bawah: kondisi.count))
                 .padding()
             if count < kondisi.count-1 {
             NavigationLink(destination: EmotionPage()) {
@@ -46,6 +47,14 @@ struct BreathingPage: View {
             }
         }.offset(y:-50)
     }
+    func buatProgress(atas: Int, bawah: Int)-> Float {
+        var atasFloat = Float(atas)
+        atasFloat += 1
+        let bawahFloat = Float(bawah)
+        let hasil = atasFloat / bawahFloat
+        return hasil
+    }
+
 }
 
 struct BreathingPage_Previews: PreviewProvider {
