@@ -14,11 +14,40 @@ struct HistoryNoCalendarTest: View {
     @Environment(\.managedObjectContext) var context
     
     var body: some View {
+        Text("Your Writings").font(.title).fontWeight(.semibold)
+            .multilineTextAlignment(.center
+            ).foregroundColor(.accentColor)
+        
         List {
-        ForEach(result) { task in
-            Text(task.story ?? "")
-            Text(task.acceptanceText ?? "") 
-        }
+            ForEach(self.result) {timestamp in
+                
+                VStack {
+                    HStack{
+                        Image("\(timestamp.emotionChoosen ?? "")").resizable().frame(width:70, height:70)
+                        
+                        VStack(alignment: .leading){
+                            //Text("\(timestamp.timestamp!)")
+                            Text(timestamp.story ?? "")
+                        }
+                        
+                        VStack{
+                            //Text("\(timestamp.timestamp!)")
+                            if timestamp.heartOn == true{
+                                Image("Heart.Fill")
+                                    .renderingMode(.none)
+                                    .font(.system(size: 45))
+                                    .padding()
+                            }else if timestamp.heartOn == false{
+                                Image("Heart")
+                                    .renderingMode(.none)
+                                    .font(.system(size: 45))
+                                    .padding()
+                            }
+                        }
+                    }
+                    
+                }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(0).background(Color("WriteColor")).cornerRadius(30)
+            }
         }
     }
 }

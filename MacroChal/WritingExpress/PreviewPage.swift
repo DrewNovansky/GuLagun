@@ -51,7 +51,7 @@ struct PreviewPage: View {
                                     buttonStyleTemplate(text: "Next")
                                 }).padding()
             }
-        }
+        }.offset(y:-50)
     }
 }
 
@@ -60,7 +60,7 @@ struct WayToGoPage: View{
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
-            SubtitleTemp(subtitle: "It’s a great experience today.I hope you learned something about yourself.Let’s meet again tomorrow!")
+            SubtitleTemp(subtitle: "It’s a great experience today.I hope you learned something about yourself.Let’s meet again tomorrow!").frame(width: 80)
             
             Image("WayToGo!")
                 .resizable()
@@ -80,7 +80,7 @@ struct WayToGoPage: View{
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding()
-        }
+        }.offset(y:-50)
     }
 }
 
@@ -92,13 +92,14 @@ struct GoodJobPage: View {
             Image("SeeYou!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
+                .offset(y:50)
                 .padding()
             NavigationLink(
                 destination: BonFireView(),
                 label: {
                     buttonStyleTemplate(text: "See you!")
-                }).padding()
-        }
+                }).offset(y:200).padding()
+        }.offset(y:-150)
     }
 }
 

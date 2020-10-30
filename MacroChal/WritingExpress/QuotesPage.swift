@@ -29,7 +29,7 @@ struct QuotesPage: View {
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding()
-        }
+        }.offset(y:-50)
     }
 }
 

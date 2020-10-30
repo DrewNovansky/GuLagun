@@ -26,7 +26,7 @@ struct FocusBreathingPage: View {
                 buttonStyleTemplate(text: "Begin Breathing")
             }.padding()
             
-        }
+        }.offset(y:-50)
     }
 }
 

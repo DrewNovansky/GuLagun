@@ -17,11 +17,11 @@ struct AcceptancePage: View {
         ScrollView{
             VStack(){
                 TitleTemp(title: "Do you know it’s okay \nto feel that way?")
-                SubtitleTemp(subtitle: "“What you’ve felt is valid. There’s no right or wrong feeling. It is part of you & it’s okay to feel that way.”")
+                SubtitleTemp(subtitle: "“What you’ve felt is valid. There’s no right or wrong feeling. It is part of you & it’s okay to feel that way.”").frame(width: 80)
                 Button(action: {
                     self.heartState.toggle()
                 }, label: {
-                    VStack(spacing: 20){
+                    VStack(spacing: 5){
                         Text("Tap the heart if you do")
                             .foregroundColor(Color("FontColor"))
                         //button image toogle (Not Yet)
@@ -44,7 +44,7 @@ struct AcceptancePage: View {
                     }).padding()
                     
             }
-            .offset(x: 0, y: -100)
+            .offset(x: 0, y: -60)
 
         }
     }

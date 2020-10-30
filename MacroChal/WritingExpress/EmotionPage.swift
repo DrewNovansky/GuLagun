@@ -10,9 +10,7 @@ import SwiftUI
 struct EmotionPage: View {
     var body: some View {
             VStack{
-                TitleTemp(title: "How did you \nfeel today?")
-                Spacer()
-                    .frame(height: 30)
+                TitleTemp(title: "How did you feel today?")
                 SubtitleTemp(subtitle: "Choose which one is your most dominant\nfeeling today using this Feeling Wheel\ninspired from The Junto Wheel.")
                     .frame(width: 80)
                 ZStack{
@@ -67,7 +65,7 @@ struct EmotionPage: View {
                             .offset(y: -70)
                     }
                 }
-            }
+            }.offset(y:-50)
     }
 }
 
