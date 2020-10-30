@@ -13,18 +13,18 @@ struct WritingPage: View {
     @State var story = ""
     var body: some View {
         VStack{
-            TitleTemp(title: "Why did you feel \nthat way?")
+            TitleTemp(title: "Why did you feel that way?")
             CircleImage(imagename: emotionChoosen)
                 .frame(width: 68, height: 68)
                 .padding()
-            SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”")
+            SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”").frame(width: 80)
             multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
             NavigationLink(
                 destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story),
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding(20)
-        }
+        }.offset(y:-50)
     }
 }
 

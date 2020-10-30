@@ -44,7 +44,7 @@ struct BreathingPage: View {
                     buttonStyleTemplate(text: "Next")
                 }
             }
-        }
+        }.offset(y:-50)
     }
 }
 

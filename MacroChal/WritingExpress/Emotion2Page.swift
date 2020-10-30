@@ -126,7 +126,7 @@ struct Emotion2Page: View {
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding()
-        }
+        }.offset(y:-50)
     }
 }
 
