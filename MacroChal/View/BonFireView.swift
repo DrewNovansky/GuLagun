@@ -38,7 +38,7 @@ struct BonFireView_Previews: PreviewProvider {
 }
 
 struct BonFire : View{
-   @State var isTopNavigationActive = false
+    @State var isTopNavigationActive = false
     
     var body: some View{
         NavigationView{
@@ -51,18 +51,18 @@ struct BonFire : View{
                 )
                 
                 Text("").navigationBarItems(trailing:
-                    HStack{
-                        Image("BooBtn").resizable().onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            isTopNavigationActive = true
-                        }).frame(width: 45, height: 45)
-                    }
+                                                HStack{
+                                                    Image("BooBtn").resizable().onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                                                        isTopNavigationActive = true
+                                                    }).frame(width: 45, height: 45)
+                                                }
                 )
                 
                 //image fire
                 HStack{
                     VStack(alignment: .leading, spacing: 10) {
                         FireAnimation(imageName: "kayuBakar", x: 7, y: -75, width: 400, height: 320)
-//                        Image("FireBG").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 450, height: 320, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        //                        Image("FireBG").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 450, height: 320, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
                     }//.offset(y:-40)
                 }
@@ -80,7 +80,7 @@ struct BonFire : View{
                         Text("Please make yourself comfortable")
                             .font(.body)
                             .multilineTextAlignment(.center).foregroundColor(.accentColor)
-                       // Spacer()
+                        // Spacer()
                     }
                 }.padding(1).offset(y: 20)
                 
@@ -102,23 +102,23 @@ struct BonFire : View{
                     }.padding(5)
                     //Explore
                     //NavigationLink(destination: ){//explorepage
-                        ZStack {
-                            Image("GrayEploreBtn")
+                    ZStack {
+                        Image("GrayEploreBtn")
+                        
+                        VStack{
+                            Spacer()
+                            Text("Explore inner you")
+                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 55, y: -15)
                             
-                            VStack{
-                                Spacer()
-                                Text("Explore inner you")
-                                    .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 55, y: -15)
-                                
-                                Text("Answer questions to know more about yourself").font(.body).foregroundColor(.accentColor).offset(x: 75, y: -20).frame(width:200)
-                            }
+                            Text("Answer questions to know more about yourself").font(.body).foregroundColor(.accentColor).offset(x: 75, y: -20).frame(width:200)
                         }
+                    }
                 }.offset(y: 20)
                 //Quick Help
-                    HStack(spacing: 8){
-                        Text("If things get harder, we recommen you to get help through nearest psychologist")
-                            .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1)
-                    }
+                HStack(spacing: 8){
+                    Text("If things get harder, we recommen you to get help through nearest psychologist")
+                        .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1)
+                }
             }
         }.navigationBarHidden(true)
     }

@@ -28,8 +28,8 @@ struct BreathingPage: View {
                 }
             Spacer()
             if count < kondisi.count-1 {
-            FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
-                .frame(width: 300, height: 325, alignment: .center)
+                FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
+                    .frame(width: 300, height: 325, alignment: .center)
             } else {
                 Image("Great!")
             }
@@ -37,9 +37,9 @@ struct BreathingPage: View {
             ProgressView(value: buatProgress(atas: count, bawah: kondisi.count))
                 .padding()
             if count < kondisi.count-1 {
-            NavigationLink(destination: EmotionPage()) {
-                buttonStyleTemplate(text: "Next")
-            }.hidden()
+                NavigationLink(destination: EmotionPage()) {
+                    buttonStyleTemplate(text: "Next")
+                }.hidden()
             } else {
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")
@@ -54,7 +54,7 @@ struct BreathingPage: View {
         let hasil = atasFloat / bawahFloat
         return hasil
     }
-
+    
 }
 
 struct BreathingPage_Previews: PreviewProvider {

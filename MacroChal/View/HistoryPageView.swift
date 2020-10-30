@@ -11,14 +11,14 @@ struct HistoryPageView: View {
     var body: some View {
         
         VStack {
-                Text("History")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("AccentColor")).padding()
-                
-                CalendarDetails()
-            }.offset(y: -50)
-        }
+            Text("History")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("AccentColor")).padding()
+            
+            CalendarDetails()
+        }.offset(y: -50)
+    }
     
 }
 
