@@ -23,9 +23,9 @@ struct cardModal: View {
                         .foregroundColor(Color("FontColor"))
                     //button image toogle (Not Yet)
                     if heartState == true{
-                    Image("Heart.Fill")
-                        .renderingMode(.none)
-                        .font(.system(size: 62))
+                        Image("Heart.Fill")
+                            .renderingMode(.none)
+                            .font(.system(size: 62))
                     }else if heartState == false{
                         Image("Heart")
                             .renderingMode(.none)

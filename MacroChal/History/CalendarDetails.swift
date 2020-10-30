@@ -45,8 +45,8 @@ struct CalendarDetails: View {
                             //print("Masuk?")
                             self.components.month = self.calendar.component(.month, from: date)
                             
-                                                        self.components.day = self.calendar.component(.day, from: date)
-                                                        self.components.year = self.calendar.component(.year, from: date)
+                            self.components.day = self.calendar.component(.day, from: date)
+                            self.components.year = self.calendar.component(.year, from: date)
                             
                             collectionView.toggle()
                         }
@@ -58,8 +58,8 @@ struct CalendarDetails: View {
                     DayView(date: self.calendar.date(from: self.components) ?? Date())
                     
                     Text("Your writings that day:")
-                    .font(.headline)
-                    .fontWeight(.regular)
+                        .font(.headline)
+                        .fontWeight(.regular)
                     HistoryCollectionView()
                 }
             }
@@ -107,20 +107,20 @@ struct HistoryCollectionView: View {
                 //CollectionView()
             }
             
-//            List {
-//                ForEach(data) { item in
-//                    ForEach(0..<1) { item in
-//                        CollectionView(data: item)
-//                    }
-//                }
-//            }
+            //            List {
+            //                ForEach(data) { item in
+            //                    ForEach(0..<1) { item in
+            //                        CollectionView(data: item)
+            //                    }
+            //                }
+            //            }
         }.frame(height: 400)
     }
     
 }
 
 struct CollectionView: View {
-
+    
     var body: some View {
         VStack {
             HStack{
@@ -154,25 +154,25 @@ struct CollectionView: View {
 }
 
 struct DayView: View {
-  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-  
-  var date: Date
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-  var dateFormatter: DateFormatter {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .long
-    return formatter
-  }
+    var date: Date
     
-  var body: some View {
-    VStack {
-      Text(self.dateFormatter.string(from: self.date))
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
     }
-  }
+    
+    var body: some View {
+        VStack {
+            Text(self.dateFormatter.string(from: self.date))
+        }
+    }
 }
 struct CalendarDetails_Previews: PreviewProvider {
     static var previews: some View {
         CalendarDetails()
-
+        
     }
 }

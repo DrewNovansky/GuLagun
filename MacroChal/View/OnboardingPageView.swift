@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingPageView: View {
-   
+    
     @Binding var isPresenting: Bool
     @State var developerNotes = false
     @State var selectedPage:Int = 0

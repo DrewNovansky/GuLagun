@@ -47,7 +47,7 @@ struct ExpressPage : View{
             VStack{
                 //Express
                 NavigationLink(destination:  FocusBreathingPage()){//nanti ganti ke breathing ini buat testing dulu
-                   
+                    
                     ZStack {
                         Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)
                         VStack{

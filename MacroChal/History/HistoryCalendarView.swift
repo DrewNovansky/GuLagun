@@ -22,13 +22,13 @@ struct HistoryCalendarView: View {
                     //munculin tangal
                     .overlay(Text(String(self.calendar.component(.day, from: date)))
                                 .foregroundColor(.accentColor)
-                            
+                             
                     )
             }
         }
-//        }.onTapGesture{
-//            print("Kepencet")
-//        }
+        //        }.onTapGesture{
+        //            print("Kepencet")
+        //        }
     }
 }
 
@@ -150,23 +150,23 @@ struct MonthView<DateView>: View where DateView: View {
         let formatter = component == 1 ? DateFormatter.Date : .Date
         
         return HStack{
-                    //ganti bulan last month
-                    Button(action: {
-                        self.changeDateBy(-1)
-                    }) {
-                        Image("PrevBtnCalendar")
-                            .resizable().frame(width: 25)
-                    }
-                  
+            //ganti bulan last month
+            Button(action: {
+                self.changeDateBy(-1)
+            }) {
+                Image("PrevBtnCalendar")
+                    .resizable().frame(width: 25)
+            }
+            
             Text(formatter.string(from: month))
                 .font(.body)
                 .foregroundColor(.accentColor)
-                    //ganti bulan next month
-                    Button(action: {
-                        self.changeDateBy(1)
-                    }) {
-                        Image("NextBtnCalendar")
-                            .resizable().frame(width: 25)
+            //ganti bulan next month
+            Button(action: {
+                self.changeDateBy(1)
+            }) {
+                Image("NextBtnCalendar")
+                    .resizable().frame(width: 25)
             }
         }.frame(height: 25)
     }
@@ -224,7 +224,7 @@ struct CalendarView<DateView>: View where DateView: View {
         
         ForEach(months, id: \.self) { month in
             MonthView(month: month, content: self.content)
-
+            
         }
     }
 }

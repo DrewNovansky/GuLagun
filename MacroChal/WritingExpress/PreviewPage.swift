@@ -27,29 +27,29 @@ struct PreviewPage: View {
             reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
             NavigationLink(destination: WayToGoPage(), isActive: $showView) {
                 Button(
-                                //destination: WayToGoPage(),
-                                action: {
-                                    let diary = DiaryDatabase(context: viewContext)
-                                    diary.emotionChoosen = self.emotionChoosen
-                                    diary.acceptanceText = self.acceptenceText
-                                    diary.emotionDetail = self.emotionDetails
-                                    diary.heartOn = self.heartOn
-                                    diary.story = self.story
-                                    diary.timestamp = self.date
-                                    //Save context
-                                    do {
-                                        try viewContext.save()
-                                        print("Saved")
-                                    } catch {
-                                        let error = NSError.self
-                                        fatalError("UnresolvedError \(error)")
-                                    }
-                                    self.showView = true
-                
-                                },
-                                label: {
-                                    buttonStyleTemplate(text: "Next")
-                                }).padding()
+                    //destination: WayToGoPage(),
+                    action: {
+                        let diary = DiaryDatabase(context: viewContext)
+                        diary.emotionChoosen = self.emotionChoosen
+                        diary.acceptanceText = self.acceptenceText
+                        diary.emotionDetail = self.emotionDetails
+                        diary.heartOn = self.heartOn
+                        diary.story = self.story
+                        diary.timestamp = self.date
+                        //Save context
+                        do {
+                            try viewContext.save()
+                            print("Saved")
+                        } catch {
+                            let error = NSError.self
+                            fatalError("UnresolvedError \(error)")
+                        }
+                        self.showView = true
+                        
+                    },
+                    label: {
+                        buttonStyleTemplate(text: "Next")
+                    }).padding()
             }
         }.offset(y:-50)
     }
@@ -60,12 +60,11 @@ struct WayToGoPage: View{
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
-            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!").frame(width: 80)
+            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
             
             Image("WayToGo!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
-                .padding()
             SubtitleTemp(subtitle: "See you at")
             
             DatePicker("", selection: $selectedDate, displayedComponents: .hourAndMinute)
@@ -73,13 +72,12 @@ struct WayToGoPage: View{
                 .labelsHidden()
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
-                .padding()
             Text("\(selectedDate.advanced(by: 86400))").hidden()
             NavigationLink(
                 destination: GoodJobPage(),
                 label: {
                     buttonStyleTemplate(text: "Next")
-                }).padding()
+                })
         }.offset(y:-50)
     }
 }
