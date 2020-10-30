@@ -72,14 +72,16 @@ struct reviewTemp: View {
                     .renderingMode(.none)
                     .font(.system(size: 62))
                     .padding()
+                SubtitleTemp(subtitle: "I know it’s okay to feel that way")
             }else if heartOn == false{
                 Image("Heart")
                     .renderingMode(.none)
                     .font(.system(size: 62))
                     .padding()
+                SubtitleTemp(subtitle: "I’m not sure that it’s okay ")
             }
             //hasil passing data
-            SubtitleTemp(subtitle: "I know it’s okay to feel that way")
+            
             
             ScrollView{
                 SubtitleTemp(subtitle: acceptenceText)
