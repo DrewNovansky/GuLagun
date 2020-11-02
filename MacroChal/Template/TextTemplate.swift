@@ -20,7 +20,6 @@ struct TitleTemp: View {
             .fontWeight(.bold)
             .multilineTextAlignment(.center)
             .foregroundColor(Color("FontColor"))
-            .frame(width: 374)
             .padding()
     }
 }
@@ -31,7 +30,12 @@ struct SubtitleTemp: View {
             .font(.body)
             .multilineTextAlignment(.center)
             .foregroundColor(Color("FontColor"))
-            .frame(width: 374)
             .padding()
+    }
+}
+
+struct TextTemplate_Previews: PreviewProvider {
+    static var previews: some View {
+        SubtitleTemp(subtitle: "TESTING")
     }
 }

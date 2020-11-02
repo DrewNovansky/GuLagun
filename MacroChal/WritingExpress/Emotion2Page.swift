@@ -18,7 +18,7 @@ var JoyList = [
     Emotion(id: 3, emotionEmoji: "Proud", emotionDetails: "Feeling deep satisfaction as a result of own achievements."),
     Emotion(id: 4, emotionEmoji: "Cheerful", emotionDetails: "Noticeably happy and optimistic."),
     Emotion(id: 5, emotionEmoji: "Happy", emotionDetails: "Feeling or showing pleasure or contentment."),
-    Emotion(id: 6, emotionEmoji: "Content", emotionDetails: "in a state of peaceful happiness, willing to accept something."),
+    Emotion(id: 6, emotionEmoji: "Content", emotionDetails: "In a state of peaceful happiness, willing to accept something."),
     Emotion(id: 7, emotionEmoji: "Peaceful", emotionDetails: "Free from disturbance."),
 ]
 
@@ -122,7 +122,8 @@ struct Emotion2Page: View {
                 }
             }
             ProgressView(value: 0.4)
-                .padding(10)
+                .frame(width: 374)
+                .accentColor(Color(.systemBlue))
             NavigationLink(
                 destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                 label: {

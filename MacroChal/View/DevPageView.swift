@@ -15,12 +15,12 @@ struct DevPageView: View {
         VStack(){
             Image("DevNote").resizable().aspectRatio(contentMode: .fit).frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
             
-            Text("Developers").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
+            Text("Developers").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.accentColor)
             
-            Text("note").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
+            Text("note").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.accentColor)
             
             Text(" We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
-                .font(.body).multilineTextAlignment(.center).padding(10)
+                .font(.body).multilineTextAlignment(.center).padding(10).foregroundColor(.accentColor)
             
             Button(action: {}){
                 HStack(spacing: 8){
