@@ -16,6 +16,7 @@ struct AcceptancePage: View {
     var body: some View{
         ScrollView{
             VStack(){
+                VStack{
                 TitleTemp(title: "Do you know it’s okay \nto feel that way?")
                 SubtitleTemp(subtitle: "“What you’ve felt is valid.\nThere’s no right or wrong feeling.\nIt is part of you & it’s okay to feel that way.”").frame(width: 80)
                 Button(action: {
@@ -36,7 +37,11 @@ struct AcceptancePage: View {
                         }
                     }
                 }).padding()
+                }.onTapGesture(perform: {
+                    UIApplication.shared.endEditing()
+                })
                 multilineTF(placeholder: "Because I ...",textWritten: $acceptance)
+                VStack{
                 ProgressView(value: 0.8)
                     .padding()
                 NavigationLink(
@@ -44,6 +49,9 @@ struct AcceptancePage: View {
                     label: {
                         buttonStyleTemplate(text: "Next")
                     }).padding()
+                }.onTapGesture(perform: {
+                    UIApplication.shared.endEditing()
+                })
                 
             }
             .offset(x: 0, y: -60)
