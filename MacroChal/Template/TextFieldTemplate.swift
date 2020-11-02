@@ -64,6 +64,11 @@ struct MultiLineTextField : UIViewRepresentable {
         }
     }
 }
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 struct TextFieldTemplate_Previews: PreviewProvider {
     static var previews: some View {
         Text("Hai")

@@ -13,12 +13,17 @@ struct WritingPage: View {
     @State var story = ""
     var body: some View {
         VStack{
+            VStack{
             TitleTemp(title: "Why did you feel that way?")
             CircleImage(imagename: emotionChoosen)
                 .frame(width: 68, height: 68)
                 .padding()
             SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”").frame(width: 80)
+            }.onTapGesture(perform: {
+                UIApplication.shared.endEditing()
+            })
             multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
+            VStack{
             ProgressView(value: 0.6)
                 .padding()
             NavigationLink(
@@ -26,9 +31,13 @@ struct WritingPage: View {
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding(20)
+            }.onTapGesture(perform: {
+                UIApplication.shared.endEditing()
+            })
         }.offset(y:-50)
     }
 }
+
 
 struct WritingPage_Previews: PreviewProvider {
     static var previews: some View {
