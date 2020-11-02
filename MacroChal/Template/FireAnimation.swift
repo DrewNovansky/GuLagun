@@ -11,7 +11,6 @@ var apiBesar : [UIImage]! = [UIImage(named: "api besar 1")!, UIImage(named: "api
 var apiKecil : [UIImage]! = [UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!]
 var apiSedang : [UIImage]! = [UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!]
 var kayuBakar : [UIImage]! = [UIImage(named: "kayuBakar1")!, UIImage(named: "kayuBakar2")!, UIImage(named: "kayuBakar3")!, UIImage(named: "kayuBakar4")!, UIImage(named: "kayuBakar5")!, UIImage(named: "kayuBakar6")!]
-var apiSemua : [UIImage]! = [UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api besar 1")!, UIImage(named: "api besar 2")!, UIImage(named: "api besar 3")!, UIImage(named: "api besar 4")!, UIImage(named: "api besar 5")!, UIImage(named: "api besar 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!, UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api kecil 1")!, UIImage(named: "api kecil 2")!, UIImage(named: "api kecil 3")!, UIImage(named: "api kecil 4")!, UIImage(named: "api kecil 5")!, UIImage(named: "api kecil 6")!, UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!,UIImage(named: "api besar 6")!,UIImage(named: "api sedang 1")!, UIImage(named: "api sedang 2")!, UIImage(named: "api sedang 3")!, UIImage(named: "api sedang 4")!, UIImage(named: "api sedang 5")!, UIImage(named: "api sedang 6")!]
 
 struct FireAnimation: UIViewRepresentable {
     var imageName: String
@@ -32,7 +31,7 @@ struct FireAnimation: UIViewRepresentable {
         case "kayuBakar":
             animatedImage = UIImage.animatedImage(with: kayuBakar, duration: 0.5)
         case "apiSemua":
-            animatedImage = UIImage.animatedImage(with: apiSemua, duration: 16)
+            animatedImage = UIImage.animatedImage(with: outputAnimasiApiPanjang(), duration: 16)
         default:
             animatedImage = UIImage.animatedImage(with: apiBesar, duration: 0.5)
         }
@@ -48,6 +47,27 @@ struct FireAnimation: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<FireAnimation>) {
+    }
+    func outputAnimasiApiPanjang()-> [UIImage] {
+        var ini2 = [UIImage]()
+        let apiBesar2 = penggandaApi(inputApi: apiBesar)
+        let apiSedang2 = penggandaApi(inputApi: apiSedang)
+        let apiKecil2 = penggandaApi(inputApi: apiKecil)
+        ini2.append(contentsOf: apiBesar2)
+        ini2.append(contentsOf: apiSedang2)
+        ini2.append(contentsOf: apiKecil2)
+        ini2.append(contentsOf: apiSedang2)
+        return ini2
+    }
+    func penggandaApi(inputApi: [UIImage])-> [UIImage] {
+        var ini : [UIImage] = []
+        ini.append(contentsOf: inputApi)
+        ini.append(contentsOf: inputApi)
+        ini.append(contentsOf: inputApi)
+        ini.append(contentsOf: inputApi)
+        ini.append(contentsOf: inputApi)
+        ini.append(contentsOf: inputApi)
+        return ini
     }
 }
 
