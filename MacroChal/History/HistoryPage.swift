@@ -27,66 +27,67 @@ struct HistoryPage: View {
     @State var commentText = ""
     var body: some View {
         ZStack{
-            VStack{
-                //                ScrollView{
-                TitleTemp(title: "\(tanggal)")
-                SubtitleTemp(subtitle: "\(jam)")
-                reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-                //                    SubtitleTemp(subtitle: "Note to self:")
-                //
-                //                    ForEach(0 ..< commentList.count) { item in
-                //                        ScrollView{
-                //                            SubtitleTemp(subtitle: commentList[item].Date)
-                //                            SubtitleTemp(subtitle: commentList[item].comment)
-                //                        }
-                //                        .frame(width: 354, height: 135, alignment: .center)
-                //                        .padding()
-                //                        .background(Color("CommentColor"))
-                //                        .cornerRadius(20)
-                //                    }
-                //                    if commentField{
-                //                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
-                //                    }
-                //                    Button(action: {
-                //                        if buttonComment{
-                //
-                //                            commentField.toggle()
-                //                            buttonComment.toggle()
-                //                        } else if buttonComment == false{
-                //                            if heartOn == false{
-                //                                halfModal.toggle()
-                //                            }
-                //                            commentField.toggle()
-                //                            buttonComment.toggle()
-                //
-                //                        }
-                //
-                //                    }, label: {
-                //                        if buttonComment{
-                //                            buttonStyleTemplate(text: "add comment")
-                //                        } else if buttonComment == false{
-                //                            buttonStyleTemplate(text: "save comment")
-                //                        }
-                //
-                //                    })
-            }.offset(y: -30)
+            ScrollView{
+                VStack{
+                    //                ScrollView{
+                    TitleTemp(title: "\(tanggal)")
+                    SubtitleTemp(subtitle: "\(jam)")
+                    reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
+//                    SubtitleTemp(subtitle: "Note to self:")
+//
+//                    ForEach(0 ..< commentList.count) { item in
+//                        ScrollView{
+//                            SubtitleTemp(subtitle: commentList[item].Date)
+//                            SubtitleTemp(subtitle: commentList[item].comment)
+//                        }
+//                        .frame(width: 354, height: 135, alignment: .center)
+//                        .padding()
+//                        .background(Color("CommentColor"))
+//                        .cornerRadius(20)
+//                    }
+//                    if commentField{
+//                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
+//                    }
+//                    Button(action: {
+//                        if buttonComment{
+//
+//                            commentField.toggle()
+//                            buttonComment.toggle()
+//                        } else if buttonComment == false{
+//                            if heartOn == false{
+//                                halfModal.toggle()
+//                            }
+//                            commentField.toggle()
+//                            buttonComment.toggle()
+//
+//                        }
+//
+//                    }, label: {
+//                        if buttonComment{
+//                            buttonStyleTemplate(text: "add comment")
+//                        } else if buttonComment == false{
+//                            buttonStyleTemplate(text: "save comment")
+//                        }
+//
+//                    })
+                }
+            }
+//            if halfModal {
+//                VStack{
+//                    SlideOverCard { cardModal(heartState: heartOn) }
+//                    Button(action:{
+//                        halfModal.toggle()
+//                    },label: {
+//                        buttonStyleTemplate(text: "Save")
+//                    }).offset(y: -70)
+//                }
+//            }
         }
-        //            if halfModal {
-        //                VStack{
-        //                    SlideOverCard { cardModal(heartState: heartOn) }
-        //                    Button(action:{
-        //                        halfModal.toggle()
-        //                    },label: {
-        //                        buttonStyleTemplate(text: "Save")
-        //                    }).offset(y: -70)
-        //                }
-        //            }
-        
     }
 }
 
 struct HistoryPage_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryPage(emotionChoosen: "Joy", emotionDetails: "Grateful", story: "I feel Grateful Because i acomplish this project", acceptenceText: "Because I have done a good job in fulfiling my task", heartOn: true, tanggal: "30 October", jam: "21.20", buttonComment: true, commentField: false, halfModal: false, commentText: "")
+        HistoryPage(emotionChoosen: "Joy", emotionDetails: "Grateful", story: "", acceptenceText: "", heartOn: false,tanggal: "",jam:"", buttonComment: true, commentField: false, halfModal: false, commentText: "")
     }
 }

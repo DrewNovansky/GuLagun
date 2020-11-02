@@ -8,36 +8,52 @@
 import SwiftUI
 
 struct BreathingPage: View {
-    
+    var timerDetik = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
-    @State var kondisi = ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds","Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds", "Now that you are more focus,\nlet’s start imagining how your day went today."]
-    @State var title = ["Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath","Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath", "Great Job!"]
-    @State var count: Int = 0
+   @State var counter = "4"
+    @State var detikOutput = 4
     
+    @State var count: Int = 0
+    var pengulangan = 4
     
     var body: some View {
         VStack {
-            TitleTemp(title: title[count])
-            SubtitleTemp(subtitle: kondisi[count])
+            TitleTemp(title: penggandaInstruksi(jumlah: pengulangan, output: "title")[count])
+            SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
                 .onReceive(timer) {input in
-                    if count < kondisi.count-1 {
+                    if count <  penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
                         self.count += 1
                     } else {
                         self.timer.upstream.connect().cancel()
                     }
                 }
+            TitleTemp(title: "\(counter)").onReceive(timerDetik, perform: { _ in
+                if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
+                    if detikOutput >  1 {
+                        detikOutput -= 1
+                        counter = "\(detikOutput)"
+                    } else {
+                        detikOutput = 4
+                        counter = "\(detikOutput)"
+                    }
+                } else{
+                    counter = ""
+                    self.timerDetik.upstream.connect().cancel()
+                }
+                
+            }
+            )
             Spacer()
-            if count < kondisi.count-1 {
+            if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count-1 {
                 FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
                     .frame(width: 300, height: 325, alignment: .center)
             } else {
                 Image("Great!")
             }
             Spacer()
-            ProgressView(value: buatProgress(atas: count, bawah: kondisi.count))
-                .frame(width: 374)
-                .accentColor(Color(.systemBlue))
-            if count < kondisi.count-1 {
+            ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
+                .padding()
+            if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")
                 }.hidden()
@@ -54,6 +70,29 @@ struct BreathingPage: View {
         let bawahFloat = Float(bawah)
         let hasil = atasFloat / bawahFloat
         return hasil
+    }
+    func penggandaInstruksi(jumlah: Int, output: String)-> [String] {
+        var berapa = 0
+        var SubtitleOutput = [String]()
+        var TitleOutput = [String]()
+        let subtitleInput =  ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds"]
+        let titleInput = ["Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath"]
+        if output == "subtitle" {
+            while berapa <= jumlah {
+                SubtitleOutput.append(contentsOf: subtitleInput)
+                berapa += 1
+                SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
+                return SubtitleOutput
+            }
+        } else {
+            while berapa <= jumlah {
+                TitleOutput.append(contentsOf: titleInput)
+                berapa += 1
+                TitleOutput.append("Great Job!")
+                return TitleOutput
+            }
+        }
+        return [String]()
     }
     
 }

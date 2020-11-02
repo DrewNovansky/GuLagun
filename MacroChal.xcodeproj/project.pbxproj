@@ -40,6 +40,7 @@
 		EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */; };
 		EC8E5F002542ADFE002EA8B5 /* BreathingInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */; };
 		EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */; };
+		ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBAE4A325500895005B427B /* DisclaimerView.swift */; };
 		ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusBreathingPage.swift; sourceTree = "<group>"; };
 		EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingInstruction.swift; sourceTree = "<group>"; };
 		EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPage.swift; sourceTree = "<group>"; };
+		ECBAE4A325500895005B427B /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNoCalendarTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +243,7 @@
 				68D1C6B825418FB800712DCC /* ExpressPageView.swift */,
 				68D1C6BA25418FB800712DCC /* HistoryPageView.swift */,
 				68D1C6B925418FB800712DCC /* AboutUsView.swift */,
+				ECBAE4A325500895005B427B /* DisclaimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
 				ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */,
 				68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */,
+				ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */,
 				68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */,
 				491953362546C9E40037B779 /* TextTemplate.swift in Sources */,
 				49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */,
