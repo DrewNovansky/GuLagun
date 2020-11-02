@@ -37,7 +37,7 @@ struct ExpressPage : View{
                         .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(2)
                 }
                 VStack{
-                    Text("Have you imagined about your day?\nWhat’s on your mind?")
+                    Text("Have you imagined about your day?\nWhat’s on your mind?").frame(width: 300, height: 50)
                         .font(.body)
                         .multilineTextAlignment(.center).foregroundColor(.accentColor)
                 }
@@ -46,7 +46,7 @@ struct ExpressPage : View{
             //buttons
             VStack{
                 //Express
-                NavigationLink(destination:  FocusBreathingPage()){//nanti ganti ke breathing ini buat testing dulu
+                NavigationLink(destination:  FocusBreathingPage()){
                     
                     ZStack {
                         Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)

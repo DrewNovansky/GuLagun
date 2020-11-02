@@ -15,11 +15,11 @@ struct AboutUsView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color("AccentColor")).padding().offset(y:-20)
             
-            Text("ForNow presents ForRest")
+            Text("Boo presents ForRest")
                 .font(.body)
                 .fontWeight(.bold)
                 .foregroundColor(Color("AccentColor"))
-                .multilineTextAlignment(.center).padding(10).offset(y:-20)
+                .multilineTextAlignment(.center).padding(5).offset(y:-20)
             
             Text("Our team consists of")
                 .font(.body)
@@ -34,7 +34,7 @@ struct AboutUsView: View {
                 Text("Steven Rafaelie")
                 Text("Vania Hefira")
             }.font(.body)
-            .foregroundColor(Color("AccentColor")).padding()
+            .foregroundColor(Color("AccentColor")).padding(5)
             
             Text("Special thanks to")
                 .font(.body)
@@ -47,7 +47,7 @@ struct AboutUsView: View {
                 Text("Phil Wira, B.Arch.")
                 Text("as our mentors")
             }.font(.body)
-            .foregroundColor(Color("AccentColor")).padding()
+            .foregroundColor(Color("AccentColor")).padding(5)
             
             VStack{
                 Text("Fiona Damanik, M.Psi.")   .font(.body)
@@ -61,10 +61,10 @@ struct AboutUsView: View {
                 Text("as our experts")   .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(Color("AccentColor"))
-            }.padding()
+            }.padding(5)
             
             
-            Image("AboutUsImg").resizable().aspectRatio(contentMode: .fit).offset(y: 0)
+            Image("AboutUsImg").resizable().aspectRatio(contentMode: .fit).offset(y: 50)
         }.offset(y: -30)
     }
 }

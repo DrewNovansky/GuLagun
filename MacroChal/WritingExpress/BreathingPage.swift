@@ -35,7 +35,8 @@ struct BreathingPage: View {
             }
             Spacer()
             ProgressView(value: buatProgress(atas: count, bawah: kondisi.count))
-                .padding()
+                .frame(width: 374)
+                .accentColor(Color(.systemBlue))
             if count < kondisi.count-1 {
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")

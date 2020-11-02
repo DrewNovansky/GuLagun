@@ -16,7 +16,7 @@ struct QuotesPage: View {
     
     var body: some View {
         
-        VStack{
+        VStack(){
             TitleTemp(title: "That’s a great \nexperience today!")
             SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling. You should embrace it as a part of your growth. Did you know that by accepting your feeling you are one step closer to love yourself more?")
             Image("Great!")
@@ -24,7 +24,8 @@ struct QuotesPage: View {
                 .frame(width: 286, height: 283, alignment: .center)
             SubtitleTemp(subtitle: "Let’s check out what you’ve written once more, shall we?")
             ProgressView(value: 1.0)
-                .padding()
+                .frame(width: 374)
+                .accentColor(Color(.systemBlue))
             NavigationLink(
                 destination: PreviewPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartState),
                 label: {

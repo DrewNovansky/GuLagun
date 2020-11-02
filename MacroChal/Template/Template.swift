@@ -78,7 +78,7 @@ struct reviewTemp: View {
                     .renderingMode(.none)
                     .font(.system(size: 62))
                     .padding()
-                SubtitleTemp(subtitle: "I’m not sure that it’s okay ")
+                SubtitleTemp(subtitle: "I’m not sure if that's okay ")
             }
             //hasil passing data
             
@@ -153,3 +153,4 @@ struct buttonTemplate: View{
         
     }
 }
+

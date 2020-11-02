@@ -17,15 +17,16 @@ struct WritingPage: View {
             TitleTemp(title: "Why did you feel that way?")
             CircleImage(imagename: emotionChoosen)
                 .frame(width: 68, height: 68)
-                .padding()
-            SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”").frame(width: 80)
+                //.padding()
+            SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”")
             }.onTapGesture(perform: {
                 UIApplication.shared.endEditing()
             })
             multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
             VStack{
             ProgressView(value: 0.6)
-                .padding()
+                .frame(width: 374)
+                .accentColor(Color(.systemBlue))
             NavigationLink(
                 destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story),
                 label: {

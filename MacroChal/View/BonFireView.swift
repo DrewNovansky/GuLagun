@@ -22,7 +22,7 @@ struct BonFireView: View {
                 }
             }
         }.onAppear{
-            //hasOnboarded = false //testing only
+//            hasOnboarded = false //testing only
             if !hasOnboarded{
                 showOnBoarding.toggle()
                 hasOnboarded = true
@@ -93,9 +93,18 @@ struct BonFire : View{
                             VStack{
                                 Spacer()
                                 Text("Express Yourself")
-                                    .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 50, y: -40)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.accentColor)
+                                    .multilineTextAlignment(.center)
+                                    .padding(2)
+                                    .offset(x: 50, y: -40)
                                 
-                                Text("Calm your heart with focus breathing and write daily nores").font(.body).foregroundColor(.accentColor).offset(x: 55, y: -45).frame(width:170)
+                                Text("Calm your heart with focus breathing and write daily notes")
+                                    .font(.body)
+                                    .foregroundColor(.accentColor)
+                                    .offset(x: 55, y: -45)
+                                    .frame(width:170)
                                 
                             }
                         }
@@ -105,18 +114,23 @@ struct BonFire : View{
                     ZStack {
                         Image("GrayEploreBtn")
                         
-                        VStack{
+                        VStack(spacing: 3){
                             Spacer()
-                            Text("Explore inner you")
-                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.center).padding(2).offset(x: 55, y: -15)
+                            Text("Explore Inner You")
+                                .font(.title3)
+                                .fontWeight(.semibold)
                             
-                            Text("Answer questions to know more about yourself").font(.body).foregroundColor(.accentColor).offset(x: 75, y: -20).frame(width:200)
-                        }
+                            Text("Answer questions to\nknow more about you")
+                                .font(.body)
+                        }.foregroundColor(.accentColor)
+                        .multilineTextAlignment(.leading)
+                        .padding(10)
+                        .offset(x: 55, y: -15)
                     }
                 }.offset(y: 20)
                 //Quick Help
                 HStack(spacing: 8){
-                    Text("If things get harder, we recommen you to get help through nearest psychologist")
+                    Text("If things get harder, we recommend you to get help through the nearest psychologist")
                         .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: 373, height: 81).padding(1)
                 }
             }

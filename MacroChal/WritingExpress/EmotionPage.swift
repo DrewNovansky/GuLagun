@@ -12,7 +12,7 @@ struct EmotionPage: View {
         VStack{
             TitleTemp(title: "How did you feel today?")
             SubtitleTemp(subtitle: "Choose which one is your most dominant\nfeeling today using this Feeling Wheel\ninspired from The Junto Wheel.")
-                .frame(width: 80)
+             
             ZStack{
                 Circle()
                     .frame(width: 286, height: 283)
@@ -66,8 +66,9 @@ struct EmotionPage: View {
                 }
             }
             ProgressView(value: 0.2)
-                .padding()
                 .offset(y: -20)
+                .frame(width: 374)
+                .accentColor(Color(.systemBlue))
         }.offset(y:-50)
     }
 }

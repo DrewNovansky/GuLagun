@@ -15,6 +15,7 @@ struct MacroChalApp: App {
         WindowGroup {
             BonFireView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+           
         }
     }
 }
