@@ -9,63 +9,29 @@ import SwiftUI
 
 struct AboutUsView: View {
     var body: some View {
-        VStack{
-            Text("About Us")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color("AccentColor")).padding().offset(y:-20)
+        VStack {
             
-            Text("Boo presents ForRest")
-                .font(.body)
-                .fontWeight(.bold)
-                .foregroundColor(Color("AccentColor"))
-                .multilineTextAlignment(.center).padding(5).offset(y:-20)
-            
-            Text("Our team consists of")
-                .font(.body)
-                .fontWeight(.bold)
-                .foregroundColor(Color("AccentColor"))
-                .multilineTextAlignment(.center).padding(5)
-            
-            VStack{
-                Text("Andrew Novansky")
-                Text("Jenifer Yolanda")
-                Text("Olivia Krisdy")
-                Text("Steven Rafaelie")
-                Text("Vania Hefira")
-            }.font(.body)
-            .foregroundColor(Color("AccentColor")).padding(5)
-            
-            Text("Special thanks to")
-                .font(.body)
-                .fontWeight(.bold)
-                .foregroundColor(Color("AccentColor"))
-                .multilineTextAlignment(.center).padding(5)
-            
-            VStack{
-                Text("David Gunawan, S.Kom.")
-                Text("Phil Wira, B.Arch.")
-                Text("as our mentors")
-            }.font(.body)
-            .foregroundColor(Color("AccentColor")).padding(5)
-            
-            VStack{
-                Text("Fiona Damanik, M.Psi.")   .font(.body)
-                    .foregroundColor(Color("AccentColor"))
-                Text("Marcell Valentino, S.Pd.")   .font(.body)
-                    .foregroundColor(Color("AccentColor"))
-                Text("Tumbur Silalahi, S.Psi.")   .font(.body)
-                    .foregroundColor(Color("AccentColor"))
-                Text("Annisa Dwi Rachmawati, M.Psi.")   .font(.body)
-                    .foregroundColor(Color("AccentColor"))
-                Text("as our experts")   .font(.body)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color("AccentColor"))
-            }.padding(5)
-            
+            VStack(alignment: .center){
+                Text("About Us\n")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text("Boo presents ForRest \n\n Our team consists of\n")
+                    .font(.body)
+                    .fontWeight(.bold)
+                
+                
+                Text("Andrew Novansky \nJenifer Yolanda\nOlivia Krisdy \nSteven Rafaelie \nVania Hefira\n").font(.body)
+                
+                Text("Special thanks to\n")
+                    .font(.body)
+                    .fontWeight(.bold)
+                
+                Text("David Gunawan, S.Kom. \nPhil Wira, B.Arch. \nas our mentors\n\nFiona Damanik, M.Psi. \nMarcell Valentino, S.Pd. \nTumbur Silalahi, S.Psi. \nAnnisa Dwi Rachmawati, M.Psi. \nas our experts").font(.body)
+            }.multilineTextAlignment(.center).foregroundColor(.accentColor)
             
             Image("AboutUsImg").resizable().aspectRatio(contentMode: .fit).offset(y: 50)
-        }.offset(y: -30)
+        }.offset(y:-50)
     }
 }
 
