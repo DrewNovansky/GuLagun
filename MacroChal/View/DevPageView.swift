@@ -21,7 +21,8 @@ struct DevPageView: View {
                 Text("note").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.accentColor)
                 
                 Text(" We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
-                    .font(.body).multilineTextAlignment(.center).padding(10).foregroundColor(.accentColor)
+                    .font(.body).multilineTextAlignment(.center).padding().foregroundColor(.accentColor)
+                
                 NavigationLink(
                     destination: DisclaimerView(),
                     label: {
@@ -29,16 +30,7 @@ struct DevPageView: View {
                             .font(.body)
                             .foregroundColor(.blue)
                             .frame(width: 374, height: 35)
-                            .padding(0)
-                            .offset(y: 20)
                     })
-                
-                //            Button(action: {}){
-                //                HStack(spacing: 8){
-                //                    Text("Term of Use")
-                //                        .font(.body).foregroundColor(.blue).frame(width: 374, height: 48).padding(0).offset(y: 30)
-                //                }
-                //            }
                 
                 Button(action: {bonFire.toggle()}){
                     VStack{
