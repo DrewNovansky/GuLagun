@@ -56,7 +56,7 @@ struct HistoryNoCalendarTest: View {
                                 }
                             }.padding()
                         }
-                    }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).padding(0).background(Color("WriteColor")).cornerRadius(20)
+                    }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).background(Color("WriteColor")).cornerRadius(20)
                     .onTapGesture(perform: {
                         self.emotionChoosen = timestamp.emotionChoosen ?? ""
                         self.emotionDetails = timestamp.emotionDetail ?? ""
