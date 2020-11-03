@@ -32,6 +32,7 @@ struct BreathingPage: View {
                         detikOutput += 1
                     } else {
                         detikOutput = 1
+                        getar(mode: "sukses")
                     }
                 } else {
                     detikOutput = 0
@@ -88,6 +89,17 @@ struct BreathingPage: View {
             }
             TitleOutput.append("Great Job!")
             return TitleOutput
+        }
+    }
+    func getar(mode: String) {
+        switch mode {
+            case "sukses":
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+        default:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            
         }
     }
 }
