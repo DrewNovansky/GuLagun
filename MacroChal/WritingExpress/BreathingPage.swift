@@ -10,8 +10,7 @@ import SwiftUI
 struct BreathingPage: View {
     var timerDetik = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
-   @State var counter = "4"
-    @State var detikOutput = 4
+    @State var detikOutput = 1
     
     @State var count: Int = 0
     var pengulangan = 4
@@ -21,30 +20,27 @@ struct BreathingPage: View {
             TitleTemp(title: penggandaInstruksi(jumlah: pengulangan, output: "title")[count])
             SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
                 .onReceive(timer) {input in
-                    if count <  penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
+                    if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
                         self.count += 1
                     } else {
                         self.timer.upstream.connect().cancel()
                     }
                 }
-            TitleTemp(title: "\(counter)").onReceive(timerDetik, perform: { _ in
+            SubtitleTemp(subtitle: "\(detikOutput)").onReceive(timerDetik, perform: { _ in
                 if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
-                    if detikOutput >  1 {
-                        detikOutput -= 1
-                        counter = "\(detikOutput)"
+                    if detikOutput <  4 {
+                        detikOutput += 1
                     } else {
-                        detikOutput = 4
-                        counter = "\(detikOutput)"
+                        detikOutput = 1
                     }
-                } else{
-                    counter = ""
+                } else {
+                    detikOutput = 0
                     self.timerDetik.upstream.connect().cancel()
                 }
-                
             }
             )
             Spacer()
-            if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count-1 {
+            if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                 FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
                     .frame(width: 300, height: 325, alignment: .center)
             } else {
@@ -78,23 +74,22 @@ struct BreathingPage: View {
         let subtitleInput =  ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds"]
         let titleInput = ["Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath"]
         if output == "subtitle" {
-            while berapa <= jumlah {
+            while berapa < jumlah {
                 SubtitleOutput.append(contentsOf: subtitleInput)
                 berapa += 1
-                SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
-                return SubtitleOutput
             }
+            SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
+            return SubtitleOutput
         } else {
-            while berapa <= jumlah {
+            while berapa < jumlah {
                 TitleOutput.append(contentsOf: titleInput)
                 berapa += 1
-                TitleOutput.append("Great Job!")
-                return TitleOutput
+                
             }
+            TitleOutput.append("Great Job!")
+            return TitleOutput
         }
-        return [String]()
     }
-    
 }
 
 struct BreathingPage_Previews: PreviewProvider {
