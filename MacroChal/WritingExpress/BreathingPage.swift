@@ -79,18 +79,22 @@ struct BreathingPage: View {
         let subtitleInput =  ["Inhale for 4 Seconds", "Hold for 4 Seconds", "Exhale for 4 Seconds","Hold for 4 Seconds"]
         let titleInput = ["Take a deep breath","Keep your breath","Release breath slowly", "Keep your breath"]
         if output == "subtitle" {
+            SubtitleOutput.append("")
             while berapa < jumlah {
                 SubtitleOutput.append(contentsOf: subtitleInput)
                 berapa += 1
+                print(SubtitleOutput)
             }
+            SubtitleOutput.removeLast()
             SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
             return SubtitleOutput
         } else {
+            SubtitleOutput.append("")
             while berapa < jumlah {
                 TitleOutput.append(contentsOf: titleInput)
                 berapa += 1
-                
             }
+            SubtitleOutput.removeLast()
             TitleOutput.append("Great Job!")
             return TitleOutput
         }
