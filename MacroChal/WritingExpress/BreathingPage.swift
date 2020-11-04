@@ -54,6 +54,7 @@ struct BreathingPage: View {
             Spacer()
             ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
                 .padding()
+                .accentColor(Color(.systemBlue))
             if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")
@@ -89,12 +90,12 @@ struct BreathingPage: View {
             SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
             return SubtitleOutput
         } else {
-            SubtitleOutput.append("")
+            TitleOutput.append("")
             while berapa < jumlah {
                 TitleOutput.append(contentsOf: titleInput)
                 berapa += 1
             }
-            SubtitleOutput.removeLast()
+            TitleOutput.removeLast()
             TitleOutput.append("Great Job!")
             return TitleOutput
         }

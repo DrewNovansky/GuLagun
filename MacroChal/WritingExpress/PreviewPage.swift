@@ -73,8 +73,6 @@ struct WayToGoPage: View{
                 .labelsHidden()
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
-                .padding()
-            Text("\(selectedDate.advanced(by: 86400))").hidden()
             
             var components =
                 Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
@@ -118,7 +116,6 @@ struct WayToGoPage: View{
         }
     }
 }
-
 
 struct GoodJobPage: View {
     var body: some View{
