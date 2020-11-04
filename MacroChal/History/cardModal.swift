@@ -34,7 +34,7 @@ struct cardModal: View {
                 }
             }).padding(5)
             Spacer()
-        }.offset(y: -50)
+        }.offset(y: -UIScreen.main.bounds.height/11)
     }
 }
 
@@ -55,7 +55,7 @@ struct SlideOverCard<Content: View> : View {
             .background(Color.white)
             .cornerRadius(20.0)
             .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.13), radius: 10.0)
-            .offset(y: self.position.rawValue + 400)
+            .offset(y: UIScreen.main.bounds.height/3)
     }
 }
 

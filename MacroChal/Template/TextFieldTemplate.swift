@@ -56,11 +56,13 @@ struct MultiLineTextField : UIViewRepresentable {
         }
         func textViewDidBeginEditing(_ textView: UITextView) {
             textView.text = placeholder
+            placeholder = textView.text
             story.wrappedValue = textView.text
             textView.textColor = UIColor(Color("FontColor"))
         }
         internal func textViewDidChange(_ textView: UITextView) {
             story.wrappedValue = textView.text
+            placeholder = textView.text
         }
     }
 }

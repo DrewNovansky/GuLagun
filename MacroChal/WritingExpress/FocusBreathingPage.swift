@@ -20,7 +20,7 @@ struct FocusBreathingPage: View {
                 BreathingInstruction(imageName: "FC_4", instruction: "Hold for 4 seconds")
             }
             Spacer()
-            SubtitleTemp(subtitle: "1 session consist of 4 breaths 01:04 Min")
+            SubtitleTemp(subtitle: "1 session consist of 4 breaths 01:00 Min")
                 .padding()
             NavigationLink(destination: BreathingPage()) {
                 buttonStyleTemplate(text: "Begin Breathing")

@@ -66,11 +66,11 @@ var LoveList = [
 ]
 
 struct Emotion2Page: View {
-    var emotionChoosen = "Surprise"
-    @State var emotionDetails:String = ""
+    var emotionChoosen = "Joy"
+    @State var emotionDetails:String = "test"
     @State var ButtonActive = false
     @State var ShowDetails = false
-    
+    @State var activeIdx:Int = 0
     
     
     var body: some View {
@@ -83,40 +83,41 @@ struct Emotion2Page: View {
                 VStack(spacing: 24)
                 {
                     if emotionChoosen == "Joy"{
-                        ForEach(0 ..< 8) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails, emotion: JoyList[item].emotionEmoji, emotionDetails: JoyList[item].emotionDetails)
+                        ForEach(0 ..< JoyList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx, selectedEmotion: $emotionDetails, idx: item, emotion: JoyList[item].emotionEmoji, emotionDetails: JoyList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Surprise"{
-                        ForEach(0 ..< 5) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails, emotion: SurpriseList[item].emotionEmoji, emotionDetails: SurpriseList[item].emotionDetails)
+                        ForEach(0 ..< SurpriseList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SurpriseList[item].emotionEmoji, emotionDetails: SurpriseList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Sad"{
                         
-                        ForEach(0 ..< 6) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails, emotion: SadList[item].emotionEmoji, emotionDetails: SadList[item].emotionDetails)
+                        ForEach(0 ..< SadList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SadList[item].emotionEmoji, emotionDetails: SadList[item].emotionDetails)
                         }
+                        
                     }
                     
                     if emotionChoosen == "Anger"{
                         
-                        ForEach(0 ..< 5) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails,emotion: AngerList[item].emotionEmoji, emotionDetails: AngerList[item].emotionDetails)
+                        ForEach(0 ..< AngerList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: AngerList[item].emotionEmoji, emotionDetails: AngerList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Fear"{
-                        ForEach(0 ..< 5) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails,emotion: FearList[item].emotionEmoji, emotionDetails: FearList[item].emotionDetails)
+                        ForEach(0 ..< FearList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: FearList[item].emotionEmoji, emotionDetails: FearList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Love"{
-                        ForEach(0 ..< 5) { item in
-                            buttonEmotion(selectedEmotion: $emotionDetails,emotion: LoveList[item].emotionEmoji, emotionDetails: LoveList[item].emotionDetails)
+                        ForEach(0 ..< LoveList.count) { item in
+                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: LoveList[item].emotionEmoji, emotionDetails: LoveList[item].emotionDetails)
                         }
                     }
                 }

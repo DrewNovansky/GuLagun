@@ -110,26 +110,34 @@ struct Template_Previews: PreviewProvider {
 struct buttonEmotion: View {
     @State private var showDetails = false
     @State private var FuncActive = false
+    @Binding var activeDetail: Int
     @Binding var selectedEmotion: String
+    let idx: Int
     var emotion = "Error"
     var emotionDetails = "Feeling intense excitement and happiness"
     var body: some View {
         Button(action: {
             self.FuncActive.toggle()
-            self.showDetails.toggle()
-            if showDetails == true{
-                selectedEmotion = emotion
-            }
+            self.activeDetail = idx
+            self.selectedEmotion = emotion
         }, label: {
-            buttonTemplate(funcActive: FuncActive, emotion: emotion)
+            buttonTemplate(funcActive: activeDetail == idx, emotion: emotion)
         })
-        if showDetails {
+        showDetail(show: activeDetail == idx, emotionDetails: emotionDetails)
+    }
+}
+struct showDetail: View{
+    let show: Bool
+    var emotionDetails:String
+        var body: some View {
+            if show{
             Text(emotionDetails)
                 .font(.caption)
                 .foregroundColor(.black)
         }
-    }
+        }
 }
+
 
 struct buttonTemplate: View{
     var funcActive = false

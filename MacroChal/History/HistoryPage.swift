@@ -29,12 +29,10 @@ struct HistoryPage: View {
         ZStack{
             ScrollView{
                 VStack{
-                    //                ScrollView{
                     TitleTemp(title: "\(tanggal)")
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
 //                    SubtitleTemp(subtitle: "Note to self:")
-//
 //                    ForEach(0 ..< commentList.count) { item in
 //                        ScrollView{
 //                            SubtitleTemp(subtitle: commentList[item].Date)
@@ -59,30 +57,37 @@ struct HistoryPage: View {
 //                            }
 //                            commentField.toggle()
 //                            buttonComment.toggle()
-//
 //                        }
-//
 //                    }, label: {
 //                        if buttonComment{
 //                            buttonStyleTemplate(text: "add comment")
 //                        } else if buttonComment == false{
 //                            buttonStyleTemplate(text: "save comment")
 //                        }
-//
 //                    })
-                }
-            }
+//                }
+//            }
 //            if halfModal {
 //                VStack{
+//                    var i = 0
 //                    SlideOverCard { cardModal(heartState: heartOn) }
+//
 //                    Button(action:{
 //                        halfModal.toggle()
+//                        commentList.append(comment(id: commentList.count+1, Date: "Date", comment: commentText))
+//                        while i<commentList.count{
+//                            print(commentList[i])
+//                            i+=1
+//                        }
 //                    },label: {
 //                        buttonStyleTemplate(text: "Save")
-//                    }).offset(y: -70)
+//                    }).offset(y: -UIScreen.main.bounds.height/10)
+//
 //                }
 //            }
         }
+    }
+}
     }
 }
 
