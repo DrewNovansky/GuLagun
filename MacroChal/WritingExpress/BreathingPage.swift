@@ -10,9 +10,9 @@ import SwiftUI
 struct BreathingPage: View {
     var timerDetik = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
-    @State var detikOutput = 1
-    
-    @State var count: Int = 0
+    @State var detikOutput = 4
+    @State var countDown:String = "4"
+    @State var count: Int = 1
     var pengulangan = 4
     
     var body: some View {
@@ -24,18 +24,22 @@ struct BreathingPage: View {
                         self.count += 1
                     } else {
                         self.timer.upstream.connect().cancel()
+                        
                     }
                 }
-            SubtitleTemp(subtitle: "\(detikOutput)").onReceive(timerDetik, perform: { _ in
+            TitleTemp(title: "\(countDown)").onReceive(timerDetik, perform: { _ in
                 if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
-                    if detikOutput <  4 {
-                        detikOutput += 1
+                    if detikOutput >  1 {
+                        detikOutput -= 1
+                        self.countDown = "\(detikOutput)"
                     } else {
-                        detikOutput = 1
+                        detikOutput = 4
+                        self.countDown = "\(detikOutput)"
                         getar(mode: "sukses")
                     }
                 } else {
                     detikOutput = 0
+                    self.countDown = ""
                     self.timerDetik.upstream.connect().cancel()
                 }
             }

@@ -57,6 +57,7 @@ struct PreviewPage: View {
 
 struct WayToGoPage: View{
     @State var selectedDate = Date()
+    @State var showView = false
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
@@ -72,15 +73,52 @@ struct WayToGoPage: View{
                 .labelsHidden()
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
+                .padding()
             Text("\(selectedDate.advanced(by: 86400))").hidden()
-            NavigationLink(
-                destination: GoodJobPage(),
-                label: {
-                    buttonStyleTemplate(text: "Next")
-                })
-        }.offset(y:-50)
+            
+            var components =
+                Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
+            
+            NavigationLink(destination: GoodJobPage(), isActive: $showView) {
+                Button(
+                    //destination: WayToGoPage(),
+                    action: {
+                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  {
+                            success, error in
+                            if success {
+                                print("authorization granted")
+                            } else if error != nil {
+                                print("Error found")
+                            }
+                            
+                            
+                        }
+                        let content = UNMutableNotificationContent()
+                        content.title = "Are you ready to go to the ForRest?"
+                        content.body = "How's your day so far? Let's express together with Boo."
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+                        
+                        let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
+                        
+                        UNUserNotificationCenter.current().add(request)
+                        self.showView = true
+                        let center = UNUserNotificationCenter.current()
+                        center.getPendingNotificationRequests(completionHandler: { requests in
+                            for request in requests {
+                                print(request)
+                            }
+                        })
+                    },
+                    label: {
+                        buttonStyleTemplate(text: "Next")
+                    })
+            }.offset(y:-50)
+        }
     }
 }
+
 
 struct GoodJobPage: View {
     var body: some View{

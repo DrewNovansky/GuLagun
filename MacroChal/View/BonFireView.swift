@@ -114,7 +114,7 @@ struct BonFire : View{
                     ZStack {
                         Image("GrayEploreBtn")
                         
-                        VStack(spacing: 3){
+                        VStack(alignment: .trailing, spacing: 5){
                             Spacer()
                             Text("Explore Inner You")
                                 .font(.title3)
