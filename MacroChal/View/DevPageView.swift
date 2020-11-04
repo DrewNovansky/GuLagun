@@ -13,15 +13,17 @@ struct DevPageView: View {
     
     var body: some View {
         NavigationView{
-            VStack(){
-                Image("DevNote").resizable().aspectRatio(contentMode: .fit).frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
-                
-                Text("Developers").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.accentColor)
-                
-                Text("note").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.accentColor)
+            VStack(alignment: .center, spacing: 20){
+                Image("DevNote")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 350)
+                Text("Developers \n notes").font(.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold).multilineTextAlignment(.center).foregroundColor(.accentColor)
                 
                 Text(" We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
-                    .font(.body).multilineTextAlignment(.center).padding().foregroundColor(.accentColor)
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.accentColor)
                 
                 NavigationLink(
                     destination: DisclaimerView(),
@@ -31,29 +33,22 @@ struct DevPageView: View {
                             .foregroundColor(.blue)
                             .frame(width: 374, height: 35)
                     })
-                
-                Button(action: {bonFire.toggle()}){
-                    VStack{
-                        Spacer()
-                        HStack(spacing: 8){
-                            
-                            Text("Start")
-                                .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
-                        }
-                    }
-                }.fullScreenCover(isPresented: $bonFire) {
-                    
-                    BonFireView()
-                }
-                
-            }.padding()
-        }
-    }
-    
-    struct DevPageView_Previews: PreviewProvider {
-        static var previews: some View {
-            DevPageView()
+                NavigationLink(
+                    destination: BonFireView(),
+                    label: {
+                        Text("Start")
+                            .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
+                    })
+                Spacer()
+            }
         }
     }
 }
+
+struct DevPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        DevPageView()
+    }
+}
+
 
