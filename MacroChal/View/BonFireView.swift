@@ -88,27 +88,25 @@ struct BonFire : View{
                 VStack{
                     //Express
                     NavigationLink(destination: ExpressPageView()){
-                        ZStack {
-                            Image("ExpressBtn")
-                            VStack{
-                                Spacer()
-                                Text("Express Yourself")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.accentColor)
-                                    .multilineTextAlignment(.center)
-                                    .padding(2)
-                                    .offset(x: 50, y: -40)
-                                
-                                Text("Calm your heart with focus breathing and write daily notes")
-                                    .font(.body)
-                                    .foregroundColor(.accentColor)
-                                    .offset(x: 55, y: -45)
-                                    .frame(width:170)
-                                
-                            }
-                        }
-                    }.padding(5)
+                        HStack {
+                                Image("ExpressBtnImg")
+                                    .resizable().frame(width: UIScreen.main.bounds.width * 0.27 , height:UIScreen.main.bounds.width * 0.25 ).padding()
+                                  
+                                VStack(spacing: 3){
+                                    HStack{
+                                        Text("Express Yourself")
+                                            .font(.title3)
+                                            .fontWeight(.semibold)
+                                    }
+                                    HStack{
+                                        Text("Calm your heart with\nfocus breathing and\nwrite daily notes")
+                                            .font(.body)
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                }.foregroundColor(.accentColor).padding()
+
+                        }.frame(width: UIScreen.main.bounds.width * 0.9).background(Color("ActiveButtonColor")).cornerRadius(20).padding(3)
+                    }
                     //Explore
                     //NavigationLink(destination: ){//explorepage
                     ZStack {
