@@ -11,6 +11,8 @@ struct WritingPage: View {
     var emotionChoosen = "Love"
     var emotionDetails = "Grateful"
     @State var story = ""
+    @State var showView = false
+    @State var showAlert = false
     var body: some View {
         ScrollView{
             VStack{
@@ -35,12 +37,21 @@ struct WritingPage: View {
                     .onTapGesture(perform: {
                         hideKeyboard()
                     })
-                NavigationLink(
-                    destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story),
-                    label: {
-                        buttonStyleTemplate(text: "Next")
-                    }).padding(20)
                 
+                NavigationLink(destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story), isActive: $showView){
+                    Button(action: {
+                        if story == ""{
+                            self.showAlert = true
+                        }else if story == "I feel \(emotionDetails) because"{
+                            self.showAlert = true
+                        }else{
+                            showView = true
+                        }
+                    }, label: {buttonStyleTemplate(text: "Next")})
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Sorry"), message: Text("We see that you haven't type your story"), dismissButton: .cancel(Text("Dismiss")))
+                }
             }.offset(y:-50)
         }
     }
