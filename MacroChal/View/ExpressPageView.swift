@@ -26,22 +26,21 @@ struct ExpressPage : View{
             
             VStack() {
                 
-                Image("ExpressPageImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 252, height: 165, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(3)//.offset(y:30)
+                Image("ExpressPageImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width * 0.6 , height:UIScreen.main.bounds.width * 0.5)
             }
             //text
             VStack{
-                HStack{
                     Text("Express")
                         .font(.title)
                         .fontWeight(.semibold)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(2)
-                }
-                VStack{
-                    Text("Have you imagined about your day?\nWhat’s on your mind?").frame(width: 300, height: 50)
+                        .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(3)
+               
+                    Text("Have you imagined about your day?\nWhat’s on your mind?")
                         .font(.body)
                         .multilineTextAlignment(.center).foregroundColor(.accentColor)
-                }
-            }.padding(3)
+               
+            }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.25)
             
             //buttons
             VStack{
@@ -49,34 +48,49 @@ struct ExpressPage : View{
                 NavigationLink(destination:  FocusBreathingPage()){
                     
                     ZStack {
-                        Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)
-                        VStack{
-                            Spacer()
-                            Text("Begin Writing")
-                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.leading).padding(2).offset(x: 50, y: -50)
-                            
-                            Text("Start focus breathing & write your emotion in 7 minutes").font(.body).foregroundColor(.accentColor).offset(x: 70, y: -50).frame(width:170)
-                            
-                        }
-                    }.frame(width: 374, height: 198).padding(5).background(Color("WriteColor")).cornerRadius(20)
-                }.padding()
+                        Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                        
+                        VStack(spacing: 3){
+                            HStack(spacing:100) {
+                                Text("")
+                                Text("Begin Writing")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                            }
+                            HStack(spacing:140) {
+                                Text("")
+                                Text("Start focus breathing\n& write your emotion\nin 7 minutes")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }.foregroundColor(.accentColor).padding()
+
+                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("WriteColor")).cornerRadius(20).padding(5)
+                }
                 
                 //Explore
                 NavigationLink(destination: HistoryNoCalendarTest()){
                     ZStack {
-                        Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 350, alignment:.leading)
-                        VStack{
-                            Spacer()
-                            Text("Open Previous Writing")
-                                .font(.title3).fontWeight(.semibold).foregroundColor(.accentColor).multilineTextAlignment(.leading).padding(1).offset(x: 53, y: -50)
-                            
-                            Text("Look back with a different perspective").font(.body).foregroundColor(.accentColor).offset(x: 65, y: -50).frame(width: 170)
-                            
-                        }
-                    }.frame(width: 374, height: 198).padding(5).background(Color("GreenButton")).cornerRadius(20)
+                        Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                        
+                        VStack(spacing: 3){
+                            HStack(spacing:110) {
+                                Text("")
+                                Text("Open Previous Writing")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                            }
+                            HStack(spacing:140) {
+                                Text("")
+                                Text("Look back with a\ndifferent perspective")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }.foregroundColor(.accentColor).padding()
+                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("GreenButton")).cornerRadius(20)
                 }
-            }
-        }.offset(y: -30)
+            }.padding(1)
+        }
     }
 }
 

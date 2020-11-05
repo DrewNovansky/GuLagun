@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "FireBG.png",
+      "filename" : "GrayExploreBtnImg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "FireBG@2x.png",
+      "filename" : "GrayExploreBtnImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "FireBG@3x.png",
+      "filename" : "GrayExploreBtnImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

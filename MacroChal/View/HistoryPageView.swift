@@ -17,7 +17,7 @@ struct HistoryPageView: View {
                 .foregroundColor(Color("AccentColor")).padding()
             
             CalendarDetails()
-        }.offset(y: -50)
+        }
     }
     
 }
