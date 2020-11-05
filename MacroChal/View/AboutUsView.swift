@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AboutUsView: View {
     var body: some View {
+        ScrollView(showsIndicators: false){
+            
         VStack {
             
             VStack(alignment: .center){
@@ -30,8 +32,9 @@ struct AboutUsView: View {
                 Text("David Gunawan, S.Kom. \nPhil Wira, B.Arch. \nas our mentors\n\nFiona Damanik, M.Psi. \nMarcell Valentino, S.Pd. \nTumbur Silalahi, S.Psi. \nAnnisa Dwi Rachmawati, M.Psi. \nas our experts").font(.body)
             }.multilineTextAlignment(.center).foregroundColor(.accentColor)
             
-            Image("AboutUsImg").resizable().aspectRatio(contentMode: .fit).offset(y: 50)
-        }.offset(y:-50)
+            Image("AboutUsImg").resizable().aspectRatio(contentMode: .fit)
+        }
+    }
     }
 }
 

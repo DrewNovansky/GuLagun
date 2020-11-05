@@ -32,7 +32,7 @@ struct OnboardingPageView: View {
                 
                 DevPageView()
             }
-        }.offset(y:-20)
+        }
         
     }
     

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "abu abu home.png",
+      "filename" : "GrayExploreBtnImg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "GrayExploreBtnImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "GrayExploreBtnImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
