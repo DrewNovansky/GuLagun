@@ -47,13 +47,17 @@ struct BonFire : View{
                     NavigationLink(
                         destination: AboutUsView(),
                         isActive: $isTopNavigationActive,
-                        label: {Text("").navigationBarItems(trailing:
-                                                                HStack{
-                                                                    Image("BooBtn").resizable().onTapGesture(count: 1, perform: {
-                                                                        isTopNavigationActive = true
-                                                                    }).frame(width: 45, height: 45)
-                                                                }
-                        )}
+                        label: {Text("")
+                            .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Image("BooBtn")
+                                                            .resizable()
+                                                            .onTapGesture(count: 1, perform: {
+                                                                isTopNavigationActive = true
+                                                            })
+                                                            .frame(width: 45, height: 45)
+                                                    }
+                            )}
                     )
                     //image fire
                     FireAnimation(imageName: "kayuBakar", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.176)*5),height: Int((UIScreen.main.bounds.width*0.149)*5))
