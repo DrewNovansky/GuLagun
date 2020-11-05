@@ -25,8 +25,7 @@ struct FocusBreathingPage: View {
             NavigationLink(destination: BreathingPage()) {
                 buttonStyleTemplate(text: "Begin Breathing")
             }.padding()
-            
-        }.offset(y:-50)
+        }
     }
 }
 
