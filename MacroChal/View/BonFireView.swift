@@ -41,46 +41,34 @@ struct BonFire : View{
     
     var body: some View{
         NavigationView{
-            VStack{
-                //image boo
-                NavigationLink(
-                    destination: AboutUsView(),
-                    isActive: $isTopNavigationActive,
-                    label: {}
-                )
-                
-                Text("").navigationBarItems(trailing:
-                                                HStack{
-                                                    Image("BooBtn").resizable().onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                                                        isTopNavigationActive = true
-                                                    }).frame(width: 45, height: 45)
-                                                }
-                )
-                
-                //image fire
+            ScrollView{
                 VStack{
-                    VStack{
-                        FireAnimation(imageName: "kayuBakar", x: 20, y: -75, width: Int(UIScreen.main.bounds.width * 0.9), height: Int(UIScreen.main.bounds.width * 0.8))
-                    }
+                    //image boo
+                    NavigationLink(
+                        destination: AboutUsView(),
+                        isActive: $isTopNavigationActive,
+                        label: {Text("").navigationBarItems(trailing:
+                                                                HStack{
+                                                                    Image("BooBtn").resizable().onTapGesture(count: 1, perform: {
+                                                                        isTopNavigationActive = true
+                                                                    }).frame(width: 45, height: 45)
+                                                                }
+                        )}
+                    )
+                    //image fire
+                    FireAnimation(imageName: "kayuBakar", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.176)*5),height: Int((UIScreen.main.bounds.width*0.149)*5))
+                        .frame(height: (UIScreen.main.bounds.width*0.149)*3.4)
+                        .offset(y: -UIScreen.main.bounds.height/15)
                     //text
-                    VStack{
-                        HStack{
-                            Text("Welcome!")
-                                .font(.title).fontWeight(.semibold)
-                                .multilineTextAlignment(.center
-                                ).foregroundColor(.accentColor)
-                            
-                        }.padding(3)
-                        HStack{
-                            Text("Please make yourself comfortable")
-                                .font(.body)
-                                .multilineTextAlignment(.center).foregroundColor(.accentColor)
-                            
-                        }
-                    }.padding(5)
-                }
-                //buttons
-                VStack{
+                    Text("Welcome!")
+                        .font(.title).fontWeight(.semibold)
+                        .multilineTextAlignment(.center
+                        ).foregroundColor(.accentColor)
+                        .padding(3)
+                    Text("Please make yourself comfortable")
+                        .font(.body)
+                        .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                    //buttons
                     //Express
                     NavigationLink(destination: ExpressPageView()){
                         HStack {
@@ -88,42 +76,29 @@ struct BonFire : View{
                                 .resizable().frame(width: UIScreen.main.bounds.width * 0.27 , height:UIScreen.main.bounds.width * 0.25 ).padding()
                             
                             VStack(spacing: 3){
-                                HStack{
-                                    Text("Express Yourself")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                }
-                                HStack{
-                                    Text("Calm your heart with\nfocus breathing and\nwrite daily notes")
-                                        .font(.body)
-                                        .multilineTextAlignment(.leading)
-                                }
+                                Text("Express Yourself")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                Text("Calm your heart with\nfocus breathing and\nwrite daily notes")
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
                             }.foregroundColor(.accentColor).padding()
-                            
                         }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.4).background(Color("ActiveButtonColor")).cornerRadius(20).padding(3)
                     }
                     //Explore
                     //NavigationLink(destination: ){//explorepage
                     HStack {
-                        Image("GrayExploreBtnImg").resizable().frame(width: UIScreen.main.bounds.width * 0.28 , height:UIScreen.main.bounds.width * 0.19 ).padding()
-                        
+                        Image("GrayExploreBtnImg").resizable().frame(width: UIScreen.main.bounds.width * 0.28 , height:UIScreen.main.bounds.width * 0.12 ).padding()
                         VStack(spacing: 3){
-                            HStack {
-                                Text("Explore Inner You")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                            }
-                            HStack {
-                                Text("Answer questions to\nknow more about you")
-                                    .font(.body)
-                                    .multilineTextAlignment(.leading)
-                            }
+                            Text("Explore Inner You")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text("Answer questions to\nknow more about you")
+                                .font(.body)
+                                .multilineTextAlignment(.leading)
                         }.foregroundColor(.accentColor).padding()
-                        
                     }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.3).background(Color("GrayBtn")).cornerRadius(20).padding(3)
-                }
-                //Quick Help
-                HStack{
+                    //Quick Help
                     Text("If things get harder, we recommend you to get help through the nearest psychologist")
                         .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: UIScreen.main.bounds.width * 0.9).padding(5)
                 }
