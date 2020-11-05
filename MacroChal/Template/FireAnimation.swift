@@ -35,13 +35,13 @@ struct FireAnimation: UIViewRepresentable {
         default:
             animatedImage = UIImage.animatedImage(with: apiBesar, duration: 0.5)
         }
-        let someView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        let someView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         let someImage = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
         someImage.clipsToBounds = true
         someImage.autoresizesSubviews = true
-        someImage.contentMode = UIView.ContentMode.scaleAspectFill
+        someImage.contentMode = UIView.ContentMode.scaleAspectFit
         someImage.image = animatedImage
-        //someView.backgroundColor = .blue
+        someView.backgroundColor = .clear
         someView.addSubview(someImage)
         return someView
     }
@@ -74,8 +74,8 @@ struct FireAnimation: UIViewRepresentable {
 
 struct WorkoutView: PreviewProvider {
     static var previews: some View {
-        VStack (alignment: HorizontalAlignment.center, spacing: 10) {
-            FireAnimation(imageName: "apiSemua", x: 20, y: 100, width: 360, height: 400)
+        VStack {
+            FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 200, height: 200)
         }
     }
 }
