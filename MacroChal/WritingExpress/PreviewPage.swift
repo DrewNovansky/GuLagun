@@ -74,7 +74,7 @@ struct WayToGoPage: View{
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
             
-            var components =
+            let components =
                 Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
             
             NavigationLink(destination: GoodJobPage(), isActive: $showView) {
