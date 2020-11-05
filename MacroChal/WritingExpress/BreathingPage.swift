@@ -89,6 +89,7 @@ struct BreathingPage: View {
             SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")
             return SubtitleOutput
         } else {
+            TitleOutput.append("")
             SubtitleOutput.append("")
             while berapa < jumlah {
                 TitleOutput.append(contentsOf: titleInput)
