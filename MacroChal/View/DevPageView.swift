@@ -12,7 +12,7 @@ struct DevPageView: View {
     @State var bonFire = false
     
     var body: some View {
-        NavigationView{
+      
             VStack(alignment: .center, spacing: 20){
                 Image("DevNote")
                     .resizable()
@@ -20,7 +20,7 @@ struct DevPageView: View {
                     .frame(width: 350)
                 Text("Developers \n notes").font(.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold).multilineTextAlignment(.center).foregroundColor(.accentColor)
                 
-                Text(" We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
+                Text("We care about your privacy and safety.\nWe never collect any text you enter.\nYour text is stored securely in your personal iCloud, not with us.")
                     .font(.body)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.accentColor)
@@ -28,7 +28,7 @@ struct DevPageView: View {
                 NavigationLink(
                     destination: DisclaimerView(),
                     label: {
-                        Text("Terms and condition")
+                        Text("Terms and conditions")
                             .font(.body)
                             .foregroundColor(.blue)
                             .frame(width: 374, height: 35)
@@ -40,8 +40,8 @@ struct DevPageView: View {
                             .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
                     })
                 Spacer()
-            }
-        }
+            
+        }.navigationBarHidden(true)
     }
 }
 

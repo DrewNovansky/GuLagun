@@ -32,7 +32,6 @@
 		68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B825418FB800712DCC /* ExpressPageView.swift */; };
 		68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B925418FB800712DCC /* AboutUsView.swift */; };
 		68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BA25418FB800712DCC /* HistoryPageView.swift */; };
-		68D1C6C625418FB800712DCC /* DevPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BD25418FB800712DCC /* DevPageView.swift */; };
 		68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */; };
 		68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */; };
 		EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CE22D2541917500217DAF /* FireAnimation.swift */; };
@@ -93,7 +92,6 @@
 		68D1C6B825418FB800712DCC /* ExpressPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressPageView.swift; sourceTree = "<group>"; };
 		68D1C6B925418FB800712DCC /* AboutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		68D1C6BA25418FB800712DCC /* HistoryPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryPageView.swift; path = ../View/HistoryPageView.swift; sourceTree = "<group>"; };
-		68D1C6BD25418FB800712DCC /* DevPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevPageView.swift; sourceTree = "<group>"; };
 		68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		EC0CE22D2541917500217DAF /* FireAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimation.swift; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				68D1C6B725418FB800712DCC /* OnboardingPageView.swift */,
-				68D1C6BD25418FB800712DCC /* DevPageView.swift */,
 				68D1C6B625418FB800712DCC /* BonFireView.swift */,
 				68D1C6B825418FB800712DCC /* ExpressPageView.swift */,
 				68D1C6B925418FB800712DCC /* AboutUsView.swift */,
@@ -387,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C36AD725418BF2009C9065 /* EmotionPage.swift in Sources */,
-				68D1C6C625418FB800712DCC /* DevPageView.swift in Sources */,
 				49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */,
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
