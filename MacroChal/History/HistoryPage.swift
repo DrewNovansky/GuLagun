@@ -14,6 +14,7 @@ struct comment : Identifiable {
     let Date: String
     let comment: String
 }
+
 var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing"),comment(id: 1, Date: "1 november", comment: "Welcome to November")]
 struct HistoryPage: View {
     var emotionChoosen = ""
@@ -36,70 +37,63 @@ struct HistoryPage: View {
                     TitleTemp(title: "\(tanggal)")
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-//                    SubtitleTemp(subtitle: "Note to self:")
-//                    ForEach(0 ..< commentList.count) { item in
-//                        ScrollView{
-//                            SubtitleTemp(subtitle: commentList[item].Date)
-//                            SubtitleTemp(subtitle: commentList[item].comment)
-//                        }
-//                        .frame(width: 354, height: 135, alignment: .center)
-//                        .padding()
-//                        .background(Color("CommentColor"))
-//                        .cornerRadius(20)
-//                    }
-//                    if commentField{
-//                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
-//                    }
-//                    Button(action: {
-//                        if buttonComment{
-//
-//                            commentField.toggle()
-//                            buttonComment.toggle()
-//                        } else if buttonComment == false{
-//                            if heartOn == false{
-//                                halfModal.toggle()
-//                            }
-//                            commentField.toggle()
-//                            buttonComment.toggle()
-//                        }
-//                    }, label: {
-//                        if buttonComment{
-//                            buttonStyleTemplate(text: "add comment")
-//                        } else if buttonComment == false{
-//                            buttonStyleTemplate(text: "save comment")
-//                        }
-//                    })
-//                }
-//            }
-//            if halfModal {
-//                VStack{
-//                    var i = 0
-//                    SlideOverCard { cardModal(heartState: heartOn) }
-//
-//                    Button(action:{
-//                        halfModal.toggle()
-//                        commentList.append(comment(id: commentList.count+1, Date: "Date", comment: commentText))
-//                        while i<commentList.count{
-//                            print(commentList[i])
-//                            i+=1
-//                        }
-//                    },label: {
-//                        buttonStyleTemplate(text: "Save")
-//                    }).offset(y: -UIScreen.main.bounds.height/10)
-//
-//                }
-//            }
-                    
+                    SubtitleTemp(subtitle: "Note to self:")
+                    // ini untuk scroll view nya munculin 
+                    ForEach(0 ..< commentList.count) { item in
+                        ScrollView{
+                            
+                            SubtitleTemp(subtitle: commentList[item].Date)
+                            SubtitleTemp(subtitle: commentList[item].comment)
+                        }
+                        .frame(width: 354, height: 135, alignment: .center)
+                        .padding()
+                        .background(Color("CommentColor"))
+                        .cornerRadius(20)
+                    }
+                    if commentField{
+                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
+                    }
+                    Button(action: {
+                        if buttonComment{
+
+                            commentField.toggle()
+                            buttonComment.toggle()
+                        } else if buttonComment == false{
+                            if heartOn == false{
+                                halfModal.toggle()
+                            }
+                            commentField.toggle()
+                            buttonComment.toggle()
+                        }
+                    }, label: {
+                        if buttonComment{
+                            buttonStyleTemplate(text: "add comment")
+                        } else if buttonComment == false{
+                            buttonStyleTemplate(text: "save comment")
+                        }
+                    })
+                }
+            }
+            if halfModal {
+                VStack{
+                    SlideOverCard { cardModal(heartState: heartOn) }
+
+                    Button(action:{
+                        halfModal.toggle()
+                        saveComment()
+                    },label: {
+                        buttonStyleTemplate(text: "Save")
+                    })
+                    .offset(y: -UIScreen.main.bounds.height/10)
+
+                }
+            }
         }
-                
-    }
-            
-}
     }
     func saveComment() {
         let diary = Commentary(context: viewContext)
         diary.children = datayangmana
-        diary.comment = "" // komen di sini
+        diary.comment = commentText
         diary.timestamp = Date()
         //Save context
         do {

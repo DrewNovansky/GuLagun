@@ -10,7 +10,7 @@ import CoreData
 
 struct HistoryNoCalendarTest: View {
     @State var emotionChoosen = ""
-    @State var emotionDetails = "Grateful"
+    @State var emotionDetails = ""
     @State var story = ""
     @State var acceptenceText = ""
     @State var heartOn = false
@@ -23,14 +23,34 @@ struct HistoryNoCalendarTest: View {
     @Environment(\.managedObjectContext) var context
     
     var body: some View {
+        VStack{
         Text("Your Writings").font(.title).fontWeight(.semibold)
             .multilineTextAlignment(.center
             ).foregroundColor(.accentColor).offset(y:-40)
         
         NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, datayangmana: databaseyang, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
-            List {
+            VStack{
                 ForEach(self.result) {timestamp in
-                    VStack {
+                    Button(action: {
+                        if timestamp.emotionChoosen != "" && timestamp.emotionDetail != ""{
+                                self.emotionChoosen = timestamp.emotionChoosen ?? ""
+                                self.emotionDetails = timestamp.emotionDetail ?? ""
+                                self.story = timestamp.story ?? ""
+                                self.acceptenceText = timestamp.acceptanceText ?? ""
+                                self.heartOn = timestamp.heartOn
+                                self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal")
+                                self.jam = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "")
+                                self.showNew = true
+                                self.databaseyang = timestamp
+                            }
+                            else { self.emotionDetails = ""
+                                self.story = ""
+                                self.acceptenceText = ""
+                                self.heartOn = false
+                                self.tanggal = ""
+                                self.jam = ""
+                                self.showNew = false}
+                    }, label: {
                         HStack{
                             Image("\(timestamp.emotionChoosen ?? "")")
                                 .resizable()
@@ -60,30 +80,19 @@ struct HistoryNoCalendarTest: View {
                                         .frame(width: 26, height: 24)
                                         .padding(2)
                                 }
-                        }.padding()
-                        }.onTapGesture(perform: { if timestamp.emotionChoosen != "" && timestamp.emotionDetail != ""{
-                        self.emotionChoosen = timestamp.emotionChoosen ?? ""
-                            self.emotionDetails = timestamp.emotionDetail ?? ""
-                            self.story = timestamp.story ?? ""
-                            self.acceptenceText = timestamp.acceptanceText ?? ""
-                            self.heartOn = timestamp.heartOn
-                            self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal")
-                            self.jam = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "")
-                            self.showNew = true
-                            self.databaseyang = timestamp
+                            }.padding()
                         }
-                        else { self.emotionDetails = ""
-                            self.story = ""
-                            self.acceptenceText = ""
-                            self.heartOn = false
-                            self.tanggal = ""
-                            self.jam = ""
-                            self.showNew = false}
-                        })
-                    }.frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).background(Color("WriteColor")).cornerRadius(20)
+                        .frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/).background(Color("WriteColor")).cornerRadius(20)
+                        .padding(5)
+                    })
+                    
+                    
                 }
             }
-        }.offset(y:-30)
+
+            }.offset(y:-30)
+            Spacer()
+        }
     }
     func CekTanggal(tanggalInput: Date, minta: String)-> String {
         let formatter3 = DateFormatter()

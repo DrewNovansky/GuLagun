@@ -20,7 +20,7 @@ struct EmotionPage: View {
                 
                 VStack{
                     NavigationLink(
-                        destination: Emotion2Page(emotionChoosen: "Joy"),
+                        destination: Emotion2Page(emotionChoosen: "Joy", activeIdx: 0),
                         label: {
                             buttonEmoji(emotionName: "Joy")
                         }).padding(10)
@@ -28,14 +28,14 @@ struct EmotionPage: View {
                     
                     HStack{
                         NavigationLink(
-                            destination: Emotion2Page(emotionChoosen: "Fear"),
+                            destination: Emotion2Page(emotionChoosen: "Fear", activeIdx: 0),
                             label: {
                                 buttonEmoji(emotionName: "Fear")
                             }).padding(10)
                         Spacer()
                             .frame(width: 130)
                         NavigationLink(
-                            destination: Emotion2Page(emotionChoosen: "Love"),
+                            destination: Emotion2Page(emotionChoosen: "Love", activeIdx: 0),
                             label: {
                                 buttonEmoji(emotionName: "Love")
                             }).padding(10)
@@ -43,14 +43,14 @@ struct EmotionPage: View {
                     
                     HStack{
                         NavigationLink(
-                            destination: Emotion2Page(emotionChoosen: "Surprise", emotionDetails: ""),
+                            destination: Emotion2Page(emotionChoosen: "Surprise", emotionDetails: "", activeIdx: 0),
                             label: {
                                 buttonEmoji(emotionName: "Surprise")
                             }).padding(10)
                         Spacer()
                             .frame(width: 130)
                         NavigationLink(
-                            destination: Emotion2Page(emotionChoosen: "Sad"),
+                            destination: Emotion2Page(emotionChoosen: "Sad", activeIdx: 0),
                             label: {
                                 buttonEmoji(emotionName: "Sad")
                             }).padding(10)
@@ -58,7 +58,7 @@ struct EmotionPage: View {
                     
                     NavigationLink(
                         
-                        destination: Emotion2Page(emotionChoosen: "Anger"),
+                        destination: Emotion2Page(emotionChoosen: "Anger", activeIdx: 0),
                         label: {
                             buttonEmoji(emotionName: "Anger")
                         }).padding(10)

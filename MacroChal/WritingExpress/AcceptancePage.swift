@@ -20,7 +20,13 @@ struct AcceptancePage: View {
             VStack(){
                 VStack{
                     TitleTemp(title: "Do you know it’s okay \nto feel that way?")
+                        .onTapGesture(perform: {
+                        hideKeyboard()
+                    })
                     SubtitleTemp(subtitle: "“What you’ve felt is valid.\nThere’s no right or wrong feeling.\nIt is part of you & it’s okay to feel that way.”")
+                        .onTapGesture(perform: {
+                            hideKeyboard()
+                        })
                     Button(action: {
                         self.heartState.toggle()
                     }, label: {
@@ -39,8 +45,8 @@ struct AcceptancePage: View {
                             }
                         }
                     }).padding()
-                }.onTapGesture(perform: {
-                    UIApplication.shared.endEditing()
+                } .onTapGesture(perform: {
+                    hideKeyboard()
                 })
                 multilineTF(placeholder: "Because I ...",textWritten: $acceptance)
                 VStack{
@@ -61,7 +67,7 @@ struct AcceptancePage: View {
                         }, label: {buttonStyleTemplate(text: "Next")})
                     }.padding()
                     .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Sorry"), message: Text("We see that you haven't type your story"), dismissButton: .cancel(Text("Dismiss")))
+                        Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure!")))
                     }
                 }.onTapGesture(perform: {
                     UIApplication.shared.endEditing()
