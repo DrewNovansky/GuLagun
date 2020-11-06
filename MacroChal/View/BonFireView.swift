@@ -21,7 +21,7 @@ struct BonFireView: View {
                 }
             }
         }.onAppear{
-                        hasOnboarded = false //testing only
+                        //hasOnboarded = false //testing only
             if !hasOnboarded{
                 showOnBoarding.toggle()
                 hasOnboarded = true

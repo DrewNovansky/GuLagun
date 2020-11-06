@@ -13,7 +13,7 @@ struct BreathingPage: View {
     @State var detikOutput = 4
     @State var countDown:String = "4"
     @State var count: Int = 1
-    var pengulangan = 4
+    var pengulangan = 1
     
     var body: some View {
         VStack {
@@ -52,16 +52,19 @@ struct BreathingPage: View {
                 Image("Great!")
             }
             Spacer()
-            ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
-                .padding()
-                .accentColor(Color(.systemBlue))
-            if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
+            if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
+                ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
+                    .padding()
+                    .accentColor(Color(.systemBlue))
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")
                 }.hidden()
             } else {
                 NavigationLink(destination: EmotionPage()) {
-                    buttonStyleTemplate(text: "Next")
+                    buttonStyleTemplate(text: "Yes")
+                }.padding()
+                NavigationLink(destination: BreathingPage()) {
+                    buttonStyleTemplate(text: "No")
                 }
             }
         }//.offset(y:-50)
@@ -84,7 +87,6 @@ struct BreathingPage: View {
             while berapa < jumlah {
                 SubtitleOutput.append(contentsOf: subtitleInput)
                 berapa += 1
-                print(SubtitleOutput)
             }
             SubtitleOutput.removeLast()
             SubtitleOutput.append("Now that you are more focus,\nlet’s start imagining how your day went today.")

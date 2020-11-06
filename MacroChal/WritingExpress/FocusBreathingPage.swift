@@ -10,9 +10,11 @@ import SwiftUI
 struct FocusBreathingPage: View {
     var body: some View {
         VStack{
-            FireAnimation(imageName: "apiSedang", x: 0, y: 0, width: 300, height: 300)
+            FireAnimation(imageName: "apiKecil", x: 0, y: 0, width: 300, height: 300)
                 .frame(width: 300, height: 325, alignment: .center)
             TitleTemp(title: "Focus Breathing")
+            SubtitleTemp(subtitle: "Breathing helps you to be more relax before your start writing your reflection. ")
+            //padding()
             VStack(){
                 BreathingInstruction(imageName: "FC_1", instruction: "Inhale for 4 seconds")
                 BreathingInstruction(imageName: "FC_2", instruction: "Hold for 4 seconds")

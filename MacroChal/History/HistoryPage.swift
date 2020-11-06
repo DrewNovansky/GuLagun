@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreData
+
 struct comment : Identifiable {
     var id: Int
     
@@ -21,6 +23,8 @@ struct HistoryPage: View {
     var heartOn:Bool
     var tanggal: String
     var jam: String
+    var datayangmana: DiaryDatabase
+    @Environment(\.managedObjectContext) private var viewContext
     @State var buttonComment = true
     @State var commentField = false
     @State var halfModal = false
@@ -85,14 +89,31 @@ struct HistoryPage: View {
 //
 //                }
 //            }
+                    
         }
+                
     }
+            
 }
+    }
+    func saveComment() {
+        let diary = Commentary(context: viewContext)
+        diary.children = datayangmana
+        diary.comment = "" // komen di sini
+        diary.timestamp = Date()
+        //Save context
+        do {
+            try viewContext.save()
+            print("Saved")
+        } catch {
+            let error = NSError.self
+            fatalError("UnresolvedError \(error)")
+        }
     }
 }
 
 struct HistoryPage_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryPage(emotionChoosen: "Joy", emotionDetails: "Grateful", story: "", acceptenceText: "", heartOn: false,tanggal: "",jam:"", buttonComment: true, commentField: false, halfModal: false, commentText: "")
+        HistoryPage(emotionChoosen: "Joy", emotionDetails: "Grateful", story: "", acceptenceText: "", heartOn: false,tanggal: "",jam:"", datayangmana: DiaryDatabase(), buttonComment: true, commentField: false, halfModal: false, commentText: "")
     }
 }
