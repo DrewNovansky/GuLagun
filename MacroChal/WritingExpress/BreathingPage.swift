@@ -67,7 +67,7 @@ struct BreathingPage: View {
                     buttonStyleTemplate(text: "No")
                 }
             }
-        }//.offset(y:-50)
+        }.offset(y:-UIScreen.main.bounds.width*0.127) 
     }
     func buatProgress(atas: Int, bawah: Int)-> Float {
         var atasFloat = Float(atas)
