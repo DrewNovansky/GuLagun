@@ -70,10 +70,11 @@ struct Emotion2Page: View {
     @State var emotionDetails:String = "test"
     @State var ButtonActive = false
     @State var ShowDetails = false
-    @State var activeIdx:Int = 0
+    @State var activeIdx:Int
     
     
     var body: some View {
+        
         VStack{
             TitleTemp(title: "What kind of \(emotionChoosen) \ndid you feel?")
             CircleImage(imagename: emotionChoosen)
@@ -83,19 +84,21 @@ struct Emotion2Page: View {
                 VStack(spacing: 24)
                 {
                     if emotionChoosen == "Joy"{
+//                        self.emotionDetails = JoyList[0].emotionDetails
                         ForEach(0 ..< JoyList.count) { item in
                             buttonEmotion(activeDetail: $activeIdx, selectedEmotion: $emotionDetails, idx: item, emotion: JoyList[item].emotionEmoji, emotionDetails: JoyList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Surprise"{
+//                        self.emotionDetails = SurpriseList[0].emotionDetails
                         ForEach(0 ..< SurpriseList.count) { item in
                             buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SurpriseList[item].emotionEmoji, emotionDetails: SurpriseList[item].emotionDetails)
                         }
                     }
                     
                     if emotionChoosen == "Sad"{
-                        
+//                        self.emotionDetails = SadList[0].emotionDetails
                         ForEach(0 ..< SadList.count) { item in
                             buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SadList[item].emotionEmoji, emotionDetails: SadList[item].emotionDetails)
                         }
@@ -137,6 +140,6 @@ struct Emotion2Page: View {
 
 struct ButtonTemp_Previews: PreviewProvider {
     static var previews: some View {
-        Emotion2Page()
+        Emotion2Page(activeIdx: 0)
     }
 }
