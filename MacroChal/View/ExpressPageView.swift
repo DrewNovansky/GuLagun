@@ -31,15 +31,15 @@ struct ExpressPage : View{
             }
             //text
             VStack{
-                    Text("Express")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(3)
-               
-                    Text("Have you imagined about your day?\nWhat’s on your mind?")
-                        .font(.body)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor)
-               
+                Text("Express")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(3)
+                
+                Text("Have you imagined about your day?\nWhat’s on your mind?")
+                    .font(.body)
+                    .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                
             }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.25)
             
             //buttons
@@ -48,9 +48,11 @@ struct ExpressPage : View{
                 NavigationLink(destination:  FocusBreathingPage()){
                     
                     ZStack {
-                        Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
-                        
-                        VStack(spacing: 3){
+                        VStack{
+                            Text("").frame(height:UIScreen.main.bounds.width * 0.04)
+                            Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                        }
+                        VStack(spacing: 10){
                             HStack(spacing:100) {
                                 Text("")
                                 Text("Begin Writing")
@@ -64,16 +66,19 @@ struct ExpressPage : View{
                                     .multilineTextAlignment(.leading)
                             }
                         }.foregroundColor(.accentColor).padding()
-
+                        
                     }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("WriteColor")).cornerRadius(20).padding(5)
                 }
                 
                 //Explore
                 NavigationLink(destination: HistoryNoCalendarTest()){
                     ZStack {
-                        Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                        VStack{
+                            Text("").frame(height:UIScreen.main.bounds.width * 0.04)
+                            Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                        }
                         
-                        VStack(spacing: 3){
+                        VStack(spacing: 10){
                             HStack(spacing:110) {
                                 Text("")
                                 Text("Open Previous Writing")
@@ -90,7 +95,7 @@ struct ExpressPage : View{
                     }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("GreenButton")).cornerRadius(20)
                 }
             }.padding(1)
-        }
+        }.offset(y: -UIScreen.main.bounds.height * 0.05)
     }
 }
 

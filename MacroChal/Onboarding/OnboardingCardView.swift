@@ -45,8 +45,7 @@ struct OnboardingCardView: View {
             
            
             
-        }.offset(y: -UIScreen.main.bounds.height * 0.06
-        )
+        }.offset(y: -UIScreen.main.bounds.height * 0.06)
     }
 }
 

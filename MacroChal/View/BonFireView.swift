@@ -60,10 +60,11 @@ struct BonFire : View{
                             )}
                     )
                     //image fire
-                    FireAnimation(imageName: "kayuBakar", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.176)*5),height: Int((UIScreen.main.bounds.width*0.149)*5))
+                    FireAnimation(imageName: "kayuBakar", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.186)*4.7),height: Int((UIScreen.main.bounds.width*0.149)*5))
                         .frame(height: (UIScreen.main.bounds.width*0.149)*3.4)
                         .offset(y: -UIScreen.main.bounds.height/15)
                     //text
+                    VStack{
                     Text("Welcome!")
                         .font(.title).fontWeight(.semibold)
                         .multilineTextAlignment(.center
@@ -72,6 +73,7 @@ struct BonFire : View{
                     Text("Please make yourself comfortable")
                         .font(.body)
                         .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.20)
                     //buttons
                     //Express
                     NavigationLink(destination: ExpressPageView()){
