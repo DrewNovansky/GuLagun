@@ -16,7 +16,7 @@ struct HistoryNoCalendarTest: View {
     @State var heartOn = false
     @State var tanggal = ""
     @State var jam = ""
-
+    @State var databaseyang: DiaryDatabase = DiaryDatabase()
     @State var showNew = false
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: DiaryDatabase.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: true)]) var result : FetchedResults<DiaryDatabase>
@@ -27,7 +27,7 @@ struct HistoryNoCalendarTest: View {
             .multilineTextAlignment(.center
             ).foregroundColor(.accentColor).offset(y:-40)
         
-        NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
+        NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, datayangmana: databaseyang, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
             List {
                 ForEach(self.result) {timestamp in
                     VStack {
@@ -69,8 +69,10 @@ struct HistoryNoCalendarTest: View {
                             self.heartOn = timestamp.heartOn
                             self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal")
                             self.jam = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "")
-                            self.showNew = true}
-                        else{ self.emotionDetails = ""
+                            self.showNew = true
+                            self.databaseyang = timestamp
+                        }
+                        else { self.emotionDetails = ""
                             self.story = ""
                             self.acceptenceText = ""
                             self.heartOn = false
