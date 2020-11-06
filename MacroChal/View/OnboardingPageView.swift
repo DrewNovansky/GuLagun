@@ -14,26 +14,20 @@ struct OnboardingPageView: View {
     @State var selectedPage:Int = 0
     
     var body: some View {
-        
-        VStack {
-            TabView(selection: $selectedPage ) {
-                ForEach(0..<Data.count){ index in OnboardingCardView(onbardingCard: Data[index])
-                }
-            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            
-            Button(action: {developerNotes.toggle()}){
-                HStack(spacing: 8){
-                    Text("Next")
-                        .font(.body).foregroundColor(.accentColor).frame(width: 374, height: 48).padding(5).background(Color("ButtonColor")).cornerRadius(20)
-                }
-            }.padding()
-            .fullScreenCover(isPresented: $developerNotes) {
+        NavigationView{
+            VStack {
+                TabView(selection: $selectedPage ) {
+                    ForEach(0..<Data.count){ index in OnboardingCardView(onbardingCard: Data[index])
+                    }
+                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 
-                DevPageView()
+                NavigationLink(destination: BonFireView()) {
+                    buttonStyleTemplate(text: "Next")
+                }.padding()
+                
             }
         }
-        
     }
     
 }
