@@ -10,8 +10,8 @@ import SwiftUI
 struct EmotionPage: View {
     var body: some View {
         VStack{
-            TitleTemp(title: "How did you feel today?")
-            SubtitleTemp(subtitle: "Choose which one is your most dominant\nfeeling today using this Feeling Wheel\ninspired from The Junto Wheel.")
+            TitleTemp(title: "How did you\nfeel today?")
+            SubtitleTemp(subtitle: "Choose which one is your most dominant\nfeeling today using this Feeling Wheel\ninspired from The Junto Wheel.").padding()
              
             ZStack{
                 Circle()
@@ -24,7 +24,7 @@ struct EmotionPage: View {
                         label: {
                             buttonEmoji(emotionName: "Joy")
                         }).padding(10)
-                        .offset(y: 30)
+                        .offset(y:UIScreen.main.bounds.width*0.1)
                     
                     HStack{
                         NavigationLink(
@@ -39,7 +39,7 @@ struct EmotionPage: View {
                             label: {
                                 buttonEmoji(emotionName: "Love")
                             }).padding(10)
-                    }.offset(y: -30.0)
+                    }.offset(y:-UIScreen.main.bounds.width*0.037)
                     
                     HStack{
                         NavigationLink(
@@ -54,7 +54,7 @@ struct EmotionPage: View {
                             label: {
                                 buttonEmoji(emotionName: "Sad")
                             }).padding(10)
-                    }.offset(y: -30.0)
+                    }.offset(y:-UIScreen.main.bounds.width*0.037)
                     
                     NavigationLink(
                         
@@ -62,14 +62,19 @@ struct EmotionPage: View {
                         label: {
                             buttonEmoji(emotionName: "Anger")
                         }).padding(10)
-                        .offset(y: -70)
+                        .offset(y:-UIScreen.main.bounds.width*0.20)
+                  
                 }
             }
+            .offset(y:-UIScreen.main.bounds.width*0.1)
+            
+            Spacer(minLength: 0)
+            
             ProgressView(value: 0.2)
-                .offset(y: -20)
+                .offset(y:-UIScreen.main.bounds.width*0.15)
                 .frame(width: 374)
                 .accentColor(Color(.systemBlue))
-        }.offset(y:-50)
+        }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }
 

@@ -25,6 +25,8 @@ struct PreviewPage: View {
         
         VStack{
             reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             NavigationLink(destination: WayToGoPage(), isActive: $showView) {
                 Button(
                     //destination: WayToGoPage(),
@@ -51,7 +53,7 @@ struct PreviewPage: View {
                         buttonStyleTemplate(text: "Next")
                     }).padding()
             }
-        }.offset(y:-50)
+        }
     }
 }
 
@@ -61,11 +63,17 @@ struct WayToGoPage: View{
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
+                .padding()
             SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             
             Image("WayToGo!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             SubtitleTemp(subtitle: "See you at")
             
             DatePicker("", selection: $selectedDate, displayedComponents: .hourAndMinute)
@@ -73,6 +81,7 @@ struct WayToGoPage: View{
                 .labelsHidden()
                 .frame(alignment: .center)
                 .accentColor(Color("FontColor"))
+                .padding()
             
             let components =
                 Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
@@ -111,9 +120,9 @@ struct WayToGoPage: View{
                     },
                     label: {
                         buttonStyleTemplate(text: "Next")
-                    })
-            }.offset(y:-50)
-        }
+                    }).padding()
+            }
+        }.offset(y:-UIScreen.main.bounds.height*0.08)
     }
 }
 
@@ -121,18 +130,20 @@ struct GoodJobPage: View {
     var body: some View{
         VStack{
             TitleTemp(title: "Great job!")
+                .padding()
             SubtitleTemp(subtitle: "We’ll remind you again tomorrow, see you!")
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             Image("SeeYou!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
-                .offset(y:50)
                 .padding()
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             NavigationLink(
                 destination: BonFireView(),
                 label: {
                     buttonStyleTemplate(text: "See you!")
-                }).offset(y:200).padding()
-        }.offset(y:-150)
+                })
+        }.offset(y:-UIScreen.main.bounds.height*0.08)
     }
 }
 

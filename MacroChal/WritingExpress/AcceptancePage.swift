@@ -17,16 +17,18 @@ struct AcceptancePage: View {
     var story = "test"
     var body: some View{
         ScrollView{
-            VStack(){
+            VStack{
                 VStack{
                     TitleTemp(title: "Do you know it’s okay \nto feel that way?")
                         .onTapGesture(perform: {
                         hideKeyboard()
                     })
+                        .padding()
                     SubtitleTemp(subtitle: "“What you’ve felt is valid.\nThere’s no right or wrong feeling.\nIt is part of you & it’s okay to feel that way.”")
                         .onTapGesture(perform: {
                             hideKeyboard()
                         })
+                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                     Button(action: {
                         self.heartState.toggle()
                     }, label: {
@@ -45,10 +47,13 @@ struct AcceptancePage: View {
                             }
                         }
                     }).padding()
+                   
                 } .onTapGesture(perform: {
                     hideKeyboard()
                 })
+                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 multilineTF(placeholder: "Because I ...",textWritten: $acceptance)
+                    .padding()
                 VStack{
                     ProgressView(value: 0.8)
                         .frame(width: 374)
@@ -73,8 +78,7 @@ struct AcceptancePage: View {
                     UIApplication.shared.endEditing()
                 })
                 
-            }
-            .offset(x: 0, y: -60)
+            }.offset(y:-UIScreen.main.bounds.height*0.08)
             
         }
     }

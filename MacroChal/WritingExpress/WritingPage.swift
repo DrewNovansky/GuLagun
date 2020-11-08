@@ -18,27 +18,29 @@ struct WritingPage: View {
         ScrollView{
             VStack{
                 VStack{
-                    TitleTemp(title: "Why did you feel that way?")
+                    TitleTemp(title: "Why did you feel\nthat way?")
                         .onTapGesture(perform: {
                             hideKeyboard()
                         })
+                    
                     CircleImage(imagename: emotionChoosen)
-                        .frame(width: 68, height: 68)
+                        .frame(width: 68, height: 68).padding()
                         .onTapGesture(perform: {
                             hideKeyboard()
                         })
-                    //.padding()
-                    SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to be there. They all have their purpose.”")
-                        .onTapGesture(perform: {
+                    
+                    SubtitleTemp(subtitle: "“Write all you feel because all emotion is meant to\nbe there. They all have their purpose.”")                        .onTapGesture(perform: {
                             hideKeyboard()
                         })
                 } .onTapGesture(perform: {
                     hideKeyboard()
                 })
+                .padding()
                 multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
                 ProgressView(value: 0.6)
                     .frame(width: 374)
                     .accentColor(Color(.systemBlue))
+                    .padding()
                     .onTapGesture(perform: {
                         hideKeyboard()
                     })
@@ -53,7 +55,7 @@ struct WritingPage: View {
                             showView = true
                         }
                     }, label: {buttonStyleTemplate(text: "Next")})
-                }
+                }.padding()
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
                     //MARK : Alert with option
@@ -61,7 +63,7 @@ struct WritingPage: View {
                     //                        self.showView = true
                     //                    }))
                 }
-            }.offset(y:-50)
+            }.offset(y:-UIScreen.main.bounds.height*0.08)
         }
     }
 }

@@ -26,7 +26,10 @@ struct ExpressPage : View{
             
             VStack() {
                 
-                Image("ExpressPageImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit)
+                Image("ExpressPageImg")
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width * 0.6 , height:UIScreen.main.bounds.width * 0.5)
             }
             //text
@@ -34,11 +37,14 @@ struct ExpressPage : View{
                 Text("Express")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .multilineTextAlignment(.center).foregroundColor(.accentColor).padding(3)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.accentColor)
+                    .padding(3)
                 
                 Text("Have you imagined about your day?\nWhat’s on your mind?")
                     .font(.body)
-                    .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.accentColor)
                 
             }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.25)
             
@@ -50,49 +56,72 @@ struct ExpressPage : View{
                     ZStack {
                         VStack{
                             Text("").frame(height:UIScreen.main.bounds.width * 0.04)
-                            Image("WriteImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                            
+                            Image("WriteImg")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
                         }
                         VStack(spacing: 10){
+                            
                             HStack(spacing:100) {
+                                
                                 Text("")
                                 Text("Begin Writing")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                             }
                             HStack(spacing:140) {
+                                
                                 Text("")
                                 Text("Start focus breathing\n& write your emotion\nin 7 minutes")
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
                             }
-                        }.foregroundColor(.accentColor).padding()
+                        }
+                        .foregroundColor(.accentColor)
+                        .padding()
                         
-                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("WriteColor")).cornerRadius(20).padding(5)
+                    }
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5)
+                    .background(Color("WriteColor"))
+                    .cornerRadius(20)
+                    .padding(5)
                 }
                 
-                //Explore
-                NavigationLink(destination: HistoryNoCalendarTest()){
+                //ReadHistory
+                NavigationLink(destination: HistoryView()){
                     ZStack {
                         VStack{
                             Text("").frame(height:UIScreen.main.bounds.width * 0.04)
-                            Image("ReadImg").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
+                            Image("ReadImg")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width * 0.8, alignment:.leading)
                         }
                         
                         VStack(spacing: 10){
                             HStack(spacing:110) {
+                                
                                 Text("")
                                 Text("Open Previous Writing")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                             }
                             HStack(spacing:140) {
+                                
                                 Text("")
                                 Text("Look back with a\ndifferent perspective")
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
                             }
                         }.foregroundColor(.accentColor).padding()
-                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5).background(Color("GreenButton")).cornerRadius(20)
+                    }
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.5)
+                    .background(Color("GreenButton"))
+                    .cornerRadius(20)
                 }
             }.padding(1)
         }.offset(y: -UIScreen.main.bounds.height * 0.05)

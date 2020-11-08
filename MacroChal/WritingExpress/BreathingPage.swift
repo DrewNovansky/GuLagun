@@ -18,6 +18,8 @@ struct BreathingPage: View {
     var body: some View {
         VStack {
             TitleTemp(title: penggandaInstruksi(jumlah: pengulangan, output: "title")[count])
+                .padding()
+            
             SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
                 .onReceive(timer) {input in
                     if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
@@ -27,31 +29,37 @@ struct BreathingPage: View {
                         
                     }
                 }
-            TitleTemp(title: "\(countDown)").onReceive(timerDetik, perform: { _ in
-                if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
-                    if detikOutput >  1 {
-                        detikOutput -= 1
-                        self.countDown = "\(detikOutput)"
+            
+            TitleTemp(title: "\(countDown)")
+                .onReceive(timerDetik, perform: { _ in
+                    if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
+                        if detikOutput >  1 {
+                            detikOutput -= 1
+                            self.countDown = "\(detikOutput)"
+                        } else {
+                            detikOutput = 4
+                            self.countDown = "\(detikOutput)"
+                            getar(mode: "sukses")
+                        }
                     } else {
-                        detikOutput = 4
-                        self.countDown = "\(detikOutput)"
-                        getar(mode: "sukses")
+                        detikOutput = 0
+                        self.countDown = ""
+                        self.timerDetik.upstream.connect().cancel()
                     }
-                } else {
-                    detikOutput = 0
-                    self.countDown = ""
-                    self.timerDetik.upstream.connect().cancel()
                 }
-            }
-            )
-            Spacer()
+                )
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                 FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
                     .frame(width: 300, height: 325, alignment: .center)
             } else {
                 Image("Great!")
             }
-            Spacer()
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                 ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
                     .padding()
@@ -69,6 +77,7 @@ struct BreathingPage: View {
             }
         }.offset(y:-UIScreen.main.bounds.width*0.127) 
     }
+    
     func buatProgress(atas: Int, bawah: Int)-> Float {
         var atasFloat = Float(atas)
         atasFloat += 1
@@ -76,6 +85,7 @@ struct BreathingPage: View {
         let hasil = atasFloat / bawahFloat
         return hasil
     }
+    
     func penggandaInstruksi(jumlah: Int, output: String)-> [String] {
         var berapa = 0
         var SubtitleOutput = [String]()
@@ -102,11 +112,12 @@ struct BreathingPage: View {
             return TitleOutput
         }
     }
+    
     func getar(mode: String) {
         switch mode {
-            case "sukses":
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.success)
+        case "sukses":
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
         default:
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)

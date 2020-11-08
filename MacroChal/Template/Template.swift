@@ -36,12 +36,21 @@ struct buttonEmoji: View {
 
 //Button Segue yang dibawah
 struct buttonStyleTemplate: View {
+    
+    var btnwidth: CGFloat {
+           if UIDevice.current.userInterfaceIdiom == .phone {
+               return UIScreen.main.bounds.width * 0.9
+           } else {
+               return UIScreen.main.bounds.width * 0.3
+           }
+       }
+    
     var text = ""
     var body: some View{
         Text(text)
             .font(.body)
             .foregroundColor(Color("FontColor"))
-            .frame(width: 374, height: 48)
+            .frame(width: btnwidth, height: 48)
             .background(Color("ActiveButtonColor"))
             .cornerRadius(20)
     }
@@ -66,6 +75,7 @@ struct reviewTemp: View {
             .padding()
             .background(Color("TextfieldColor"))
             .cornerRadius(20)
+            
             //button image toogle (Not Yet)
             if heartOn == true{
                 Image("Heart.Fill")
@@ -81,7 +91,6 @@ struct reviewTemp: View {
                 SubtitleTemp(subtitle: "I’m not sure if that's okay ")
             }
             //hasil passing data
-            
             
             ScrollView{
                 SubtitleTemp(subtitle: acceptenceText)

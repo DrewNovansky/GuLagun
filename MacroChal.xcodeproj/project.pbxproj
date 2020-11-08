@@ -25,13 +25,11 @@
 		49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AC825418BF2009C9065 /* WritingPage.swift */; };
 		49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36AC925418BF2009C9065 /* QuotesPage.swift */; };
 		49C36AD725418BF2009C9065 /* EmotionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36ACB25418BF2009C9065 /* EmotionPage.swift */; };
-		685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944002546C6C4001BFF17 /* HistoryCalendarView.swift */; };
-		685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685944012546C6C4001BFF17 /* CalendarDetails.swift */; };
+		6897373425580C2200964D80 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6897373325580C2200964D80 /* HistoryView.swift */; };
 		68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B625418FB800712DCC /* BonFireView.swift */; };
 		68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B725418FB800712DCC /* OnboardingPageView.swift */; };
 		68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B825418FB800712DCC /* ExpressPageView.swift */; };
 		68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6B925418FB800712DCC /* AboutUsView.swift */; };
-		68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6BA25418FB800712DCC /* HistoryPageView.swift */; };
 		68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */; };
 		68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */; };
 		EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CE22D2541917500217DAF /* FireAnimation.swift */; };
@@ -40,7 +38,6 @@
 		EC8E5F002542ADFE002EA8B5 /* BreathingInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */; };
 		EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */; };
 		ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBAE4A325500895005B427B /* DisclaimerView.swift */; };
-		ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,13 +82,11 @@
 		49C36AC825418BF2009C9065 /* WritingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingPage.swift; sourceTree = "<group>"; };
 		49C36AC925418BF2009C9065 /* QuotesPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesPage.swift; sourceTree = "<group>"; };
 		49C36ACB25418BF2009C9065 /* EmotionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPage.swift; sourceTree = "<group>"; };
-		685944002546C6C4001BFF17 /* HistoryCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCalendarView.swift; sourceTree = "<group>"; };
-		685944012546C6C4001BFF17 /* CalendarDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetails.swift; sourceTree = "<group>"; };
+		6897373325580C2200964D80 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		68D1C6B625418FB800712DCC /* BonFireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonFireView.swift; sourceTree = "<group>"; };
 		68D1C6B725418FB800712DCC /* OnboardingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		68D1C6B825418FB800712DCC /* ExpressPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressPageView.swift; sourceTree = "<group>"; };
 		68D1C6B925418FB800712DCC /* AboutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
-		68D1C6BA25418FB800712DCC /* HistoryPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryPageView.swift; path = ../View/HistoryPageView.swift; sourceTree = "<group>"; };
 		68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		EC0CE22D2541917500217DAF /* FireAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimation.swift; sourceTree = "<group>"; };
@@ -100,7 +95,6 @@
 		EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingInstruction.swift; sourceTree = "<group>"; };
 		EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPage.swift; sourceTree = "<group>"; };
 		ECBAE4A325500895005B427B /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
-		ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNoCalendarTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,10 +189,7 @@
 		49C36AC325418BF2009C9065 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				68D1C6BA25418FB800712DCC /* HistoryPageView.swift */,
-				685944012546C6C4001BFF17 /* CalendarDetails.swift */,
-				ECBF55DC254972020054D397 /* HistoryNoCalendarTest.swift */,
-				685944002546C6C4001BFF17 /* HistoryCalendarView.swift */,
+				6897373325580C2200964D80 /* HistoryView.swift */,
 				49C36AC425418BF2009C9065 /* HistoryPage.swift */,
 				4919532B2546C9B00037B779 /* cardModal.swift */,
 			);
@@ -387,26 +378,23 @@
 				49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */,
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
-				ECBF55DD254972020054D397 /* HistoryNoCalendarTest.swift in Sources */,
-				68D1C6C325418FB800712DCC /* HistoryPageView.swift in Sources */,
 				ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */,
 				68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */,
 				491953362546C9E40037B779 /* TextTemplate.swift in Sources */,
 				49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */,
 				68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */,
 				49C36AD325418BF2009C9065 /* AcceptancePage.swift in Sources */,
-				685944022546C6C4001BFF17 /* HistoryCalendarView.swift in Sources */,
 				4919532C2546C9B00037B779 /* cardModal.swift in Sources */,
 				491953372546C9E40037B779 /* Template.swift in Sources */,
 				49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */,
 				49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */,
-				685944032546C6C4001BFF17 /* CalendarDetails.swift in Sources */,
 				49C36AD225418BF2009C9065 /* Emotion2Page.swift in Sources */,
 				EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */,
 				491953382546C9E40037B779 /* TextFieldTemplate.swift in Sources */,
 				49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */,
 				68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */,
 				EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */,
+				6897373425580C2200964D80 /* HistoryView.swift in Sources */,
 				4919535B2546CAD20037B779 /* PreviewPage.swift in Sources */,
 				68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */,
 				EC87DA0D2546C19700EA4BCD /* FireAnimationTest.swift in Sources */,

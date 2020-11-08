@@ -80,7 +80,9 @@ struct Emotion2Page: View {
             CircleImage(imagename: emotionChoosen)
                 .frame(width: 68, height: 68)
                 .padding(30)
+            
             ScrollView{
+                
                 VStack(spacing: 24)
                 {
                     if emotionChoosen == "Joy"{
@@ -133,7 +135,7 @@ struct Emotion2Page: View {
                 label: {
                     buttonStyleTemplate(text: "Next")
                 }).padding()
-        }.offset(y:-50)
+        }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }
 
