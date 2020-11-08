@@ -21,7 +21,7 @@ struct BonFireView: View {
                 }
             }
         }.onAppear{
-                        //hasOnboarded = false //testing only
+            //hasOnboarded = false //testing only
             if !hasOnboarded{
                 showOnBoarding.toggle()
                 hasOnboarded = true
@@ -41,7 +41,7 @@ struct BonFire : View{
     
     var body: some View{
         NavigationView{
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 VStack{
                     //image boo
                     NavigationLink(
@@ -65,48 +65,82 @@ struct BonFire : View{
                         .offset(y: -UIScreen.main.bounds.height/15)
                     //text
                     VStack{
-                    Text("Welcome!")
-                        .font(.title).fontWeight(.semibold)
-                        .multilineTextAlignment(.center
-                        ).foregroundColor(.accentColor)
-                        .padding(3)
-                    Text("Please make yourself comfortable")
-                        .font(.body)
-                        .multilineTextAlignment(.center).foregroundColor(.accentColor)
+                        
+                        Text("Welcome!")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.accentColor)
+                            .padding(3)
+                        
+                        Text("Please make yourself comfortable")
+                            .font(.body)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.accentColor)
+                        
                     }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.20)
+                    
                     //buttons
                     //Express
                     NavigationLink(destination: ExpressPageView()){
                         HStack {
+                            
                             Image("ExpressBtnImg")
-                                .resizable().frame(width: UIScreen.main.bounds.width * 0.27 , height:UIScreen.main.bounds.width * 0.25 ).padding()
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width * 0.27 , height:UIScreen.main.bounds.width * 0.25 )
+                                .padding()
                             
                             VStack(spacing: 3){
+                                
                                 Text("Express Yourself")
                                     .font(.title3)
                                     .fontWeight(.semibold)
+                                
                                 Text("Calm your heart with\nfocus breathing and\nwrite daily notes")
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
-                            }.foregroundColor(.accentColor).padding()
-                        }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.4).background(Color("ActiveButtonColor")).cornerRadius(20).padding(3)
+                            }
+                            .foregroundColor(.accentColor)
+                            .padding()
+                        }
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.4)
+                        .background(Color("ActiveButtonColor"))
+                        .cornerRadius(20).padding(3)
                     }
+                    
                     //Explore
-                    //NavigationLink(destination: ){//explorepage
                     HStack {
-                        Image("GrayExploreBtnImg").resizable().frame(width: UIScreen.main.bounds.width * 0.28 , height:UIScreen.main.bounds.width * 0.12 ).padding()
+                        
+                        Image("GrayExploreBtnImg")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * 0.28 , height:UIScreen.main.bounds.width * 0.12 )
+                            .padding()
+                        
                         VStack(spacing: 3){
+                            
                             Text("Explore Inner You")
                                 .font(.title3)
                                 .fontWeight(.semibold)
+                            
                             Text("Answer questions to\nknow more about you")
                                 .font(.body)
                                 .multilineTextAlignment(.leading)
-                        }.foregroundColor(.accentColor).padding()
-                    }.frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.3).background(Color("GrayBtn")).cornerRadius(20).padding(3)
+                        }
+                        .foregroundColor(.accentColor)
+                        .padding()
+                    }
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.3)
+                    .background(Color("GrayBtn"))
+                    .cornerRadius(20)
+                    .padding(3)
+                    
                     //Quick Help
                     Text("If things get harder, we recommend you to get help through the nearest psychologist")
-                        .font(.footnote).foregroundColor(.accentColor).multilineTextAlignment(.center).frame(width: UIScreen.main.bounds.width * 0.9).padding(5)
+                        .font(.footnote)
+                        .foregroundColor(.accentColor)
+                        .multilineTextAlignment(.center)
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                        .padding(5)
                 }
             }
         }.navigationBarHidden(true)

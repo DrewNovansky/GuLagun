@@ -34,7 +34,7 @@ struct HistoryPage: View {
         ZStack{
             ScrollView{
                 VStack{
-                    TitleTemp(title: "\(tanggal)")
+                    TitleTemp(title: "\(tanggal)").padding(.top)
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     SubtitleTemp(subtitle: "Note to self:")
@@ -73,7 +73,7 @@ struct HistoryPage: View {
                         }
                     })
                 }
-            }
+            }.offset(y:UIScreen.main.bounds.height*0.01)
             if halfModal {
                 VStack{
                     SlideOverCard { cardModal(heartState: heartOn) }
@@ -88,8 +88,9 @@ struct HistoryPage: View {
 
                 }
             }
-        }
+        }.offset(y:-UIScreen.main.bounds.height*0.011)
     }
+    
     func saveComment() {
         let diary = Commentary(context: viewContext)
         diary.children = datayangmana

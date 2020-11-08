@@ -20,7 +20,6 @@ struct TitleTemp: View {
             .fontWeight(.bold)
             .multilineTextAlignment(.center)
             .foregroundColor(Color("FontColor"))
-            //.padding()
     }
 }
 struct SubtitleTemp: View {
@@ -30,7 +29,6 @@ struct SubtitleTemp: View {
             .font(.body)
             .multilineTextAlignment(.center)
             .foregroundColor(Color("FontColor"))
-            //.padding()
     }
 }
 

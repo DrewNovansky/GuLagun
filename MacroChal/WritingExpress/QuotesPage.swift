@@ -17,21 +17,40 @@ struct QuotesPage: View {
     var body: some View {
         
         VStack(){
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             TitleTemp(title: "That’s a great \nexperience today!")
-            SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling. You should embrace it as a part of your growth. Did you know that by accepting your feeling you are one step closer to love yourself more?")
+                
+            
+            SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling.\nYou should embrace it as a part of your growth.\nDid you know that by accepting your feeling\nyou are one step closer to love yourself more?")
+                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.1)
+                .padding()
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             Image("Great!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
-            SubtitleTemp(subtitle: "Let’s check out what you’ve written once more, shall we?")
+                .padding()
+               
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
+            SubtitleTemp(subtitle: "Let’s check out what you’ve written once more,\nshall we?")
+            
+            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             ProgressView(value: 1.0)
                 .frame(width: 374)
                 .accentColor(Color(.systemBlue))
+                .padding()
+            
             NavigationLink(
                 destination: PreviewPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartState),
                 label: {
                     buttonStyleTemplate(text: "Next")
                 })
-        }.offset(y:-50)
+                .padding()
+            
+        }.offset(y:-UIScreen.main.bounds.height*0.06)
     }
 }
 
