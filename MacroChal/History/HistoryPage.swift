@@ -10,7 +10,6 @@ import CoreData
 
 struct comment : Identifiable {
     var id: Int
-    
     let Date: String
     let comment: String
 }
@@ -24,12 +23,13 @@ struct HistoryPage: View {
     var heartOn:Bool
     var tanggal: String
     var jam: String
-    var datayangmana: DiaryDatabase
+    @State var datayangmana: DiaryDatabase
     @Environment(\.managedObjectContext) private var viewContext
     @State var buttonComment = true
     @State var commentField = false
     @State var halfModal = false
     @State var commentText = ""
+    @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
     var body: some View {
         ZStack{
             ScrollView{
@@ -39,11 +39,10 @@ struct HistoryPage: View {
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     SubtitleTemp(subtitle: "Note to self:")
                     // ini untuk scroll view nya munculin 
-                    ForEach(0 ..< commentList.count) { item in
+                    ForEach(self.commentTest) { isiKomen in
                         ScrollView{
-                            
-                            SubtitleTemp(subtitle: commentList[item].Date)
-                            SubtitleTemp(subtitle: commentList[item].comment)
+                            SubtitleTemp(subtitle: isiKomen.comment ?? "")
+                            SubtitleTemp(subtitle: isiKomen.timestampComment ?? "")
                         }
                         .frame(width: 354, height: 135, alignment: .center)
                         .padding()
@@ -92,10 +91,10 @@ struct HistoryPage: View {
     }
     
     func saveComment() {
-        let diary = Commentary(context: viewContext)
+        let diary = CommentaryData(context: viewContext)
         diary.children = datayangmana
         diary.comment = commentText
-        diary.timestamp = Date()
+        diary.timestampComment = Date()
         //Save context
         do {
             try viewContext.save()

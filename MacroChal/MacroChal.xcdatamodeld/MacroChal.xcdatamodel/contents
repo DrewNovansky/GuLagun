@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Commentary" representedClassName=".Commentary" syncable="YES" codeGenerationType="class">
+    <entity name="CommentaryData" representedClassName=".CommentarycommentTest" parentEntity="DiaryDatabase" syncable="YES" codeGenerationType="class">
         <attribute name="comment" attributeType="String" defaultValueString=""/>
-        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="626257560" usesScalarValueType="NO"/>
+        <attribute name="timestampComment" attributeType="Date" defaultDateTimeInterval="626257560" usesScalarValueType="NO"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DiaryDatabase" inverseName="parent" inverseEntity="DiaryDatabase"/>
     </entity>
     <entity name="DiaryDatabase" representedClassName=".DiaryDatabase" syncable="YES" codeGenerationType="class">
@@ -12,10 +12,10 @@
         <attribute name="heartOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="story" attributeType="String" defaultValueString=""/>
         <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="625398180" usesScalarValueType="NO"/>
-        <relationship name="parent" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Commentary" inverseName="children" inverseEntity="Commentary"/>
+        <relationship name="parent" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CommentaryData" inverseName="children" inverseEntity="CommentaryData"/>
     </entity>
     <elements>
-        <element name="Commentary" positionX="-63" positionY="27" width="128" height="88"/>
+        <element name="CommentaryData" positionX="-63" positionY="27" width="128" height="88"/>
         <element name="DiaryDatabase" positionX="-291.6171875" positionY="70.6796875" width="128" height="148"/>
     </elements>
 </model>
