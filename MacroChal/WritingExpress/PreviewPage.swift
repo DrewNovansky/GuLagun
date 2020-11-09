@@ -17,41 +17,119 @@ struct PreviewPage: View {
     // hasil passing data
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
-    var story = ""
-    var acceptenceText = ""
-    var heartOn:Bool
+    @State var story = ""
+    @State var acceptenceText = ""
+    @State var heartOn:Bool
     var date = Date()
+    @State var keyboardState = false
+    @State var editOn = false
+    
     var body: some View {
-        
-        VStack{
-            reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-            
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-            NavigationLink(destination: WayToGoPage(), isActive: $showView) {
-                Button(
-                    //destination: WayToGoPage(),
-                    action: {
-                        let diary = DiaryDatabase(context: viewContext)
-                        diary.emotionChoosen = self.emotionChoosen
-                        diary.acceptanceText = self.acceptenceText
-                        diary.emotionDetail = self.emotionDetails
-                        diary.heartOn = self.heartOn
-                        diary.story = self.story
-                        diary.timestamp = self.date
-                        //Save context
-                        do {
-                            try viewContext.save()
-                            print("Saved")
-                        } catch {
-                            let error = NSError.self
-                            fatalError("UnresolvedError \(error)")
-                        }
-                        self.showView = true
+        ScrollView{
+            VStack{
+                HStack{
+                    if keyboardState{
+                        Text("")
+                            .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Button(action: {
+                                                            hideKeyboard()
+                                                            keyboardState = false
+                                                        }
+                                                        , label: {
+                                                            Text("Done")
+                                                                .padding(5)
+                                                            
+                                                        }
+                                                        )
+                                                    })
+                    }
+                    else {
+                        Text("")
+                            .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Text("")
+                                                    })
+                    }
+                }
+                if editOn == true{
+                    VStack{
+                        Image(emotionChoosen)
+                            .padding()
+                        SubtitleTemp(subtitle: "I feel \(emotionDetails)")
+                        multilineTF(placeholder: story, textWritten: $story, keyboardState: $keyboardState)
                         
-                    },
-                    label: {
-                        buttonStyleTemplate(text: "Next")
-                    }).padding()
+                        Button(action: {
+                            self.heartOn.toggle()
+                        }, label: {
+                            VStack(spacing: 5){
+                                Text("Tap the heart if you do")
+                                    .foregroundColor(Color("FontColor"))
+                                //button image toogle (Not Yet)
+                                if heartOn == true{
+                                    Image("Heart.Fill")
+                                        .renderingMode(.none)
+                                        .font(.system(size: 62))
+                                }else if heartOn == false{
+                                    Image("Heart")
+                                        .renderingMode(.none)
+                                        .font(.system(size: 62))
+                                }
+                            }
+                        }).padding()
+                        //hasil passing data
+                        multilineTF(placeholder: acceptenceText, textWritten: $acceptenceText,keyboardState: $keyboardState)
+                        
+                        
+                        
+                    }
+                }else{
+                    reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
+                    
+                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                }
+                Button(action: {
+                    editOn.toggle()
+                }, label: {
+                    if editOn == true
+                    {
+                        buttonStyleTemplate(text: "Done")
+                            .padding()
+                    }else
+                    {
+                        buttonStyleTemplate(text: "Edit")
+                            .padding()
+                    }
+                }
+                )
+                if editOn == false{
+                NavigationLink(destination: WayToGoPage(), isActive: $showView) {
+                    Button(
+                        //destination: WayToGoPage(),
+                        action: {
+                            let diary = DiaryDatabase(context: viewContext)
+                            diary.emotionChoosen = self.emotionChoosen
+                            diary.acceptanceText = self.acceptenceText
+                            diary.emotionDetail = self.emotionDetails
+                            diary.heartOn = self.heartOn
+                            diary.story = self.story
+                            diary.timestamp = self.date
+                            //Save context
+                            do {
+                                try viewContext.save()
+                                print("Saved")
+                            } catch {
+                                let error = NSError.self
+                                fatalError("UnresolvedError \(error)")
+                            }
+                            self.showView = true
+                            
+                        },
+                        label: {
+                            buttonStyleTemplate(text: "Next")
+                        }).padding()
+                }
+                }
             }
         }
     }

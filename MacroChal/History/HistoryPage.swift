@@ -15,33 +15,59 @@ struct comment : Identifiable {
     let comment: String
 }
 
-var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing"),comment(id: 1, Date: "1 november", comment: "Welcome to November")]
+var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing")]
 struct HistoryPage: View {
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
-    var story = ""
-    var acceptenceText = ""
-    var heartOn:Bool
+    @State var story = ""
+    @State var acceptenceText = ""
+    @State var heartOn:Bool
     var tanggal: String
     var jam: String
     var datayangmana: DiaryDatabase
+    @State var editOn = true
     @Environment(\.managedObjectContext) private var viewContext
     @State var buttonComment = true
     @State var commentField = false
     @State var halfModal = false
     @State var commentText = ""
+    @State var keyboardState = false
+    @State var showAlert = false
     var body: some View {
         ZStack{
             ScrollView{
                 VStack{
-                    TitleTemp(title: "\(tanggal)").padding(.top)
+                    if keyboardState{
+                        Text("")
+                        .navigationBarItems(trailing:
+                                                        HStack{
+                                                            Button(action: {
+                                                                hideKeyboard()
+                                                                keyboardState = false
+                                                            }
+                                                            , label: {
+                                                                Text("Done")
+                                                                    .padding(5)
+                                                                    
+                                                        }
+                                )
+                        })
+                    }
+                    else {
+                        Text("")
+                        .navigationBarItems(trailing:
+                                                        HStack{
+                                                            Text("")
+                        })
+                    }
+                    TitleTemp(title: "\(tanggal)")
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
+                    
                     SubtitleTemp(subtitle: "Note to self:")
                     // ini untuk scroll view nya munculin 
                     ForEach(0 ..< commentList.count) { item in
                         ScrollView{
-                            
                             SubtitleTemp(subtitle: commentList[item].Date)
                             SubtitleTemp(subtitle: commentList[item].comment)
                         }
@@ -51,11 +77,10 @@ struct HistoryPage: View {
                         .cornerRadius(20)
                     }
                     if commentField{
-                        multilineTF(placeholder: "Write Here...", textWritten: $commentText)
+                        multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
                     }
                     Button(action: {
                         if buttonComment{
-
                             commentField.toggle()
                             buttonComment.toggle()
                         } else if buttonComment == false{
@@ -67,16 +92,19 @@ struct HistoryPage: View {
                         }
                     }, label: {
                         if buttonComment{
-                            buttonStyleTemplate(text: "add comment")
+                            buttonStyleTemplate(text: "Add Comment")
                         } else if buttonComment == false{
-                            buttonStyleTemplate(text: "save comment")
+                            buttonStyleTemplate(text: "Save Comment")
                         }
                     })
-                }
+                
             }.offset(y:UIScreen.main.bounds.height*0.01)
+            }.offset(y:-UIScreen.main.bounds.height*0.011)
             if halfModal {
                 VStack{
-                    SlideOverCard { cardModal(heartState: heartOn) }
+                    SlideOverCard {
+                        cardModal(heartState: $heartOn)
+                    }
 
                     Button(action:{
                         halfModal.toggle()
@@ -88,13 +116,13 @@ struct HistoryPage: View {
 
                 }
             }
-        }.offset(y:-UIScreen.main.bounds.height*0.011)
+            
     }
-    
+}
     func saveComment() {
         let diary = Commentary(context: viewContext)
-        diary.children = datayangmana
-        diary.comment = commentText
+        diary.children = self.datayangmana
+        diary.comment = self.commentText
         diary.timestamp = Date()
         //Save context
         do {
