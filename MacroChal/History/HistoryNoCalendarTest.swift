@@ -27,7 +27,14 @@ struct HistoryNoCalendarTest: View {
         Text("Your Writings").font(.title).fontWeight(.semibold)
             .multilineTextAlignment(.center
             ).foregroundColor(.accentColor).offset(y:-40)
-        
+            if result.endIndex == 0{
+                SubtitleTemp(subtitle: "You haven't write anything. \nLet's go to express page to write.")
+                NavigationLink(
+                    destination: FocusBreathingPage(),
+                    label: {
+                        buttonStyleTemplate(text: "Let's Begin Writing")
+                    })
+            }else{
         NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, datayangmana: databaseyang, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
             VStack{
                 ForEach(self.result) {timestamp in
@@ -91,6 +98,8 @@ struct HistoryNoCalendarTest: View {
             }
 
             }.offset(y:-30)
+            
+        }
             Spacer()
         }
     }

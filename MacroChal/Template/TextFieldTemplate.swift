@@ -11,9 +11,10 @@ import SwiftUI
 struct multilineTF :View {
     @State var placeholder = "test"
     @Binding var textWritten: String
+    @Binding var keyboardState: Bool
     var body: some View{
         VStack{
-            MultiLineTextField(placeholder: $placeholder,story: $textWritten)
+            MultiLineTextField(placeholder: $placeholder,story: $textWritten, keyboardState: $keyboardState)
                 .frame(width: 374,height: 336)
                 .padding(10)
                 .background(Color("TextfieldColor"))
@@ -24,8 +25,9 @@ struct multilineTF :View {
 struct MultiLineTextField : UIViewRepresentable {
     @Binding var placeholder: String
     @Binding var story: String
+    @Binding var keyboardState: Bool
     func makeCoordinator() -> MultiLineTextField.Coordinator {
-        return MultiLineTextField.Coordinator(parent1: self, placeholder: placeholder, story: $story)
+        return MultiLineTextField.Coordinator(parent1: self, placeholder: placeholder, story: $story, keyboardState: $keyboardState)
     }
     func makeUIView(context: UIViewRepresentableContext<MultiLineTextField>) -> UITextView {
         let view = UITextView()
@@ -49,18 +51,22 @@ struct MultiLineTextField : UIViewRepresentable {
         var parent : MultiLineTextField
         var story: Binding<String>
         var placeholder: String
-        init(parent1 : MultiLineTextField,placeholder : String,story : Binding<String>){
+        var keyboardState: Binding<Bool>
+        init(parent1 : MultiLineTextField,placeholder : String,story : Binding<String>,keyboardState: Binding<Bool>){
             parent = parent1
             self.story = story
+            self.keyboardState = keyboardState
             self.placeholder = placeholder
         }
         func textViewDidBeginEditing(_ textView: UITextView) {
             textView.text = placeholder
             placeholder = textView.text
+            keyboardState.wrappedValue = true
             story.wrappedValue = textView.text
             textView.textColor = UIColor(Color("FontColor"))
         }
         internal func textViewDidChange(_ textView: UITextView) {
+            keyboardState.wrappedValue = true
             story.wrappedValue = textView.text
             placeholder = textView.text
         }

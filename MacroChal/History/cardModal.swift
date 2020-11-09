@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct cardModal: View {
-    @State var heartState = false
+    @Binding var heartState: Bool
     var body: some View {
         VStack{
             Spacer()
@@ -40,7 +40,7 @@ struct cardModal: View {
 
 struct cardModal_Previews: PreviewProvider {
     static var previews: some View {
-        SlideOverCard { cardModal() }
+        Text("Haii")
     }
 }
 

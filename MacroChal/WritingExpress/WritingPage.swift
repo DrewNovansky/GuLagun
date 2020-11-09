@@ -13,10 +13,34 @@ struct WritingPage: View {
     @State var story = ""
     @State var showView = false
     @State var showAlert = false
+    @State var keyboardState = false
     var body: some View {
-        
         ScrollView{
             VStack{
+                    //dibikin masuk navbar dibikin hidden sesuai bool
+                if keyboardState{
+                    Text("")
+                    .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Button(action: {
+                                                            hideKeyboard()
+                                                            keyboardState = false
+                                                        }
+                                                        , label: {
+                                                            Text("Done")
+                                                                .padding(5)
+                                                                
+                                                    }
+                            )
+                    })
+                }
+                else {
+                    Text("")
+                    .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Text("")
+                    })
+                }
                 VStack{
                     TitleTemp(title: "Why did you feel\nthat way?")
                         .onTapGesture(perform: {
@@ -36,7 +60,7 @@ struct WritingPage: View {
                     hideKeyboard()
                 })
                 .padding()
-                multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story)
+                multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story, keyboardState: $keyboardState)
                 ProgressView(value: 0.6)
                     .frame(width: 374)
                     .accentColor(Color(.systemBlue))
@@ -62,7 +86,7 @@ struct WritingPage: View {
                     //                     Alert(title: Text("Hello"), message: Text("Hai"), primaryButton: .cancel(Text("No")), secondaryButton: .destructive(Text("Yes"), action: {
                     //                        self.showView = true
                     //                    }))
-                }
+            }
             }.offset(y:-UIScreen.main.bounds.height*0.08)
         }
     }

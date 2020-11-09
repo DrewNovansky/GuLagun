@@ -12,17 +12,41 @@ struct AcceptancePage: View {
     @State var acceptance = ""
     @State var showAlert = false
     @State var showView = false
+    @State var keyboardState = false
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
     var story = "test"
+    
     var body: some View{
         ScrollView{
-            VStack{
+            VStack(){
+                if keyboardState{
+                    Text("")
+                        .navigationBarItems(trailing:
+                                                HStack{
+                                                    Button(action: {
+                                                        hideKeyboard()
+                                                        keyboardState = false
+                                                    }
+                                                    , label: {
+                                                        Text("Done")
+                                                            .padding(5)
+                                                    }
+                                                    )
+                                                })
+                }
+                else {
+                    Text("")
+                        .navigationBarItems(trailing:
+                                                HStack{
+                                                    Text("")
+                                                })
+                }
                 VStack{
                     TitleTemp(title: "Do you know it’s okay \nto feel that way?")
                         .onTapGesture(perform: {
-                        hideKeyboard()
-                    })
+                            hideKeyboard()
+                        })
                         .padding()
                     SubtitleTemp(subtitle: "“What you’ve felt is valid.\nThere’s no right or wrong feeling.\nIt is part of you & it’s okay to feel that way.”")
                         .onTapGesture(perform: {
@@ -47,12 +71,12 @@ struct AcceptancePage: View {
                             }
                         }
                     }).padding()
-                   
+                    
                 } .onTapGesture(perform: {
                     hideKeyboard()
                 })
                 Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-                multilineTF(placeholder: "Because I ...",textWritten: $acceptance)
+                multilineTF(placeholder: "Because I ...",textWritten: $acceptance, keyboardState: $keyboardState)
                     .padding()
                 VStack{
                     ProgressView(value: 0.8)
