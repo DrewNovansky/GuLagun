@@ -67,7 +67,7 @@ var LoveList = [
 
 struct Emotion2Page: View {
     var emotionChoosen = "Joy"
-    @State var emotionDetails:String = "test"
+    @State var emotionDetails:String
     @State var ButtonActive = false
     @State var ShowDetails = false
     @State var activeIdx:Int
@@ -75,73 +75,63 @@ struct Emotion2Page: View {
     
     var body: some View {
         
-        VStack{
-            TitleTemp(title: "What kind of \(emotionChoosen) \ndid you feel?")
-            CircleImage(imagename: emotionChoosen)
-                .frame(width: 68, height: 68)
-                .padding(30)
-            
-            ScrollView{
-                
-                VStack(spacing: 24)
-                {
-                    if emotionChoosen == "Joy"{
-//                        self.emotionDetails = JoyList[0].emotionDetails
-                        ForEach(0 ..< JoyList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx, selectedEmotion: $emotionDetails, idx: item, emotion: JoyList[item].emotionEmoji, emotionDetails: JoyList[item].emotionDetails)
+            VStack{
+                TitleTemp(title: "What kind of \(emotionChoosen) \ndid you feel?")
+                CircleImage(imagename: emotionChoosen)
+                    .frame(width: 68, height: 68)
+                    .padding(30)
+                ScrollView{
+                    VStack(spacing: 24)
+                    {
+                        if emotionChoosen == "Joy"{
+                            //                        self.emotionDetails = JoyList[0].emotionDetails
+                            ForEach(0 ..< JoyList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx, selectedEmotion: $emotionDetails, idx: item, emotion: JoyList[item].emotionEmoji, emotionDetails: JoyList[item].emotionDetails)
+                            }
                         }
-                    }
-                    
-                    if emotionChoosen == "Surprise"{
-//                        self.emotionDetails = SurpriseList[0].emotionDetails
-                        ForEach(0 ..< SurpriseList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SurpriseList[item].emotionEmoji, emotionDetails: SurpriseList[item].emotionDetails)
+                        if emotionChoosen == "Surprise"{
+                            //                        self.emotionDetails = SurpriseList[0].emotionDetails
+                            ForEach(0 ..< SurpriseList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SurpriseList[item].emotionEmoji, emotionDetails: SurpriseList[item].emotionDetails)
+                            }
                         }
-                    }
-                    
-                    if emotionChoosen == "Sad"{
-//                        self.emotionDetails = SadList[0].emotionDetails
-                        ForEach(0 ..< SadList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SadList[item].emotionEmoji, emotionDetails: SadList[item].emotionDetails)
+                        if emotionChoosen == "Sad"{
+                            ForEach(0 ..< SadList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item, emotion: SadList[item].emotionEmoji, emotionDetails: SadList[item].emotionDetails)
+                            }
                         }
-                        
-                    }
-                    
-                    if emotionChoosen == "Anger"{
-                        
-                        ForEach(0 ..< AngerList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: AngerList[item].emotionEmoji, emotionDetails: AngerList[item].emotionDetails)
+                        if emotionChoosen == "Anger"{
+                            ForEach(0 ..< AngerList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: AngerList[item].emotionEmoji, emotionDetails: AngerList[item].emotionDetails)
+                            }
                         }
-                    }
-                    
-                    if emotionChoosen == "Fear"{
-                        ForEach(0 ..< FearList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: FearList[item].emotionEmoji, emotionDetails: FearList[item].emotionDetails)
+                        if emotionChoosen == "Fear"{
+                            ForEach(0 ..< FearList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: FearList[item].emotionEmoji, emotionDetails: FearList[item].emotionDetails)
+                            }
                         }
-                    }
-                    
-                    if emotionChoosen == "Love"{
-                        ForEach(0 ..< LoveList.count) { item in
-                            buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: LoveList[item].emotionEmoji, emotionDetails: LoveList[item].emotionDetails)
+                        if emotionChoosen == "Love"{
+                            ForEach(0 ..< LoveList.count) { item in
+                                buttonEmotion(activeDetail: $activeIdx,selectedEmotion: $emotionDetails,idx: item,emotion: LoveList[item].emotionEmoji, emotionDetails: LoveList[item].emotionDetails)
+                            }
                         }
                     }
                 }
-            }
-            ProgressView(value: 0.4)
-                .frame(width: 374)
-                .accentColor(Color(.systemBlue))
-            NavigationLink(
-                destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
-                label: {
-                    buttonStyleTemplate(text: "Next")
-                }).padding()
-        }.offset(y:-UIScreen.main.bounds.height*0.05)
+                ProgressView(value: 0.4)
+                    .frame(width: 374)
+                    .accentColor(Color(.systemBlue))
+                NavigationLink(
+                    destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
+                    label: {
+                        buttonStyleTemplate(text: "Next")
+                    }).padding()
+            }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }
 
 
 struct ButtonTemp_Previews: PreviewProvider {
     static var previews: some View {
-        Emotion2Page(activeIdx: 0)
+        Emotion2Page(emotionDetails: "", activeIdx: 0)
     }
 }
