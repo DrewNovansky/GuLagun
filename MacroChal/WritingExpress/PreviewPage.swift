@@ -15,7 +15,7 @@ struct PreviewPage: View {
     @FetchRequest(sortDescriptors: [])
     private var diary: FetchedResults<DiaryDatabase>
     // hasil passing data
-    var emotionChoosen = ""
+    var emotionChoosen = "Joy"
     var emotionDetails = "Grateful"
     @State var story = ""
     @State var acceptenceText = ""
@@ -59,7 +59,6 @@ struct PreviewPage: View {
                         SubtitleTemp(subtitle: "I feel \(emotionDetails)")
                         multilineTF(placeholder: story, textWritten: $story, keyboardState: $keyboardState)
                             .padding()
-                        
                         Button(action: {
                             self.heartOn.toggle()
                         }, label: {
@@ -77,7 +76,7 @@ struct PreviewPage: View {
                                         .font(.system(size: 62))
                                 }
                             }
-                        })
+                        }).padding()
                         //hasil passing data
                         multilineTF(placeholder: acceptenceText, textWritten: $acceptenceText,keyboardState: $keyboardState)
                         
@@ -141,33 +140,25 @@ struct WayToGoPage: View{
     @State var showView = false
     var body: some View{
         VStack{
+            ScrollView{
             TitleTemp(title: "Way to go!")
-            
-            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
-                .frame(width:UIScreen.main.bounds.height*0.9,height:UIScreen.main.bounds.height*0.1)
                 .padding()
-            
+            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
+                .padding()
             Image("WayToGo!")
                 .resizable()
-                .frame(width: 286, height: 283, alignment: .center)
-                .offset(y:UIScreen.main.bounds.height*0.05)
-            
-            Text("").frame(height:UIScreen.main.bounds.height*0.1)
-            
-            
+                .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8, alignment: .center)
             VStack{
                 SubtitleTemp(subtitle: "See you at")
-                
+                    .padding()
                 DatePicker("", selection: $selectedDate, displayedComponents: .hourAndMinute)
                     .datePickerStyle(CompactDatePickerStyle())
                     .labelsHidden()
                     .frame(alignment: .center)
                     .accentColor(Color("FontColor"))
                     .padding()
-                
                 let components =
                     Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
-                
                 NavigationLink(destination: GoodJobPage(), isActive: $showView) {
                     Button(
                         //destination: WayToGoPage(),
@@ -179,8 +170,6 @@ struct WayToGoPage: View{
                                 } else if error != nil {
                                     print("Error found")
                                 }
-                                
-                                
                             }
                             let content = UNMutableNotificationContent()
                             content.title = "Are you ready to go to the ForRest?"
@@ -207,6 +196,7 @@ struct WayToGoPage: View{
             }.frame(height:UIScreen.main.bounds.height*0.3)
         }.offset(y:-UIScreen.main.bounds.height*0.02)
     }
+    }
 }
 
 struct GoodJobPage: View {
@@ -219,14 +209,13 @@ struct GoodJobPage: View {
             Text("").frame(height:UIScreen.main.bounds.height*0.15)
             Image("SeeYou!")
                 .resizable()
-                .frame(width: 286, height: 283, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8, alignment: .center)
                 .padding()
-            Text("").frame(height:UIScreen.main.bounds.height*0.15)
             NavigationLink(
                 destination: BonFireView(),
                 label: {
                     buttonStyleTemplate(text: "See you!")
-                })
+                }).padding()
         }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }

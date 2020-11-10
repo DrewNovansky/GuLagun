@@ -78,26 +78,37 @@ struct HistoryPage: View {
 //                    }
                     if commentField{
                         multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
+                            .padding()
                     }
                     Button(action: {
                         if buttonComment{
                             commentField.toggle()
                             buttonComment.toggle()
                         } else if buttonComment == false{
-                            if heartOn == false{
-                                halfModal.toggle()
+                            //Mark: alert muncul if write here...
+                            if commentText == "" || commentText == "Write Here..." || commentText == "Write Here"{
+                                self.showAlert = true
                             }
-                            commentField.toggle()
-                            buttonComment.toggle()
+                            else{
+                                
+                                if heartOn == false{
+                                    halfModal.toggle()
+                                }
+                                commentField.toggle()
+                                buttonComment.toggle()
+                            }
                         }
                     }, label: {
                         if buttonComment{
                             buttonStyleTemplate(text: "Add Comment")
+                                .padding()
                         } else if buttonComment == false{
                             buttonStyleTemplate(text: "Save Comment")
+                                .padding()
                         }
-                    })
-                
+                    }).alert(isPresented: $showAlert) {
+                        Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
+                    }
             }.offset(y:UIScreen.main.bounds.height*0.01)
             }.offset(y:-UIScreen.main.bounds.height*0.011)
             if halfModal {
