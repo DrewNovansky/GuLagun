@@ -49,13 +49,13 @@ struct HistoryView: View {
                     ForEach(self.result) {timestamp in
                         Button(action: {
                             if timestamp.emotionChoosen != "" && timestamp.emotionDetail != ""{
-                                self.emotionChoosen = timestamp.emotionChoosen ?? ""
-                                self.emotionDetails = timestamp.emotionDetail ?? ""
-                                self.story = timestamp.story ?? ""
-                                self.acceptenceText = timestamp.acceptanceText ?? ""
+                                self.emotionChoosen = timestamp.emotionChoosen
+                                self.emotionDetails = timestamp.emotionDetail
+                                self.story = timestamp.story
+                                self.acceptenceText = timestamp.acceptanceText
                                 self.heartOn = timestamp.heartOn
-                                self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal")
-                                self.jam = CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "")
+                                self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp, minta: "tanggal")
+                                self.jam = CekTanggal(tanggalInput: timestamp.timestamp, minta: "")
                                 self.showNew = true
                                 self.databaseyang = timestamp
                             }
@@ -68,22 +68,22 @@ struct HistoryView: View {
                                 self.showNew = false}
                         }, label: {
                             HStack{
-                                Image("\(timestamp.emotionChoosen ?? "")")
+                                Image("\(timestamp.emotionChoosen)")
                                     .resizable()
                                     .frame(width:50, height:50)
                                     .padding()
                                 
                                 VStack(alignment: .leading){
-                                    Text(CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: "tanggal"))
+                                    Text(CekTanggal(tanggalInput: timestamp.timestamp, minta: "tanggal"))
                                         .foregroundColor(.accentColor)
                                     //tanggal
-                                    Text(timestamp.story ?? "")
+                                    Text(timestamp.story)
                                         .frame(height: 25)
                                         .foregroundColor(.accentColor)
                                 }
                                 Spacer()
                                 VStack{
-                                    Text(CekTanggal(tanggalInput: timestamp.timestamp ?? Date(), minta: ""))
+                                    Text(CekTanggal(tanggalInput: timestamp.timestamp, minta: ""))
                                         .foregroundColor(.accentColor)
                                     
                                     if timestamp.heartOn == true{
