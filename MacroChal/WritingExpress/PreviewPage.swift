@@ -77,7 +77,7 @@ struct PreviewPage: View {
                                         .font(.system(size: 62))
                                 }
                             }
-                        }).padding()
+                        })
                         //hasil passing data
                         multilineTF(placeholder: acceptenceText, textWritten: $acceptenceText,keyboardState: $keyboardState)
                         
@@ -86,9 +86,10 @@ struct PreviewPage: View {
                     }
                 }else{
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
-                    
+                        .padding()
                     Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 }
+                
                 Button(action: {
                     editOn.toggle()
                 }, label: {
@@ -101,34 +102,34 @@ struct PreviewPage: View {
                         buttonStyleTemplate(text: "Edit")
                     }
                 }
-                )
+                ).offset(y:UIScreen.main.bounds.height*0.045)
                 if editOn == false{
-                NavigationLink(destination: WayToGoPage(), isActive: $showView) {
-                    Button(
-                        //destination: WayToGoPage(),
-                        action: {
-                            let diary = DiaryDatabase(context: viewContext)
-                            diary.emotionChoosen = self.emotionChoosen
-                            diary.acceptanceText = self.acceptenceText
-                            diary.emotionDetail = self.emotionDetails
-                            diary.heartOn = self.heartOn
-                            diary.story = self.story
-                            diary.timestamp = self.date
-                            //Save context
-                            do {
-                                try viewContext.save()
-                                print("Saved")
-                            } catch {
-                                let error = NSError.self
-                                fatalError("UnresolvedError \(error)")
-                            }
-                            self.showView = true
-                            
-                        },
-                        label: {
-                            buttonStyleTemplate(text: "Next")
-                        }).padding()
-                }
+                    NavigationLink(destination: WayToGoPage(), isActive: $showView) {
+                        Button(
+                            //destination: WayToGoPage(),
+                            action: {
+                                let diary = DiaryDatabase(context: viewContext)
+                                diary.emotionChoosen = self.emotionChoosen
+                                diary.acceptanceText = self.acceptenceText
+                                diary.emotionDetail = self.emotionDetails
+                                diary.heartOn = self.heartOn
+                                diary.story = self.story
+                                diary.timestamp = self.date
+                                //Save context
+                                do {
+                                    try viewContext.save()
+                                    print("Saved")
+                                } catch {
+                                    let error = NSError.self
+                                    fatalError("UnresolvedError \(error)")
+                                }
+                                self.showView = true
+                                
+                            },
+                            label: {
+                                buttonStyleTemplate(text: "Next")
+                            }).padding()
+                    }.offset(y:UIScreen.main.bounds.height*0.04)
                 }
             }
         }.offset(y:-UIScreen.main.bounds.height*0.03)
@@ -141,66 +142,70 @@ struct WayToGoPage: View{
     var body: some View{
         VStack{
             TitleTemp(title: "Way to go!")
-                .padding()
-            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
             
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            SubtitleTemp(subtitle: "It’s a great experience today.\nI hope you learned something about yourself.\nLet’s meet again tomorrow!")
+                .frame(width:UIScreen.main.bounds.height*0.9,height:UIScreen.main.bounds.height*0.1)
+                .padding()
             
             Image("WayToGo!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
+                .offset(y:UIScreen.main.bounds.height*0.05)
             
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            Text("").frame(height:UIScreen.main.bounds.height*0.1)
             
-            SubtitleTemp(subtitle: "See you at")
             
-            DatePicker("", selection: $selectedDate, displayedComponents: .hourAndMinute)
-                .datePickerStyle(CompactDatePickerStyle())
-                .labelsHidden()
-                .frame(alignment: .center)
-                .accentColor(Color("FontColor"))
-                .padding()
-            
-            let components =
-                Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
-            
-            NavigationLink(destination: GoodJobPage(), isActive: $showView) {
-                Button(
-                    //destination: WayToGoPage(),
-                    action: {
-                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  {
-                            success, error in
-                            if success {
-                                print("authorization granted")
-                            } else if error != nil {
-                                print("Error found")
+            VStack{
+                SubtitleTemp(subtitle: "See you at")
+                
+                DatePicker("", selection: $selectedDate, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(CompactDatePickerStyle())
+                    .labelsHidden()
+                    .frame(alignment: .center)
+                    .accentColor(Color("FontColor"))
+                    .padding()
+                
+                let components =
+                    Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: selectedDate.advanced(by: 86400))
+                
+                NavigationLink(destination: GoodJobPage(), isActive: $showView) {
+                    Button(
+                        //destination: WayToGoPage(),
+                        action: {
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  {
+                                success, error in
+                                if success {
+                                    print("authorization granted")
+                                } else if error != nil {
+                                    print("Error found")
+                                }
+                                
+                                
                             }
+                            let content = UNMutableNotificationContent()
+                            content.title = "Are you ready to go to the ForRest?"
+                            content.body = "How's your day so far? Let's express together with Boo."
+                            content.sound = UNNotificationSound.default
                             
+                            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
                             
-                        }
-                        let content = UNMutableNotificationContent()
-                        content.title = "Are you ready to go to the ForRest?"
-                        content.body = "How's your day so far? Let's express together with Boo."
-                        content.sound = UNNotificationSound.default
-                        
-                        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-                        
-                        let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
-                        
-                        UNUserNotificationCenter.current().add(request)
-                        self.showView = true
-                        let center = UNUserNotificationCenter.current()
-                        center.getPendingNotificationRequests(completionHandler: { requests in
-                            for request in requests {
-                                print(request)
-                            }
-                        })
-                    },
-                    label: {
-                        buttonStyleTemplate(text: "Next")
-                    }).padding()
-            }
-        }.offset(y:-UIScreen.main.bounds.height*0.08)
+                            let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
+                            
+                            UNUserNotificationCenter.current().add(request)
+                            self.showView = true
+                            let center = UNUserNotificationCenter.current()
+                            center.getPendingNotificationRequests(completionHandler: { requests in
+                                for request in requests {
+                                    print(request)
+                                }
+                            })
+                        },
+                        label: {
+                            buttonStyleTemplate(text: "Next")
+                        }).padding()
+                }
+            }.frame(height:UIScreen.main.bounds.height*0.3)
+        }.offset(y:-UIScreen.main.bounds.height*0.02)
     }
 }
 
@@ -208,20 +213,21 @@ struct GoodJobPage: View {
     var body: some View{
         VStack{
             TitleTemp(title: "Great job!")
-                .padding()
+                //.padding()
             SubtitleTemp(subtitle: "We’ll remind you again tomorrow, see you!")
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                .padding()
+            Text("").frame(height:UIScreen.main.bounds.height*0.15)
             Image("SeeYou!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
                 .padding()
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            Text("").frame(height:UIScreen.main.bounds.height*0.15)
             NavigationLink(
                 destination: BonFireView(),
                 label: {
                     buttonStyleTemplate(text: "See you!")
                 })
-        }.offset(y:-UIScreen.main.bounds.height*0.08)
+        }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }
 
