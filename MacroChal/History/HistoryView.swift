@@ -30,6 +30,7 @@ struct HistoryView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.accentColor)
                 .offset(y:-UIScreen.main.bounds.height*0.04)
+               
             ScrollView{
             if result.endIndex == 0 {
                 Text("It's seems you haven't tell us any story let's start expressing")
@@ -110,7 +111,7 @@ struct HistoryView: View {
                         
                     }
                 }
-            }.offset(y:-UIScreen.main.bounds.height*0.03)
+            }.offset(y:UIScreen.main.bounds.height*0.01)
             }
             }
             Spacer()

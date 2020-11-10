@@ -16,25 +16,26 @@ struct QuotesPage: View {
     
     var body: some View {
         
-        VStack(){
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+        VStack{
+            
             TitleTemp(title: "That’s a great \nexperience today!")
-                
+                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.2)
             
             SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling.\nYou should embrace it as a part of your growth.\nDid you know that by accepting your feeling\nyou are one step closer to love yourself more?")
                 .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.1)
                 .padding()
             
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             
             Image("Great!")
                 .resizable()
                 .frame(width: 286, height: 283, alignment: .center)
                 .padding()
-               
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            
             
             SubtitleTemp(subtitle: "Let’s check out what you’ve written once more,\nshall we?")
+                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.2)
+                .padding()
+            
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             
@@ -50,7 +51,7 @@ struct QuotesPage: View {
                 })
                 .padding()
             
-        }.offset(y:-UIScreen.main.bounds.height*0.06)
+        }.offset(y:-UIScreen.main.bounds.height*0.04)
     }
 }
 

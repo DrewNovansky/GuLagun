@@ -102,7 +102,7 @@ struct AcceptancePage: View {
                     UIApplication.shared.endEditing()
                 })
                 
-            }.offset(y:-UIScreen.main.bounds.height*0.08)
+            }.offset(y:-UIScreen.main.bounds.height*0.1)
             
         }
     }

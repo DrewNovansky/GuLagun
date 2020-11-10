@@ -60,10 +60,12 @@ struct WritingPage: View {
                     hideKeyboard()
                 })
                 .padding()
+               
                 multilineTF(placeholder: "I feel \(emotionDetails) because",textWritten: $story, keyboardState: $keyboardState)
                 ProgressView(value: 0.6)
                     .frame(width: 374)
                     .accentColor(Color(.systemBlue))
+                    .offset(y: UIScreen.main.bounds.height*0.01)
                     .padding()
                     .onTapGesture(perform: {
                         hideKeyboard()
@@ -79,7 +81,9 @@ struct WritingPage: View {
                             showView = true
                         }
                     }, label: {buttonStyleTemplate(text: "Next")})
-                }.padding()
+                }
+                .offset(y: UIScreen.main.bounds.height*0.01)
+                .padding()
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
                     //MARK : Alert with option

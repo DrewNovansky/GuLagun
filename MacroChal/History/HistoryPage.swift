@@ -10,7 +10,6 @@ import CoreData
 
 struct comment : Identifiable {
     var id: Int
-    
     let Date: String
     let comment: String
 }
@@ -24,7 +23,7 @@ struct HistoryPage: View {
     @State var heartOn:Bool
     var tanggal: String
     var jam: String
-    var datayangmana: DiaryDatabase
+    @State var datayangmana: DiaryDatabase
     @State var editOn = true
     @Environment(\.managedObjectContext) private var viewContext
     @State var buttonComment = true
@@ -33,6 +32,7 @@ struct HistoryPage: View {
     @State var commentText = ""
     @State var keyboardState = false
     @State var showAlert = false
+//    @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
     var body: some View {
         ZStack{
             ScrollView{
@@ -64,18 +64,18 @@ struct HistoryPage: View {
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     
-                    SubtitleTemp(subtitle: "Note to self:")
+//                    SubtitleTemp(subtitle: "Note to self:")
                     // ini untuk scroll view nya munculin 
-                    ForEach(0 ..< commentList.count) { item in
-                        ScrollView{
-                            SubtitleTemp(subtitle: commentList[item].Date)
-                            SubtitleTemp(subtitle: commentList[item].comment)
-                        }
-                        .frame(width: 354, height: 135, alignment: .center)
-                        .padding()
-                        .background(Color("CommentColor"))
-                        .cornerRadius(20)
-                    }
+//                    ForEach(self.commentTest) { isiKomen in
+//                        ScrollView{
+//                            SubtitleTemp(subtitle: isiKomen.comment ?? "")
+//                            SubtitleTemp(subtitle: isiKomen.timestampComment ?? "")
+//                        }
+//                        .frame(width: 354, height: 135, alignment: .center)
+//                        .padding()
+//                        .background(Color("CommentColor"))
+//                        .cornerRadius(20)
+//                    }
                     if commentField{
                         multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
                     }
@@ -108,7 +108,7 @@ struct HistoryPage: View {
 
                     Button(action:{
                         halfModal.toggle()
-                        saveComment()
+//                        saveComment()
                     },label: {
                         buttonStyleTemplate(text: "Save")
                     })
@@ -119,20 +119,20 @@ struct HistoryPage: View {
             
     }
 }
-    func saveComment() {
-        let diary = Commentary(context: viewContext)
-        diary.children = self.datayangmana
-        diary.comment = self.commentText
-        diary.timestamp = Date()
-        //Save context
-        do {
-            try viewContext.save()
-            print("Saved")
-        } catch {
-            let error = NSError.self
-            fatalError("UnresolvedError \(error)")
-        }
-    }
+//    func saveComment() {
+//        let diary = CommentaryData(context: viewContext)
+//        diary.children = datayangmana
+//        diary.comment = commentText
+//        diary.timestampComment = Date()
+//        //Save context
+//        do {
+//            try viewContext.save()
+//            print("Saved")
+//        } catch {
+//            let error = NSError.self
+//            fatalError("UnresolvedError \(error)")
+//        }
+//    }
 }
 
 struct HistoryPage_Previews: PreviewProvider {

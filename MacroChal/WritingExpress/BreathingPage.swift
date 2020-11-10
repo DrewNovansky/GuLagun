@@ -70,12 +70,15 @@ struct BreathingPage: View {
             } else {
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Yes")
-                }.padding()
+                }
+                .padding()
+                .offset(y:UIScreen.main.bounds.width*0.1)
                 NavigationLink(destination: BreathingPage()) {
                     buttonStyleTemplate(text: "No")
                 }
+                .offset(y:UIScreen.main.bounds.width*0.1) 
             }
-        }.offset(y:-UIScreen.main.bounds.width*0.127) 
+        }.offset(y:-UIScreen.main.bounds.width*0.15) 
     }
     
     func buatProgress(atas: Int, bawah: Int)-> Float {

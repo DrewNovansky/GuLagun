@@ -120,11 +120,14 @@ struct Emotion2Page: View {
                 ProgressView(value: 0.4)
                     .frame(width: 374)
                     .accentColor(Color(.systemBlue))
+                    .padding()
+                    .offset(y:UIScreen.main.bounds.height*0.05)
                 NavigationLink(
                     destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                     label: {
                         buttonStyleTemplate(text: "Next")
                     }).padding()
+                    .offset(y:UIScreen.main.bounds.height*0.05)
             }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
 }
