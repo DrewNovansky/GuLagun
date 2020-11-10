@@ -12,6 +12,7 @@ struct FocusBreathingPage: View {
         ScrollView(showsIndicators: false){
             VStack{
                 
+                Text("").frame(height: UIScreen.main.bounds.width*0.1)
                 
                 FireAnimation(imageName: "apiKecil", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.176)*5),height: Int((UIScreen.main.bounds.width*0.149)*5))
                     .frame(height: (UIScreen.main.bounds.width*0.149)*3.4)
@@ -34,9 +35,8 @@ struct FocusBreathingPage: View {
                     buttonStyleTemplate(text: "Begin Breathing")
                 }.padding()
             }
-            //.offset(y:UIScreen.main.bounds.height*0.049)
             
-        }.offset(y:-UIScreen.main.bounds.height*0.01)
+        }.offset(y:-UIScreen.main.bounds.height*0.001)
     }
 }
 

@@ -58,6 +58,7 @@ struct PreviewPage: View {
                             .padding()
                         SubtitleTemp(subtitle: "I feel \(emotionDetails)")
                         multilineTF(placeholder: story, textWritten: $story, keyboardState: $keyboardState)
+                            .padding()
                         
                         Button(action: {
                             self.heartOn.toggle()
@@ -98,7 +99,6 @@ struct PreviewPage: View {
                     }else
                     {
                         buttonStyleTemplate(text: "Edit")
-                            .padding()
                     }
                 }
                 )
@@ -131,7 +131,7 @@ struct PreviewPage: View {
                 }
                 }
             }
-        }
+        }.offset(y:-UIScreen.main.bounds.height*0.03)
     }
 }
 
