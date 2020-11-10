@@ -84,11 +84,7 @@ struct AcceptancePage: View {
                         .accentColor(Color(.systemBlue))
                     NavigationLink(destination: QuotesPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptance, heartState: heartState), isActive: $showView){
                         Button(action: {
-                            if acceptance == ""{
-                                self.showAlert = true
-                            }else if acceptance == "Because I ..."{
-                                self.showAlert = true
-                            }else if acceptance == "Because I "{
+                            if acceptance == "" || acceptance == "Because I ..." || acceptance == "Because I "{
                                 self.showAlert = true
                             }else{
                                 showView = true

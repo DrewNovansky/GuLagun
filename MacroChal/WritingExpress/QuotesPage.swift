@@ -17,30 +17,23 @@ struct QuotesPage: View {
     var body: some View {
         
         VStack{
-            
+            ScrollView{
             TitleTemp(title: "That’s a great \nexperience today!")
-                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.2)
+                .padding()
             
             SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling.\nYou should embrace it as a part of your growth.\nDid you know that by accepting your feeling\nyou are one step closer to love yourself more?")
-                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.1)
                 .padding()
             
             
             Image("Great!")
                 .resizable()
-                .frame(width: 286, height: 283, alignment: .center)
-                .padding()
+                .frame(width: UIScreen.main.bounds.width*0.8,height: UIScreen.main.bounds.width*0.8,alignment: .center)
             
             
-            SubtitleTemp(subtitle: "Let’s check out what you’ve written once more,\nshall we?")
-                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.width*0.2)
-                .padding()
-            
-            
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+            SubtitleTemp(subtitle: "Let’s check out what you’ve written once more, shall we?").padding()
             
             ProgressView(value: 1.0)
-                .frame(width: 374)
+                .frame(width: UIScreen.main.bounds.width*0.9)
                 .accentColor(Color(.systemBlue))
                 .padding()
             
@@ -52,6 +45,7 @@ struct QuotesPage: View {
                 .padding()
             
         }.offset(y:-UIScreen.main.bounds.height*0.04)
+    }
     }
 }
 

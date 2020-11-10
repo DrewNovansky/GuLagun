@@ -15,8 +15,8 @@ struct multilineTF :View {
     var body: some View{
         VStack{
             MultiLineTextField(placeholder: $placeholder,story: $textWritten, keyboardState: $keyboardState)
-                .frame(width: 374,height: 336)
                 .padding(10)
+                .frame(width: UIScreen.main.bounds.width-30,height: 336)
                 .background(Color("TextfieldColor"))
                 .cornerRadius(20)
         }
