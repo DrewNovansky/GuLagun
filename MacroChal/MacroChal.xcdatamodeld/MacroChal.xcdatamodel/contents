@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="CommentaryData" representedClassName=".CommentarycommentTest" parentEntity="DiaryDatabase" syncable="YES" codeGenerationType="class">
+    <entity name="CommentaryData" representedClassName=".CommentaryData" parentEntity="DiaryDatabase" syncable="YES">
         <attribute name="comment" attributeType="String" defaultValueString=""/>
         <attribute name="timestampComment" attributeType="Date" defaultDateTimeInterval="626257560" usesScalarValueType="NO"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DiaryDatabase" inverseName="parent" inverseEntity="DiaryDatabase"/>
     </entity>
-    <entity name="DiaryDatabase" representedClassName=".DiaryDatabase" syncable="YES" codeGenerationType="class">
+    <entity name="DiaryDatabase" representedClassName=".DiaryDatabase" syncable="YES">
         <attribute name="acceptanceText" attributeType="String" defaultValueString=""/>
         <attribute name="emotionChoosen" attributeType="String" defaultValueString=""/>
         <attribute name="emotionDetail" attributeType="String" defaultValueString=""/>

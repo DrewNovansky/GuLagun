@@ -32,7 +32,7 @@ struct HistoryPage: View {
     @State var commentText = ""
     @State var keyboardState = false
     @State var showAlert = false
-//    @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
+ @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
     var body: some View {
         ZStack{
             ScrollView{
