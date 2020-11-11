@@ -8,13 +8,6 @@
 import SwiftUI
 import CoreData
 
-struct comment : Identifiable {
-    var id: Int
-    let Date: String
-    let comment: String
-}
-
-var commentList = [comment(id: 0, Date: "20 oktober", comment: "testing")]
 struct HistoryPage: View {
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
@@ -32,7 +25,9 @@ struct HistoryPage: View {
     @State var commentText = ""
     @State var keyboardState = false
     @State var showAlert = false
+    
  @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
+    
     var body: some View {
         ZStack{
             ScrollView{
@@ -64,18 +59,20 @@ struct HistoryPage: View {
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     
-//                    SubtitleTemp(subtitle: "Note to self:")
-                    // ini untuk scroll view nya munculin 
-//                    ForEach(self.commentTest) { isiKomen in
-//                        ScrollView{
-//                            SubtitleTemp(subtitle: isiKomen.comment ?? "")
-//                            SubtitleTemp(subtitle: isiKomen.timestampComment ?? "")
-//                        }
-//                        .frame(width: 354, height: 135, alignment: .center)
-//                        .padding()
-//                        .background(Color("CommentColor"))
-//                        .cornerRadius(20)
-//                    }
+                    SubtitleTemp(subtitle: "Note to self:")
+                     //ini untuk scroll view nya munculin
+                    ForEach(self.commentTest) { isiKomen in
+                        ScrollView{
+                            SubtitleTemp(subtitle: isiKomen.comment)
+                            SubtitleTemp(subtitle:
+                            ""//isiKomen.timestampComment)
+                            )
+                        }
+                        .frame(width: 354, height: 135, alignment: .center)
+                        .padding()
+                        .background(Color("CommentColor"))
+                        .cornerRadius(20)
+                    }
                     if commentField{
                         multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
                             .padding()
@@ -119,7 +116,9 @@ struct HistoryPage: View {
 
                     Button(action:{
                         halfModal.toggle()
-//                        saveComment()
+                        saveComment()
+                        reloadHeart()
+                        
                     },label: {
                         buttonStyleTemplate(text: "Save")
                     })
@@ -130,20 +129,30 @@ struct HistoryPage: View {
             
     }
 }
-//    func saveComment() {
-//        let diary = CommentaryData(context: viewContext)
-//        diary.children = datayangmana
-//        diary.comment = commentText
-//        diary.timestampComment = Date()
-//        //Save context
-//        do {
-//            try viewContext.save()
-//            print("Saved")
-//        } catch {
-//            let error = NSError.self
-//            fatalError("UnresolvedError \(error)")
-//        }
-//    }
+    func saveComment() {
+        let diary = CommentaryData(context: viewContext)
+        diary.children = datayangmana
+        diary.comment = commentText
+        diary.timestampComment = Date()
+        //Save context
+        do {
+            try viewContext.save()
+            print("Saved")
+        } catch {
+            let error = NSError.self
+            fatalError("UnresolvedError \(error)")
+        }
+    }
+    func reloadHeart() {
+        datayangmana.heartOn = heartOn
+        do {
+            try viewContext.save()
+            print("Saved")
+        } catch {
+            let error = NSError.self
+            fatalError("UnresolvedError \(error)")
+        }
+    }
 }
 
 struct HistoryPage_Previews: PreviewProvider {

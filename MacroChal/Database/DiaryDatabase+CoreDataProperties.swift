@@ -2,7 +2,7 @@
 //  DiaryDatabase+CoreDataProperties.swift
 //  ForRest
 //
-//  Created by Steven Rafaelie on 10/11/20.
+//  Created by Steven Rafaelie on 11/11/20.
 //
 //
 
