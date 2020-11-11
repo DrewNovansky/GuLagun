@@ -9,15 +9,12 @@ import SwiftUI
 
 struct FocusBreathingPage: View {
     var body: some View {
-        ScrollView(showsIndicators: false){
-            VStack{
-                
+        VStack{
+            ScrollView(showsIndicators: false){
                 Text("").frame(height: UIScreen.main.bounds.width*0.1)
-                
                 FireAnimation(imageName: "apiKecil", x: Int(UIScreen.main.bounds.width/15), y: Int(-UIScreen.main.bounds.height)/25, width: Int((UIScreen.main.bounds.width*0.176)*5),height: Int((UIScreen.main.bounds.width*0.149)*5))
                     .frame(height: (UIScreen.main.bounds.width*0.149)*3.4)
                     .offset(y: -UIScreen.main.bounds.height/15)
-                
                 TitleTemp(title: "Focus Breathing")
                 SubtitleTemp(subtitle: "Breathing helps you to be more calm\nbefore you start expressing yourself.").frame(height: UIScreen.main.bounds.width * 0.2)
                 
@@ -30,12 +27,10 @@ struct FocusBreathingPage: View {
                 .padding(3)
                 SubtitleTemp(subtitle: "1 session consist of 4 breaths 01:00 Min")
                     .padding()
-                
-                NavigationLink(destination: BreathingPage()) {
-                    buttonStyleTemplate(text: "Begin Breathing")
-                }.padding()
             }
-            
+            NavigationLink(destination: BreathingPage()) {
+                buttonStyleTemplate(text: "Begin Breathing")
+            }.padding()
         }.offset(y:-UIScreen.main.bounds.height*0.001)
     }
 }

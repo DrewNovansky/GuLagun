@@ -56,8 +56,8 @@ struct BreathingPage: View {
                             self.countDown = ""
                             self.timerDetik.upstream.connect().cancel()
                         }
-                    }
-                    ).offset(y: UIScreen.main.bounds.height/20)
+                    })
+                    .offset(y: UIScreen.main.bounds.height*0.09)
             }
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
@@ -76,7 +76,7 @@ struct BreathingPage: View {
                 .padding()
                 .offset(y:UIScreen.main.bounds.width*0.1)
                 NavigationLink(destination: BreathingPage()) {
-                    buttonStyleTemplate(text: "No")
+                    buttonTemplate(funcActive: false, emotion: "No")
                 }
                 .offset(y:UIScreen.main.bounds.width*0.1) 
             }

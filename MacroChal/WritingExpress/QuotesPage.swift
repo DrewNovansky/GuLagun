@@ -17,35 +17,29 @@ struct QuotesPage: View {
     var body: some View {
         
         VStack{
-            ScrollView{
             TitleTemp(title: "That’s a great \nexperience today!")
-                .padding()
-            
+        }.offset(y: -UIScreen.main.bounds.height*0.05)
+            ScrollView{
             SubtitleTemp(subtitle: "Remember that there’s no right or wrong feeling.\nYou should embrace it as a part of your growth.\nDid you know that by accepting your feeling\nyou are one step closer to love yourself more?")
                 .padding()
-            
-            
             Image("Great!")
                 .resizable()
-                .frame(width: UIScreen.main.bounds.width*0.8,height: UIScreen.main.bounds.width*0.8,alignment: .center)
-            
-            
+                .frame(width: UIScreen.main.bounds.width*0.7,height: UIScreen.main.bounds.width*0.7,alignment: .center)
             SubtitleTemp(subtitle: "Let’s check out what you’ve written once more, shall we?").padding()
-            
+            }.offset(y:-UIScreen.main.bounds.height*0.05)
+            VStack{
             ProgressView(value: 1.0)
                 .frame(width: UIScreen.main.bounds.width*0.9)
                 .accentColor(Color(.systemBlue))
                 .padding()
-            
             NavigationLink(
                 destination: PreviewPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartState),
                 label: {
                     buttonStyleTemplate(text: "Next")
                 })
                 .padding()
-            
-        }.offset(y:-UIScreen.main.bounds.height*0.04)
-    }
+        }
+//            .offset(y: -UIScreen.main.bounds.height*0.02)
     }
 }
 

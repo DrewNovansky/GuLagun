@@ -126,7 +126,8 @@ struct Emotion2Page: View {
                     destination: WritingPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails,story: ""),
                     label: {
                         buttonStyleTemplate(text: "Next")
-                    }).padding()
+                    })
+                    .padding()
                     .offset(y:UIScreen.main.bounds.height*0.05)
             }.offset(y:-UIScreen.main.bounds.height*0.05)
     }
