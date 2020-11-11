@@ -157,14 +157,14 @@ struct buttonTemplate: View{
             Text(emotion)
                 .font(.body)
                 .foregroundColor(.black)
-                .frame(width: UIScreen.main.bounds.width-30 , height: 48)
+                .frame(width: UIScreen.main.bounds.width*0.9 , height: 48)
                 .background(Color("ActiveButtonColor"))
                 .cornerRadius(20)
         }else{
             Text(emotion)
                 .font(.body)
                 .foregroundColor(.black)
-                .frame(width: UIScreen.main.bounds.width-30 , height: 48)
+                .frame(width: UIScreen.main.bounds.width*0.9 , height: 48)
                 .background(Color("WriteColor"))
                 .cornerRadius(20)
         }

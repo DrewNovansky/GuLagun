@@ -35,7 +35,8 @@ struct HistoryView: View {
                 VStack{
                     SubtitleTemp(subtitle: "Well there's nothing here... yet.\nSo let's start expressing about today, shall we?")
                     Image("YourWriting")
-                        .frame(height: UIScreen.main.bounds.width)
+                        .frame(height: UIScreen.main.bounds.width*0.7)
+                        .padding()
                     Spacer()
                     NavigationLink(
                         destination: FocusBreathingPage(),

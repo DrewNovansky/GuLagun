@@ -16,32 +16,29 @@ struct AcceptancePage: View {
     var emotionChoosen = ""
     var emotionDetails = "Grateful"
     var story = "test"
-    
     var body: some View{
-        ScrollView{
-            VStack(){
-                if keyboardState{
-                    Text("")
-                        .navigationBarItems(trailing:
-                                                HStack{
-                                                    Button(action: {
-                                                        hideKeyboard()
-                                                        keyboardState = false
-                                                    }
-                                                    , label: {
-                                                        Text("Done")
-                                                            .padding(5)
-                                                    }
-                                                    )
-                                                })
-                }
-                else {
-                    Text("")
-                        .navigationBarItems(trailing:
-                                                HStack{
-                                                    Text("")
-                                                })
-                }
+            if keyboardState{
+                Text("")
+                    .navigationBarItems(trailing:
+                                            HStack{
+                                                Button(action: {
+                                                    hideKeyboard()
+                                                    keyboardState = false
+                                                }
+                                                , label: {
+                                                    Text("Done")
+                                                        .padding(5)
+                                                }
+                                                )
+                                            })
+            }
+            else {
+                Text("")
+                    .navigationBarItems(trailing:
+                                            HStack{
+                                                Text("")
+                                            })
+            }
                 VStack{
                     TitleTemp(title: "Do you know it’s okay \nto feel that way?")
                         .onTapGesture(perform: {
@@ -52,7 +49,8 @@ struct AcceptancePage: View {
                         .onTapGesture(perform: {
                             hideKeyboard()
                         })
-                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                }.offset(y: -UIScreen.main.bounds.height*0.1)
+        ScrollView{
                     Button(action: {
                         self.heartState.toggle()
                     }, label: {
@@ -64,45 +62,38 @@ struct AcceptancePage: View {
                                 Image("Heart.Fill")
                                     .renderingMode(.none)
                                     .font(.system(size: 62))
-                            }else if heartState == false{
+                            }
+                            else if heartState == false{
                                 Image("Heart")
                                     .renderingMode(.none)
                                     .font(.system(size: 62))
                             }
                         }
                     }).padding()
-                    
-                } .onTapGesture(perform: {
-                    hideKeyboard()
-                })
-                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 multilineTF(placeholder: "Because I ...",textWritten: $acceptance, keyboardState: $keyboardState)
                     .padding()
-                VStack{
-                    ProgressView(value: 0.8)
-                        .frame(width: 374)
-                        .accentColor(Color(.systemBlue))
-                    NavigationLink(destination: QuotesPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptance, heartState: heartState), isActive: $showView){
-                        Button(action: {
-                            if acceptance == "" || acceptance == "Because I ..." || acceptance == "Because I "{
-                                self.showAlert = true
-                            }else{
-                                showView = true
-                            }
-                        }, label: {buttonStyleTemplate(text: "Next")})
-                    }.padding()
-                    .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure!")))
-                    }
-                }.onTapGesture(perform: {
-                    UIApplication.shared.endEditing()
-                })
-                
-            }.offset(y:-UIScreen.main.bounds.height*0.1)
-            
-        }
+            Spacer()
+    }.offset(y: -UIScreen.main.bounds.height*0.1)
+            VStack{
+                ProgressView(value: 0.8)
+                    .frame(width: 374)
+                    .accentColor(Color(.systemBlue))
+                    .padding()
+                NavigationLink(destination: QuotesPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptance, heartState: heartState), isActive: $showView){
+                    Button(action: {
+                        if acceptance == "" || acceptance == "Because I ..." || acceptance == "Because I "{
+                            self.showAlert = true
+                        }else{
+                            showView = true
+                        }
+                    }, label: {buttonStyleTemplate(text: "Next")})
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure!")))}
+            }.offset(y: -UIScreen.main.bounds.height*0.02)
     }
 }
+
 
 struct AcceptancePage_Previews: PreviewProvider {
     static var previews: some View {
