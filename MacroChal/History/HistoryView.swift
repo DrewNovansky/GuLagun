@@ -30,89 +30,91 @@ struct HistoryView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.accentColor)
                 .offset(y:-UIScreen.main.bounds.height*0.04)
-              
-            ScrollView{
+            
             if result.endIndex == 0 {
-                Text("It's seems you haven't tell us any story let's start expressing")
-                    .padding()
-                Spacer()
-                    .frame(height:UIScreen.main.bounds.width)
-                NavigationLink(
-                    destination: FocusBreathingPage(),
-                    label: {
-                        buttonStyleTemplate(text: "Let's Go Express")
-                    })
+                VStack{
+                    SubtitleTemp(subtitle: "Well there's nothing here... yet.\nSo let's start expressing about today, shall we?")
+                    Image("YourWriting")
+                        .frame(height: UIScreen.main.bounds.width)
+                    Spacer()
+                    NavigationLink(
+                        destination: FocusBreathingPage(),
+                        label: {
+                            buttonStyleTemplate(text: "Express Yourself")
+                        })
+                }
             }
             else{
-            NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, datayangmana: databaseyang, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
-                VStack{
-                    ForEach(self.result) {timestamp in
-                        Button(action: {
-                            if timestamp.emotionChoosen != "" && timestamp.emotionDetail != ""{
-                                self.emotionChoosen = timestamp.emotionChoosen
-                                self.emotionDetails = timestamp.emotionDetail
-                                self.story = timestamp.story
-                                self.acceptenceText = timestamp.acceptanceText
-                                self.heartOn = timestamp.heartOn
-                                self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp, minta: "tanggal")
-                                self.jam = CekTanggal(tanggalInput: timestamp.timestamp, minta: "")
-                                self.showNew = true
-                                self.databaseyang = timestamp
-                            }
-                            else { self.emotionDetails = ""
-                                self.story = ""
-                                self.acceptenceText = ""
-                                self.heartOn = false
-                                self.tanggal = ""
-                                self.jam = ""
-                                self.showNew = false}
-                        }, label: {
-                            HStack{
-                                Image("\(timestamp.emotionChoosen)")
-                                    .resizable()
-                                    .frame(width:50, height:50)
-                                    .padding()
-                                
-                                VStack(alignment: .leading){
-                                    Text(CekTanggal(tanggalInput: timestamp.timestamp, minta: "tanggal"))
-                                        .foregroundColor(.accentColor)
-                                    //tanggal
-                                    Text(timestamp.story)
-                                        .frame(height: 25)
-                                        .foregroundColor(.accentColor)
-                                }
-                                Spacer()
-                                VStack{
-                                    Text(CekTanggal(tanggalInput: timestamp.timestamp, minta: ""))
-                                        .foregroundColor(.accentColor)
-                                    
-                                    if timestamp.heartOn == true{
-                                        Image("Heart.Fill")
-                                            .renderingMode(.none)
-                                            .resizable()
-                                            .frame(width: 26, height: 24)
-                                            .padding(2)
-                                        
-                                    }else if timestamp.heartOn == false{
-                                        Image("Heart")
-                                            .renderingMode(.none)
-                                            .resizable()
-                                            .frame(width: 26, height: 24)
-                                            .padding(2)
+                ScrollView{
+                    NavigationLink(destination: HistoryPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn, tanggal: tanggal, jam: jam, datayangmana: databaseyang, buttonComment: true, commentField: false, halfModal: false, commentText: ""), isActive: $showNew){
+                        VStack{
+                            ForEach(self.result) {timestamp in
+                                Button(action: {
+                                    if timestamp.emotionChoosen != "" && timestamp.emotionDetail != ""{
+                                        self.emotionChoosen = timestamp.emotionChoosen
+                                        self.emotionDetails = timestamp.emotionDetail
+                                        self.story = timestamp.story
+                                        self.acceptenceText = timestamp.acceptanceText
+                                        self.heartOn = timestamp.heartOn
+                                        self.tanggal = CekTanggal(tanggalInput: timestamp.timestamp , minta: "tanggal")
+                                        self.jam = CekTanggal(tanggalInput: timestamp.timestamp , minta: "")
+                                        self.showNew = true
+                                        self.databaseyang = timestamp
                                     }
-                                }.padding()
+                                    else { self.emotionDetails = ""
+                                        self.story = ""
+                                        self.acceptenceText = ""
+                                        self.heartOn = false
+                                        self.tanggal = ""
+                                        self.jam = ""
+                                        self.showNew = false}
+                                }, label: {
+                                    HStack{
+                                        Image("\(timestamp.emotionChoosen)")
+                                            .resizable()
+                                            .frame(width:50, height:50)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text(CekTanggal(tanggalInput: timestamp.timestamp , minta: "tanggal"))
+                                                .foregroundColor(.accentColor)
+                                            //tanggal
+                                            Text(timestamp.story)
+                                                .frame(height: 25)
+                                                .foregroundColor(.accentColor)
+                                        }
+                                        Spacer()
+                                        VStack{
+                                            Text(CekTanggal(tanggalInput: timestamp.timestamp, minta: ""))
+                                                .foregroundColor(.accentColor)
+                                            
+                                            if timestamp.heartOn == true{
+                                                Image("Heart.Fill")
+                                                    .renderingMode(.none)
+                                                    .resizable()
+                                                    .frame(width: 26, height: 24)
+                                                    .padding(2)
+                                                
+                                            }else if timestamp.heartOn == false{
+                                                Image("Heart")
+                                                    .renderingMode(.none)
+                                                    .resizable()
+                                                    .frame(width: 26, height: 24)
+                                                    .padding(2)
+                                            }
+                                        }.padding()
+                                    }
+                                    .frame(width:UIScreen.main.bounds.width-30, height: UIScreen.main.bounds.height/10)
+                                    .background(Color("WriteColor"))
+                                    .cornerRadius(20)
+                                    .padding(5)
+                                })
+                                
+                                
                             }
-                            .frame(width:380, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                            .background(Color("WriteColor"))
-                            .cornerRadius(20)
-                            .padding(5)
-                        })
-                        
-                        
-                    }
+                        }
+                    }.offset(y:UIScreen.main.bounds.height*0.01)
                 }
-            }.offset(y:UIScreen.main.bounds.height*0.01)
-            }
             }
             Spacer()
         }

@@ -30,32 +30,34 @@ struct BreathingPage: View {
                     }
                 }
             
-            TitleTemp(title: "\(countDown)")
-                .onReceive(timerDetik, perform: { _ in
-                    if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
-                        if detikOutput >  1 {
-                            detikOutput -= 1
-                            self.countDown = "\(detikOutput)"
-                        } else {
-                            detikOutput = 4
-                            self.countDown = "\(detikOutput)"
-                            getar(mode: "sukses")
-                        }
-                    } else {
-                        detikOutput = 0
-                        self.countDown = ""
-                        self.timerDetik.upstream.connect().cancel()
-                    }
-                }
-                )
+            
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-            
+            ZStack{
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                 FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
                     .frame(width: 300, height: 325, alignment: .center)
             } else {
                 Image("Great!")
+            }
+                TitleTemp(title: "\(countDown)")
+                    .onReceive(timerDetik, perform: { _ in
+                        if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
+                            if detikOutput >  1 {
+                                detikOutput -= 1
+                                self.countDown = "\(detikOutput)"
+                            } else {
+                                detikOutput = 4
+                                self.countDown = "\(detikOutput)"
+                                getar(mode: "sukses")
+                            }
+                        } else {
+                            detikOutput = 0
+                            self.countDown = ""
+                            self.timerDetik.upstream.connect().cancel()
+                        }
+                    }
+                    ).offset(y: UIScreen.main.bounds.height/20)
             }
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
