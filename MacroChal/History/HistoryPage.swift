@@ -26,7 +26,7 @@ struct HistoryPage: View {
     @State var keyboardState = false
     @State var showAlert = false
     
- @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
+    @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
     
     var body: some View {
         ZStack{
@@ -34,44 +34,47 @@ struct HistoryPage: View {
                 VStack{
                     if keyboardState{
                         Text("")
-                        .navigationBarItems(trailing:
-                                                        HStack{
-                                                            Button(action: {
-                                                                hideKeyboard()
-                                                                keyboardState = false
-                                                            }
-                                                            , label: {
-                                                                Text("Done")
-                                                                    .padding(5)
-                                                                    
+                            .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Button(action: {
+                                                            hideKeyboard()
+                                                            keyboardState = false
                                                         }
-                                )
-                        })
+                                                        , label: {
+                                                            Text("Done")
+                                                                .padding(5)
+                                                            
+                                                        }
+                                                        )
+                                                    })
                     }
                     else {
                         Text("")
-                        .navigationBarItems(trailing:
-                                                        HStack{
-                                                            Text("")
-                        })
+                            .navigationBarItems(trailing:
+                                                    HStack{
+                                                        Text("")
+                                                    })
                     }
                     TitleTemp(title: "\(tanggal)")
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     
                     SubtitleTemp(subtitle: "Note to self:")
-                     //ini untuk scroll view nya munculin
+                    //ini untuk scroll view nya munculin
+                    
                     ForEach(self.commentTest) { isiKomen in
-                        ScrollView{
-                            SubtitleTemp(subtitle: isiKomen.comment)
-                            SubtitleTemp(subtitle:
-                            ""//isiKomen.timestampComment)
-                            )
+                        if isiKomen.children == datayangmana {
+                            ScrollView{
+                                SubtitleTemp(subtitle:
+                                                outputTanggalKomen(inputTanggal: isiKomen.timestampComment)
+                                )
+                                SubtitleTemp(subtitle: isiKomen.comment)
+                            }
+                            .frame(width: 354, height: 135, alignment: .center)
+                            .padding()
+                            .background(Color("CommentColor"))
+                            .cornerRadius(20)
                         }
-                        .frame(width: 354, height: 135, alignment: .center)
-                        .padding()
-                        .background(Color("CommentColor"))
-                        .cornerRadius(20)
                     }
                     if commentField{
                         multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
@@ -82,26 +85,22 @@ struct HistoryPage: View {
                             commentField.toggle()
                             buttonComment.toggle()
                         } else if buttonComment == false{
-                            //Mark: alert muncul if write here...
-                            if commentText == "" || commentText == "Write Here..." || commentText == "Write Here"{
-                                self.showAlert = true
-                            }
-                            else{
-                                
-                                if heartOn == false{
-                                    halfModal.toggle()
-                                }
+                            if commentText == "" ||  commentText == "Write Here..." || commentText == "Write Here"{ 
+                              self.showAlert = true }
+                            else{ if heartOn == false
+                                 { halfModal.toggle()}
                                 commentField.toggle()
                                 buttonComment.toggle()
-                            }
+                                }
                         }
                     }, label: {
                         if buttonComment{
-                            buttonStyleTemplate(text: "Add Comment")
-                                .padding()
+                            buttonStyleTemplate(text: "Add Note")
+                          .padding()
                         } else if buttonComment == false{
-                            buttonStyleTemplate(text: "Save Comment")
-                                .padding()
+                            buttonStyleTemplate(text: "Save Note")
+                                                    .padding()
+
                         }
                     }).alert(isPresented: $showAlert) {
                         Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
@@ -113,22 +112,18 @@ struct HistoryPage: View {
                     SlideOverCard {
                         cardModal(heartState: $heartOn)
                     }
-
                     Button(action:{
                         halfModal.toggle()
                         saveComment()
                         reloadHeart()
-                        
                     },label: {
                         buttonStyleTemplate(text: "Save")
                     })
                     .offset(y: -UIScreen.main.bounds.height/10)
-
                 }
             }
-            
+        }
     }
-}
     func saveComment() {
         let diary = CommentaryData(context: viewContext)
         diary.children = datayangmana
@@ -152,6 +147,13 @@ struct HistoryPage: View {
             let error = NSError.self
             fatalError("UnresolvedError \(error)")
         }
+    }
+    func outputTanggalKomen(inputTanggal: Date)-> String {
+        let ubahTanggal = DateFormatter()
+        var tanggalString: String = String()
+        ubahTanggal.dateFormat = "d MMM y"
+        tanggalString = ubahTanggal.string(from: inputTanggal)
+        return tanggalString
     }
 }
 
