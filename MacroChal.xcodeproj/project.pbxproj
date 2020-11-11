@@ -33,15 +33,15 @@
 		68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */; };
 		68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */; };
 		EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CE22D2541917500217DAF /* FireAnimation.swift */; };
+		EC6B7224255BCEED00C047BB /* CommentaryData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B7220255BCEED00C047BB /* CommentaryData+CoreDataClass.swift */; };
+		EC6B7225255BCEED00C047BB /* CommentaryData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B7221255BCEED00C047BB /* CommentaryData+CoreDataProperties.swift */; };
+		EC6B7226255BCEED00C047BB /* DiaryDatabase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B7222255BCEED00C047BB /* DiaryDatabase+CoreDataClass.swift */; };
+		EC6B7227255BCEED00C047BB /* DiaryDatabase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B7223255BCEED00C047BB /* DiaryDatabase+CoreDataProperties.swift */; };
 		EC87DA0D2546C19700EA4BCD /* FireAnimationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87DA0C2546C19700EA4BCD /* FireAnimationTest.swift */; };
 		EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */; };
 		EC8E5F002542ADFE002EA8B5 /* BreathingInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */; };
 		EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */; };
 		ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBAE4A325500895005B427B /* DisclaimerView.swift */; };
-		ECBFBF27255A9C150048A277 /* DiaryDatabase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFBF23255A9C150048A277 /* DiaryDatabase+CoreDataClass.swift */; };
-		ECBFBF28255A9C150048A277 /* DiaryDatabase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFBF24255A9C150048A277 /* DiaryDatabase+CoreDataProperties.swift */; };
-		ECBFBF29255A9C150048A277 /* CommentarycommentTest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFBF25255A9C150048A277 /* CommentarycommentTest+CoreDataClass.swift */; };
-		ECBFBF2A255A9C150048A277 /* CommentarycommentTest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFBF26255A9C150048A277 /* CommentarycommentTest+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,15 +94,15 @@
 		68D1C6CB25418FCE00712DCC /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		68D1C6CC25418FCE00712DCC /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		EC0CE22D2541917500217DAF /* FireAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimation.swift; sourceTree = "<group>"; };
+		EC6B7220255BCEED00C047BB /* CommentaryData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommentaryData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC6B7221255BCEED00C047BB /* CommentaryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommentaryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC6B7222255BCEED00C047BB /* DiaryDatabase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryDatabase+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC6B7223255BCEED00C047BB /* DiaryDatabase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryDatabase+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EC87DA0C2546C19700EA4BCD /* FireAnimationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimationTest.swift; sourceTree = "<group>"; };
 		EC8E5EFA2542AC9C002EA8B5 /* FocusBreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusBreathingPage.swift; sourceTree = "<group>"; };
 		EC8E5EFF2542ADFE002EA8B5 /* BreathingInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingInstruction.swift; sourceTree = "<group>"; };
 		EC8E5F072542B09E002EA8B5 /* BreathingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPage.swift; sourceTree = "<group>"; };
 		ECBAE4A325500895005B427B /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
-		ECBFBF23255A9C150048A277 /* DiaryDatabase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryDatabase+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ECBFBF24255A9C150048A277 /* DiaryDatabase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryDatabase+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		ECBFBF25255A9C150048A277 /* CommentarycommentTest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommentarycommentTest+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ECBFBF26255A9C150048A277 /* CommentarycommentTest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommentarycommentTest+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,10 +257,10 @@
 		ECBFBF22255A9BC90048A277 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				ECBFBF23255A9C150048A277 /* DiaryDatabase+CoreDataClass.swift */,
-				ECBFBF24255A9C150048A277 /* DiaryDatabase+CoreDataProperties.swift */,
-				ECBFBF25255A9C150048A277 /* CommentarycommentTest+CoreDataClass.swift */,
-				ECBFBF26255A9C150048A277 /* CommentarycommentTest+CoreDataProperties.swift */,
+				EC6B7220255BCEED00C047BB /* CommentaryData+CoreDataClass.swift */,
+				EC6B7221255BCEED00C047BB /* CommentaryData+CoreDataProperties.swift */,
+				EC6B7222255BCEED00C047BB /* DiaryDatabase+CoreDataClass.swift */,
+				EC6B7223255BCEED00C047BB /* DiaryDatabase+CoreDataProperties.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -394,34 +394,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBFBF28255A9C150048A277 /* DiaryDatabase+CoreDataProperties.swift in Sources */,
 				49C36AD725418BF2009C9065 /* EmotionPage.swift in Sources */,
 				49BA455D2525ECEC00066A7E /* MacroChal.xcdatamodeld in Sources */,
 				68D1C6CD25418FCE00712DCC /* OnboardingCardView.swift in Sources */,
 				EC8E5F082542B09E002EA8B5 /* BreathingPage.swift in Sources */,
+				EC6B7227255BCEED00C047BB /* DiaryDatabase+CoreDataProperties.swift in Sources */,
 				ECBAE4A425500895005B427B /* DisclaimerView.swift in Sources */,
 				68D1C6CE25418FCE00712DCC /* OnboardingCard.swift in Sources */,
 				491953362546C9E40037B779 /* TextTemplate.swift in Sources */,
 				49C36AD525418BF2009C9065 /* QuotesPage.swift in Sources */,
 				68D1C6C125418FB800712DCC /* ExpressPageView.swift in Sources */,
 				49C36AD325418BF2009C9065 /* AcceptancePage.swift in Sources */,
-				ECBFBF2A255A9C150048A277 /* CommentarycommentTest+CoreDataProperties.swift in Sources */,
 				4919532C2546C9B00037B779 /* cardModal.swift in Sources */,
 				491953372546C9E40037B779 /* Template.swift in Sources */,
 				49BA455A2525ECEC00066A7E /* Persistence.swift in Sources */,
 				49BA45512525ECEA00066A7E /* MacroChalApp.swift in Sources */,
-				ECBFBF27255A9C150048A277 /* DiaryDatabase+CoreDataClass.swift in Sources */,
 				49C36AD225418BF2009C9065 /* Emotion2Page.swift in Sources */,
 				EC8E5EFB2542AC9C002EA8B5 /* FocusBreathingPage.swift in Sources */,
 				491953382546C9E40037B779 /* TextFieldTemplate.swift in Sources */,
 				49C36AD425418BF2009C9065 /* WritingPage.swift in Sources */,
+				EC6B7224255BCEED00C047BB /* CommentaryData+CoreDataClass.swift in Sources */,
 				68D1C6BF25418FB800712DCC /* BonFireView.swift in Sources */,
+				EC6B7226255BCEED00C047BB /* DiaryDatabase+CoreDataClass.swift in Sources */,
 				EC0CE22E2541917500217DAF /* FireAnimation.swift in Sources */,
 				6897373425580C2200964D80 /* HistoryView.swift in Sources */,
 				4919535B2546CAD20037B779 /* PreviewPage.swift in Sources */,
-				ECBFBF29255A9C150048A277 /* CommentarycommentTest+CoreDataClass.swift in Sources */,
 				68D1C6C025418FB800712DCC /* OnboardingPageView.swift in Sources */,
 				EC87DA0D2546C19700EA4BCD /* FireAnimationTest.swift in Sources */,
+				EC6B7225255BCEED00C047BB /* CommentaryData+CoreDataProperties.swift in Sources */,
 				68D1C6C225418FB800712DCC /* AboutUsView.swift in Sources */,
 				49C36AD125418BF2009C9065 /* HistoryPage.swift in Sources */,
 				EC8E5F002542ADFE002EA8B5 /* BreathingInstruction.swift in Sources */,
