@@ -89,7 +89,9 @@ struct HistoryPage: View {
                         } else if buttonComment == false{
                             if commentText == "" ||  commentText == "Write Here..." || commentText == "Write Here"{ 
                                 self.showAlert = true }
-                            else{ if heartOn == false
+                            else{
+                                saveComment()
+                                if heartOn == false
                             { halfModal.toggle()}
                             commentField.toggle()
                             buttonComment.toggle()
@@ -116,7 +118,6 @@ struct HistoryPage: View {
                     }
                     Button(action:{
                         halfModal.toggle()
-                        saveComment()
                         reloadHeart()
                     },label: {
                         buttonStyleTemplate(text: "Save")

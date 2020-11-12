@@ -13,7 +13,7 @@ struct BreathingPage: View {
     @State var detikOutput = 4
     @State var countDown:String = "4"
     @State var count: Int = 1
-    var pengulangan = 1
+    var pengulangan = 4
     
     var body: some View {
         VStack {
