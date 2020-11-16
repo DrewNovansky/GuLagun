@@ -66,7 +66,7 @@ struct WritingPage: View {
             }.frame(minHeight: UIScreen.main.bounds.height/3)
             VStack{
                 ProgressView(value: 0.6)
-                    .frame(width: 374)
+                    .frame(width: UIScreen.main.bounds.width-30)
                     .accentColor(Color(.systemBlue))
                     .offset(y: UIScreen.main.bounds.height*0.01)
                     .padding(.bottom)

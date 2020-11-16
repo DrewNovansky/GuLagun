@@ -194,26 +194,25 @@ struct WayToGoPage: View{
 
 struct GoodJobPage: View {
     var body: some View{
-        VStack{
-            TitleTemp(title: "Great job!")
-                //.padding()
-            SubtitleTemp(subtitle: "We’ll remind you again tomorrow, see you!")
-            Text("").frame(height:UIScreen.main.bounds.height*0.1)
-            Image("SeeYou!")
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width*0.7, height: UIScreen.main.bounds.width*0.7, alignment: .center)
-                .padding()
-            Text("").frame(height:UIScreen.main.bounds.height*0.15)
-            NavigationLink(
-                destination: BonFireView(),
-                label: {
-                    buttonStyleTemplate(text: "See you!")
-                })
-                .padding(.top, 30.0)
-                .offset(y: UIScreen.main.bounds.height*0.03)
-        }
-        .offset(y:-UIScreen.main.bounds.height*0.04)
-    }
+          VStack{
+              TitleTemp(title: "Great job!")
+                  .padding()
+              SubtitleTemp(subtitle: "We’ll remind you again tomorrow, see you!")
+              ScrollView{
+              Image("SeeYou!")
+                  .resizable()
+                  .frame(width: UIScreen.main.bounds.width*0.7, height: UIScreen.main.bounds.width*0.7, alignment: .center)
+                  .padding()
+              }.offset(y: UIScreen.main.bounds.height*0.1)
+              NavigationLink(
+                  destination: BonFireView(),
+                  label: {
+                      buttonStyleTemplate(text: "See you!")
+                  })
+                  .offset(y: UIScreen.main.bounds.height*0.06)
+          }
+          .offset(y:-UIScreen.main.bounds.height*0.08)
+      }
 }
 
 struct PreviewPage_Previews: PreviewProvider {

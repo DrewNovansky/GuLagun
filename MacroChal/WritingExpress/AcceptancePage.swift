@@ -80,7 +80,7 @@ struct AcceptancePage: View {
             .offset(y: -UIScreen.main.bounds.height*0.05)
             VStack{
                 ProgressView(value: 0.8)
-                    .frame(width: 374)
+                    .frame(width: UIScreen.main.bounds.width-30)
                     .accentColor(Color(.systemBlue))
                 NavigationLink(destination: QuotesPage(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptance, heartState: heartState), isActive: $showView){
                     Button(action: {
