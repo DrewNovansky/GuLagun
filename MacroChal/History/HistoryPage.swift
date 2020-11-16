@@ -67,13 +67,15 @@ struct HistoryPage: View {
                             ScrollView{
                                 SubtitleTemp(subtitle:
                                                 outputTanggalKomen(inputTanggal: isiKomen.timestampComment)
-                                )
+                                ).padding(.top)
                                 SubtitleTemp(subtitle: isiKomen.comment)
                             }
-                            .frame(width: 354, height: 135, alignment: .center)
-                            .padding()
+                            
+                            .frame(width: UIScreen.main.bounds.width*0.9, height: 135, alignment: .center)
                             .background(Color("CommentColor"))
                             .cornerRadius(20)
+                            .padding()
+                            
                         }
                     }
                     if commentField{
@@ -86,26 +88,28 @@ struct HistoryPage: View {
                             buttonComment.toggle()
                         } else if buttonComment == false{
                             if commentText == "" ||  commentText == "Write Here..." || commentText == "Write Here"{ 
-                              self.showAlert = true }
-                            else{ if heartOn == false
-                                 { halfModal.toggle()}
-                                commentField.toggle()
-                                buttonComment.toggle()
-                                }
+                                self.showAlert = true }
+                            else{
+                                saveComment()
+                                if heartOn == false
+                            { halfModal.toggle()}
+                            commentField.toggle()
+                            buttonComment.toggle()
+                            }
                         }
                     }, label: {
                         if buttonComment{
                             buttonStyleTemplate(text: "Add Note")
-                          .padding()
+                                .padding()
                         } else if buttonComment == false{
                             buttonStyleTemplate(text: "Save Note")
-                                                    .padding()
-
+                                .padding()
+                            
                         }
                     }).alert(isPresented: $showAlert) {
                         Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
                     }
-            }.offset(y:UIScreen.main.bounds.height*0.01)
+                }.offset(y:UIScreen.main.bounds.height*0.01)
             }.offset(y:-UIScreen.main.bounds.height*0.011)
             if halfModal {
                 VStack{
@@ -114,7 +118,6 @@ struct HistoryPage: View {
                     }
                     Button(action:{
                         halfModal.toggle()
-                        saveComment()
                         reloadHeart()
                     },label: {
                         buttonStyleTemplate(text: "Save")

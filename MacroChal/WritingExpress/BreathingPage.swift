@@ -77,7 +77,7 @@ struct BreathingPage: View {
                 .padding()
                 .offset(y:UIScreen.main.bounds.width*0.1)
                 NavigationLink(destination: BreathingPage()) {
-                    buttonStyleTemplate(text: "No")
+                    buttonTemplate(funcActive: false, emotion: "No")
                 }
                 .offset(y:UIScreen.main.bounds.width*0.1) 
             }
