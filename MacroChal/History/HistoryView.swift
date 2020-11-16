@@ -19,7 +19,7 @@ struct HistoryView: View {
     @State var databaseyang: DiaryDatabase = DiaryDatabase()
     @State var showNew = false
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: DiaryDatabase.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: true)]) var result : FetchedResults<DiaryDatabase>
+    @FetchRequest(entity: DiaryDatabase.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)]) var result : FetchedResults<DiaryDatabase>
     @Environment(\.managedObjectContext) var context
     
     var body: some View {

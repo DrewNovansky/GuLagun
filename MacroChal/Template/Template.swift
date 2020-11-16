@@ -24,7 +24,7 @@ struct buttonEmoji: View {
             Text(emotionName)
                 .padding(3)
                 .font(.body)
-                .foregroundColor(.black)
+                .foregroundColor(.accentColor)
             
             CircleImage(imagename: emotionName)
                 .frame(width: 68, height: 68, alignment: .center)
@@ -143,7 +143,7 @@ struct showDetail: View{
             if show{
             Text(emotionDetails)
                 .font(.caption)
-                .foregroundColor(.black)
+                .foregroundColor(.accentColor)
         }
         }
 }
@@ -156,14 +156,14 @@ struct buttonTemplate: View{
         if funcActive{
             Text(emotion)
                 .font(.body)
-                .foregroundColor(.black)
+                .foregroundColor(.accentColor)
                 .frame(width: UIScreen.main.bounds.width*0.9 , height: 48)
                 .background(Color("ActiveButtonColor"))
                 .cornerRadius(20)
         }else{
             Text(emotion)
                 .font(.body)
-                .foregroundColor(.black)
+                .foregroundColor(.accentColor)
                 .frame(width: UIScreen.main.bounds.width*0.9 , height: 48)
                 .background(Color("WriteColor"))
                 .cornerRadius(20)

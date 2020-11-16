@@ -19,7 +19,7 @@ struct AboutUsView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Text("Boo presents ForRest \n\n Our team consists of\n")
+                    Text("Our Team presents ForRest \n")
                         .font(.body)
                         .fontWeight(.bold)
                     

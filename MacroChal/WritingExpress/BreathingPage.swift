@@ -36,7 +36,7 @@ struct BreathingPage: View {
                 FireAnimation(imageName: "apiSemua", x: 0, y: 0, width: 300, height: 300)
                     .frame(width: 300, height: 325, alignment: .center)
             } else {
-                Image("Great!")
+                Image("BooComingSoon")
             }
                 VStack{
                 TitleTemp(title: "\(countDown)")
@@ -58,7 +58,7 @@ struct BreathingPage: View {
                         }
                         TimerAtasDetik += 1
                     }
-                    ).offset(y: UIScreen.main.bounds.height/20)
+                    ).offset(y: UIScreen.main.bounds.height*0.1)
                     if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                     SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
                         .offset(y: UIScreen.main.bounds.height*0.17)
@@ -79,12 +79,12 @@ struct BreathingPage: View {
                 }.hidden()
             } else {
                 NavigationLink(destination: EmotionPage()) {
-                    buttonStyleTemplate(text: "Yes")
+                    buttonStyleTemplate(text: "Continue")
                 }
                 .padding()
                 .offset(y:UIScreen.main.bounds.width*0.1)
                 NavigationLink(destination: BreathingPage()) {
-                    buttonTemplate(funcActive: false, emotion: "No")
+                    buttonTemplate(funcActive: false, emotion: "Repeat Breathing")
                 }
                 .offset(y:UIScreen.main.bounds.width*0.1) 
             }
