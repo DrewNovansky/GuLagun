@@ -13,7 +13,8 @@ struct BreathingPage: View {
     @State var detikOutput = 4
     @State var countDown:String = "4"
     @State var count: Int = 1
-    var pengulangan = 4
+    var pengulangan = 1
+    @State var TimerAtasDetik = 1
     
     var body: some View {
         VStack {
@@ -29,9 +30,6 @@ struct BreathingPage: View {
                         
                     }
                 }
-            
-            
-            
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             ZStack{
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
@@ -49,15 +47,17 @@ struct BreathingPage: View {
                             } else {
                                 detikOutput = 4
                                 self.countDown = "\(detikOutput)"
-                                getar(mode: "sukses")
+                                //getar(mode: "sukses")
+                                UINotificationFeedbackGenerator().notificationOccurred(.success)
                             }
                         } else {
                             detikOutput = 0
                             self.countDown = ""
                             self.timerDetik.upstream.connect().cancel()
                         }
-                    })
-                    .offset(y: UIScreen.main.bounds.height*0.09)
+                        TimerAtasDetik += 1
+                    }
+                    ).offset(y: UIScreen.main.bounds.height/20)
             }
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
@@ -66,6 +66,7 @@ struct BreathingPage: View {
                 ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
                     .padding()
                     .accentColor(Color(.systemBlue))
+                
                 NavigationLink(destination: EmotionPage()) {
                     buttonStyleTemplate(text: "Next")
                 }.hidden()
@@ -82,13 +83,14 @@ struct BreathingPage: View {
             }
         }.offset(y:-UIScreen.main.bounds.width*0.15) 
     }
-    
     func buatProgress(atas: Int, bawah: Int)-> Float {
-        var atasFloat = Float(atas)
-        atasFloat += 1
-        let bawahFloat = Float(bawah)
-        let hasil = atasFloat / bawahFloat
-        return hasil
+        //var atasFloat = Float(atas)
+        //atasFloat += 1
+        //let bawahFloat = Float(bawah)
+        //let hasil = atasFloat / bawahFloat
+        let hasil:Float = Float(TimerAtasDetik)/Float(60)
+        print(TimerAtasDetik)
+        return Float(hasil)
     }
     
     func penggandaInstruksi(jumlah: Int, output: String)-> [String] {
@@ -118,17 +120,17 @@ struct BreathingPage: View {
         }
     }
     
-    func getar(mode: String) {
-        switch mode {
-        case "sukses":
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
-        default:
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
-            
-        }
-    }
+//    func getar(mode: String) {
+//        switch mode {
+//        case "sukses":
+//            let generator = UINotificationFeedbackGenerator()
+//            generator.notificationOccurred(.success)
+//        default:
+//            let generator = UINotificationFeedbackGenerator()
+//            generator.notificationOccurred(.success)
+//
+//        }
+//    }
 }
 
 struct BreathingPage_Previews: PreviewProvider {
