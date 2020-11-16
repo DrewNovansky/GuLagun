@@ -71,8 +71,8 @@ struct reviewTemp: View {
                 // hasil passing data
                 SubtitleTemp(subtitle: story)
             }
-            .frame(width: 354, height: 88, alignment: .center)
             .padding()
+            .frame(width: UIScreen.main.bounds.width-30, height: 88, alignment: .center)
             .background(Color("TextfieldColor"))
             .cornerRadius(20)
             
@@ -95,8 +95,8 @@ struct reviewTemp: View {
             ScrollView{
                 SubtitleTemp(subtitle: acceptenceText)
             }
-            .frame(width: 354, height: 135, alignment: .center)
             .padding()
+            .frame(width: UIScreen.main.bounds.width-30, height: 135, alignment: .center)
             .background(Color("TextfieldColor"))
             .cornerRadius(20)
         }
@@ -110,6 +110,7 @@ struct Template_Previews: PreviewProvider {
         VStack{
             TitleTemp(title: "Title")
             SubtitleTemp(subtitle: "This is template where we can put all our outlet template")
+            buttonStyleTemplate(text: "Ini teh tehnya tehteh")
         }
         reviewTemp()
     }
@@ -156,14 +157,14 @@ struct buttonTemplate: View{
             Text(emotion)
                 .font(.body)
                 .foregroundColor(.black)
-                .frame(width: 374, height: 48)
+                .frame(width: UIScreen.main.bounds.width-30 , height: 48)
                 .background(Color("ActiveButtonColor"))
                 .cornerRadius(20)
         }else{
             Text(emotion)
                 .font(.body)
                 .foregroundColor(.black)
-                .frame(width: 374, height: 48)
+                .frame(width: UIScreen.main.bounds.width-30 , height: 48)
                 .background(Color("WriteColor"))
                 .cornerRadius(20)
         }

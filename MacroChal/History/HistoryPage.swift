@@ -78,48 +78,50 @@ struct HistoryPage: View {
                     }
                     if commentField{
                         multilineTF(placeholder: "Write Here...", textWritten: $commentText, keyboardState: $keyboardState)
+                            .padding()
                     }
                     Button(action: {
                         if buttonComment{
                             commentField.toggle()
                             buttonComment.toggle()
                         } else if buttonComment == false{
-                            if commentText == "" ||  commentText == "Write Here..." || commentText == "Write Here"{ self.showAlert = true }
-                            else{ if heartOn == false{ halfModal.toggle()}
+                            if commentText == "" ||  commentText == "Write Here..." || commentText == "Write Here"{ 
+                              self.showAlert = true }
+                            else{ if heartOn == false
+                                 { halfModal.toggle()}
                                 commentField.toggle()
-                                buttonComment.toggle()}
+                                buttonComment.toggle()
+                                }
                         }
                     }, label: {
                         if buttonComment{
                             buttonStyleTemplate(text: "Add Note")
+                          .padding()
                         } else if buttonComment == false{
                             buttonStyleTemplate(text: "Save Note")
+                                                    .padding()
+
                         }
                     }).alert(isPresented: $showAlert) {
                         Alert(title: Text("Hello Friend"), message: Text("We would love to understand you better so tell us more about your story"), dismissButton: .cancel(Text("Sure")))
                     }
-                    
-                }.offset(y:UIScreen.main.bounds.height*0.01)
+            }.offset(y:UIScreen.main.bounds.height*0.01)
             }.offset(y:-UIScreen.main.bounds.height*0.011)
             if halfModal {
                 VStack{
                     SlideOverCard {
                         cardModal(heartState: $heartOn)
                     }
-                    
                     Button(action:{
                         halfModal.toggle()
                         saveComment()
                         reloadHeart()
-                        
                     },label: {
                         buttonStyleTemplate(text: "Save")
                     })
                     .offset(y: -UIScreen.main.bounds.height/10)
-                    
                 }
             }
-            
         }
     }
     func saveComment() {
@@ -153,7 +155,6 @@ struct HistoryPage: View {
         tanggalString = ubahTanggal.string(from: inputTanggal)
         return tanggalString
     }
-    
 }
 
 struct HistoryPage_Previews: PreviewProvider {

@@ -73,9 +73,7 @@ struct WritingPage: View {
                 
                 NavigationLink(destination: AcceptancePage(acceptance: "", emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story), isActive: $showView){
                     Button(action: {
-                        if story == ""{
-                            self.showAlert = true
-                        }else if story == "I feel \(emotionDetails) because"{
+                        if story == "" || story == "I feel \(emotionDetails) because"{
                             self.showAlert = true
                         }else{
                             showView = true
