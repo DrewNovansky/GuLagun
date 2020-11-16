@@ -118,7 +118,7 @@ struct Emotion2Page: View {
                     }
                 }
                 ProgressView(value: 0.4)
-                    .frame(width: 374)
+                    .frame(width: UIScreen.main.bounds.width-30)
                     .accentColor(Color(.systemBlue))
                     .padding()
                     .offset(y:UIScreen.main.bounds.height*0.05)

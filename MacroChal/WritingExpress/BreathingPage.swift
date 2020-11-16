@@ -70,6 +70,7 @@ struct BreathingPage: View {
             
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
                 ProgressView(value: buatProgress(atas: count, bawah: penggandaInstruksi(jumlah: pengulangan, output: "title").count))
+                    .frame(width: UIScreen.main.bounds.width-30)
                     .padding()
                     .accentColor(Color(.systemBlue))
                 
