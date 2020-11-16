@@ -17,19 +17,19 @@ struct BreathingPage: View {
     @State var TimerAtasDetik = 1
     
     var body: some View {
-        VStack {
-            TitleTemp(title: penggandaInstruksi(jumlah: pengulangan, output: "title")[count])
-                .padding()
-            
-            SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
-                .onReceive(timer) {input in
-                    if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
-                        self.count += 1
-                    } else {
-                        self.timer.upstream.connect().cancel()
-                        
-                    }
+        VStack {TitleTemp(title: penggandaInstruksi(jumlah: pengulangan, output: "title")[count])
+            .padding()
+            .onReceive(timer) {input in
+                if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count-1 {
+                    self.count += 1
+                } else {
+                    self.timer.upstream.connect()
+                        .cancel()
                 }
+            }
+            if count >= penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
+                    SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
+                    }
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             ZStack{
             if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
@@ -38,6 +38,7 @@ struct BreathingPage: View {
             } else {
                 Image("Great!")
             }
+                VStack{
                 TitleTemp(title: "\(countDown)")
                     .onReceive(timerDetik, perform: { _ in
                         if count < penggandaInstruksi(jumlah: pengulangan, output: "title").count - 1 {
@@ -58,6 +59,11 @@ struct BreathingPage: View {
                         TimerAtasDetik += 1
                     }
                     ).offset(y: UIScreen.main.bounds.height/20)
+                    if count < penggandaInstruksi(jumlah: pengulangan, output: "subtitle").count - 1 {
+                    SubtitleTemp(subtitle: penggandaInstruksi(jumlah: pengulangan, output: "subtitle")[count])
+                        .offset(y: UIScreen.main.bounds.height*0.17)
+                    }
+                    }
             }
             
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
