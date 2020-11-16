@@ -25,6 +25,7 @@ struct HistoryPage: View {
     @State var commentText = ""
     @State var keyboardState = false
     @State var showAlert = false
+    @State var adaKomen = false
     
     @FetchRequest(entity: CommentaryData.entity(), sortDescriptors: [NSSortDescriptor(key: "timestampComment", ascending: true)]) var commentTest : FetchedResults<CommentaryData>
     
@@ -59,23 +60,27 @@ struct HistoryPage: View {
                     SubtitleTemp(subtitle: "\(jam)")
                     reviewTemp(emotionChoosen: emotionChoosen, emotionDetails: emotionDetails, story: story, acceptenceText: acceptenceText, heartOn: heartOn)
                     
-                    SubtitleTemp(subtitle: "Note to self:")
+                    if adaKomen {
+                        SubtitleTemp(subtitle: "Note to self:")
+                    } 
+                    
                     //ini untuk scroll view nya munculin
                     
                     ForEach(self.commentTest) { isiKomen in
                         if isiKomen.children == datayangmana {
+//                            self.adaKomen = true
                             ScrollView{
                                 SubtitleTemp(subtitle:
                                                 outputTanggalKomen(inputTanggal: isiKomen.timestampComment)
                                 ).padding(.top)
-                                SubtitleTemp(subtitle: isiKomen.comment)
+                                SubtitleTemp(subtitle: isiKomen.comment).onAppear(perform: {
+                                    adaKomen = true
+                                })
                             }
-                            
                             .frame(width: UIScreen.main.bounds.width*0.9, height: 135, alignment: .center)
                             .background(Color("CommentColor"))
                             .cornerRadius(20)
                             .padding()
-                            
                         }
                     }
                     if commentField{
@@ -127,6 +132,7 @@ struct HistoryPage: View {
             }
         }
     }
+    
     func saveComment() {
         let diary = CommentaryData(context: viewContext)
         diary.children = datayangmana
