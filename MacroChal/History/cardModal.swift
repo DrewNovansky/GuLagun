@@ -13,8 +13,11 @@ struct cardModal: View {
         VStack{
             Spacer()
                 .frame(height: 80)
+                .padding(.bottom)
             TitleTemp(title: "Hi There")
+                .padding(.top)
             SubtitleTemp(subtitle: "That day you didn’t choose to accept that feeling. Have you changed your mind?")
+                .padding()
             Button(action: {
                 self.heartState.toggle()
             }, label: {
