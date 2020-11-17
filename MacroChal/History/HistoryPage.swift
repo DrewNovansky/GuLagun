@@ -62,20 +62,22 @@ struct HistoryPage: View {
                     
                     if adaKomen {
                         SubtitleTemp(subtitle: "Note to self:")
+                            .padding(.top, 12)
                     } 
                     
                     //ini untuk scroll view nya munculin
                     
                     ForEach(self.commentTest) { isiKomen in
                         if isiKomen.children == datayangmana {
-//                            self.adaKomen = true
+                            //                            self.adaKomen = true
                             ScrollView{
                                 SubtitleTemp(subtitle:
                                                 outputTanggalKomen(inputTanggal: isiKomen.timestampComment)
                                 ).padding(.top)
-                                SubtitleTemp(subtitle: isiKomen.comment).onAppear(perform: {
-                                    adaKomen = true
-                                })
+                                SubtitleTemp(subtitle: isiKomen.comment)
+                                    .onAppear(perform: {
+                                        adaKomen = true
+                                    })
                             }
                             .frame(width: UIScreen.main.bounds.width*0.9, height: 135, alignment: .center)
                             .background(Color("CommentColor"))
@@ -97,9 +99,9 @@ struct HistoryPage: View {
                             else{
                                 saveComment()
                                 if heartOn == false
-                            { halfModal.toggle()}
-                            commentField.toggle()
-                            buttonComment.toggle()
+                                { halfModal.toggle()}
+                                commentField.toggle()
+                                buttonComment.toggle()
                             }
                         }
                     }, label: {
